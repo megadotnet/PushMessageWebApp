@@ -1,0 +1,33 @@
+﻿
+<div class="row">
+    <div class="col-md-12">
+        <h2>方法列表</h2>
+        <ul style="list-style:decimal">
+            <li><a href="/api/message/" target="_blank">发送短信  </a><br/>请求地址：http://localhost:2493/api/message  <br/>请求方法：POST</li>
+        </ul>
+        <h2>参数说明</h2>
+        <ul>
+            <li>
+                APP_CODE             字符串(32)  '应用系统标识'</li>
+            <li>
+                SENDER_ACCOUNT      字符串(64) '消息发送者帐号'
+            </li>
+            <li>
+                SENDER               字符串(64) '消息发送者姓名',</li>
+            <li>
+                ORG_CODE             字符串(32) '发送者当时所属组织机构'</li>
+            <li>
+                MSG_TYPE             字符串(64) '消息类型  默认值为：DEFAULT'</li>
+            <li>
+                MSG_SEND_TYPE        字符串(64)  发送类型,默认值为SMS, 可以是SMS、报文等
+                </li>
+            <li>
+                RECEIVER_ACCOUNT    字符串(2048)  '消息接收者帐号（例如：Email地址，手机号等）
+            </li>
+            <li>
+                MSG_TITLE            字符串(512) '消息标题'
+            </li><li>
+                MSG_CONTENT        字符串(2048)  '消息内容'</li>
+</ul>
+</div>
+</div>

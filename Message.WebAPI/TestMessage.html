@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>test page</title>
+    <link type="text/css" rel="stylesheet" href="Content/bootstrap.min.css" />
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(function () {
+        $('#btnSendMsg').click(function () {
+            $.post('api/message',$('#frm').serialize() , function (value) { alert(value); }, 'json');
+        });
+    });
+
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <form id="frm" class="form-horizontal">
+            <fieldset>
+                <legend>Send Message</legend>
+                <div class="control-group">
+                    <label class="control-label">ID</label>
+                    <input type="text" value="1" name="Id" id="Id" class="input-large" placeholder=".input-large" />
+                </div>
+
+                <div class="controls">
+                    <label class="control-label">MSG_TITLE</label><input type="text" value="SITA" name="MSG_TITLE" id="MSG_TITLE" max="100" />
+                </div>
+                <div class="controls">
+                    <label class="control-label">MSG_CONTENT</label>
+                    <textarea name="MSG_CONTENT" id="MSG_CONTENT" cols="100" rows="10">test
+</textarea>
+                </div>
+                </fieldset>
+       </form> 
+        <hr />
+        <input type="button" id="btnSendMsg" value="发送消息" class="btn btn-primary" />
+
+    </div> 
+
+</body>
+</html>
