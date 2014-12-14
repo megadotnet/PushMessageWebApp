@@ -13,12 +13,21 @@ function Feed() {
                 $("ul.feed-list li:gt(3)").remove();
             }
 
-            $.messager.show({
-                title: 'Tips',
-                msg: item.MSG_CONTENT,
-                showType: 'show'          
-            });
+            //$.messager.show({
+            //    title: 'Tips',
+            //    msg: item.MSG_CONTENT,
+            //    showType: 'show'          
+            //});
 
+
+            new PNotify({
+                title: item.MSG_TITLE,
+                text: item.MSG_CONTENT,
+                type: 'success',
+                desktop: {
+                    desktop: true
+                }
+            });
      
         };
 

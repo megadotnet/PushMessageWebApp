@@ -29,9 +29,9 @@ namespace TestWebAPIJSON.Services
             {
                 return container.Resolve(serviceType);
             }
-            catch (ResolutionFailedException)
+            catch (ResolutionFailedException ex)
             {
-                return null;
+                throw;
             }
         }
 
