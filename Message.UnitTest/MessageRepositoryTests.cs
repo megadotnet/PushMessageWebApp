@@ -15,8 +15,8 @@ namespace Message.UnitTest
             bool isSuccess=messageRepository.SendMessage(new BusniessEntities.Models.PushMessageModel()
             {
                   Id=1,
-                  MSG_TITLE="Test title",
-                   MSG_CONTENT="test content"
+                  MSGTITLE="Test title",
+                   MSGCONTENT="test content"
             });
 
             Assert.IsTrue(isSuccess);

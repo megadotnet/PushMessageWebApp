@@ -31,7 +31,7 @@ namespace RealTimeApp
             var activemq = Megadotnet.MessageMQ.Adapter.ActiveMQListenAdapter<PushMessageModel>.Instance(MQConfig.MQIpAddress, MQConfig.QueueDestination);
             activemq.MQListener += m =>
             {
-                log.InfoFormat("从MQ收到消息{0}", m.MSG_CONTENT);
+                log.InfoFormat("从MQ收到消息{0}", m.MSGCONTENT);
                 GlobalHost.ConnectionManager.GetHubContext<FeedHub>().Clients.All.receive(m);
             };
 

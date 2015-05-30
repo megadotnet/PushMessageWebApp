@@ -49,6 +49,9 @@
     <Reference Include="Common.Logging.NLog">
       <HintPath>..\packages\Common.Logging.NLog.Net4.2.1.2\lib\net40\Common.Logging.NLog.dll</HintPath>
     </Reference>
+    <Reference Include="Megadotnet.Message.Utility">
+      <HintPath>..\ReferenceDll\Megadotnet.Message.Utility.dll</HintPath>
+    </Reference>
     <Reference Include="Megadotnet.MessageMQ.Adapter">
       <HintPath>..\ReferenceDll\Megadotnet.MessageMQ.Adapter.dll</HintPath>
     </Reference>
