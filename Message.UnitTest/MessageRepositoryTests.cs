@@ -12,11 +12,16 @@ namespace Message.UnitTest
         public void ShouldSendMessage()
         {
             IMessageRepository messageRepository = new MessageRepository();
-            bool isSuccess=messageRepository.SendMessage(new BusniessEntities.Models.PushMessageModel()
+            bool isSuccess = messageRepository.SendMessage(new BusniessEntities.Models.PushMsg()
             {
-                  Id=1,
-                  MSGTITLE="Test title",
-                   MSGCONTENT="test content"
+                Id = 1,
+                MSGTITLE = "Test title",
+                MSGCONTENT = "test content",
+                MSGTYPE=1,
+                MsgSendType=1,
+                ExpirationTime=DateTime.MaxValue,
+                IsRead=false,
+                Users = new string[] { "peter","john"}
             });
 
             Assert.IsTrue(isSuccess);

@@ -29,11 +29,11 @@ namespace Message.WebAPI.Models
     }
 
 
-    public class MessageCenterContext : DbContext
+    public class MessageCenterEntities : DbContext
     {
 
-        public MessageCenterContext()
-            : base("MessageCenterContext")
+        public MessageCenterEntities()
+            : base("MessageCenterEntities")
         {
         }
 

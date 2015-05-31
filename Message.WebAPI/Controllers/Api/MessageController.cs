@@ -19,7 +19,6 @@ namespace Message.WebAPI.Controllers.Api
         /// The address.
         /// </summary>
         private static string address = MQConfig.MQIpAddress;
-
         /// <summary>
         /// The queu e_ destination.
         /// </summary>
@@ -32,13 +31,18 @@ namespace Message.WebAPI.Controllers.Api
             this.messageRepository = _messageRepository;
         }
 
+        public IHttpActionResult Get()
+        {
+            return Ok("Call Ok");
+        }
+
         /// <summary>
         /// SendMessage
         /// </summary>
         /// <param name="messagemodel">The messagemodel.</param>
         /// <returns></returns>
         [HttpPost]
-        public IHttpActionResult SendMessage(PushMessageModel messagemodel)
+        public IHttpActionResult SendMessage(PushMsg messagemodel)
         {
             return SendToServer(messagemodel);
 
@@ -49,7 +53,7 @@ namespace Message.WebAPI.Controllers.Api
         /// </summary>
         /// <param name="messagemodel">The messagemodel.</param>
         /// <returns></returns>
-        private IHttpActionResult SendToServer(PushMessageModel messagemodel)
+        private IHttpActionResult SendToServer(PushMsg messagemodel)
         {
 
             if (ModelState.IsValid)

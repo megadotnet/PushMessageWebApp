@@ -25,10 +25,12 @@ namespace Message.WebAPI.Services.Repository
         /// </summary>
         /// <param name="messagemodel"></param>
         /// <returns></returns>
-        public bool SendMessage(PushMessageModel messagemodel)
+        public bool SendMessage(PushMsg messagemodel)
         {
-          var activemq = new ActiveMQAdapter<PushMessageModel>(MQConfig.MQIpAddress, MQConfig.QueueDestination);
-          return activemq.SendMessage<PushMessageModel>(messagemodel)>0;
+
+            return PushMessages(new PushMsg[]{messagemodel});
+          //var activemq = new ActiveMQAdapter<PushMessageModel>(MQConfig.MQIpAddress, MQConfig.QueueDestination);
+          //return activemq.SendMessage<PushMessageModel>(messagemodel)>0;
         }
 
 
@@ -44,8 +46,9 @@ namespace Message.WebAPI.Services.Repository
         /// <param name="pushmsg">The pushmsg.</param>
         /// <returns>成功插入PushMessage的PK的列表</returns>
         //[TransactionScopeCallHandler]
-        public int[] InsertPushMessage(PushMsg pushmsg)
+        protected int[] InsertPushMessage(PushMsg pushmsg)
         {
+            var dbcontext = new MessageCenterEntities();
 
             IList<T_BD_PushMessage> pushMessageDtoList = new List<T_BD_PushMessage>();
             pushmsg.Users.ToList().ForEach(u =>
@@ -68,10 +71,13 @@ namespace Message.WebAPI.Services.Repository
             pushMessageDtoList.ToList().ForEach(u =>
             {
                 //save db
+
+                dbcontext.T_BD_PushMessage.Add(u);
+                dbcontext.SaveChanges();
                 //entiesrepository.Add(u);
                 //entiesrepository.Save();
 
-              //  pushMessageEntiyIdList.Add(dbEntity.Id);
+                pushMessageEntiyIdList.Add(u.Id);
             }
             );
 
@@ -92,7 +98,7 @@ namespace Message.WebAPI.Services.Repository
             return sendflag > 0 ? true : false;
         }
 
-        protected bool PushMessages(PushMsg[] pushMsgs)
+        public bool PushMessages(PushMsg[] pushMsgs)
         {
             if (pushMsgs == null && pushMsgs.Length > 0)
             {

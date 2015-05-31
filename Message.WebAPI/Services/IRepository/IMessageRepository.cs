@@ -10,6 +10,6 @@ namespace Message.WebAPI.Services.IRepository
 {
     public interface IMessageRepository
     {
-         bool SendMessage(PushMessageModel messagemodel);
+        bool SendMessage(PushMsg messagemodel);
     }
 }
