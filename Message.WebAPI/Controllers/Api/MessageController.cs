@@ -33,7 +33,7 @@ namespace Message.WebAPI.Controllers.Api
 
         public IHttpActionResult Get()
         {
-            return Ok("Call Ok");
+            return Ok("Call method Ok");
         }
 
         /// <summary>

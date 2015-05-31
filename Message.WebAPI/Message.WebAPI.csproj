@@ -260,6 +260,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Services\IRepository\IMessageRepository.cs" />
+    <Compile Include="Services\MessageCenterEntities.cs" />
     <Compile Include="Services\Repository\MessageRepository.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

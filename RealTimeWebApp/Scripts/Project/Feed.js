@@ -21,8 +21,8 @@ function Feed() {
 
 
             new PNotify({
-                title: item.MSG_TITLE,
-                text: item.MSG_CONTENT,
+                title: item.MSGTITLE,
+                text: item.MSGCONTENT,
                 type: 'success',
                 desktop: {
                     desktop: true
