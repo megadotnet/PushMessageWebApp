@@ -18,8 +18,11 @@ namespace Message.WebAPI.Models
         public Nullable<int> Userid { get; set; }
         public int MsgType { get; set; }
         public System.DateTime UpdateTime { get; set; }
+        /// <summary>
+        /// Updator
+        /// </summary>
         public Nullable<int> Updator { get; set; }
     
 
-          }
+    }
 }
