@@ -9,6 +9,7 @@ using Microsoft.Practices.Unity;
 using Message.WebAPI.Services.IRepository;
 using Message.WebAPI.Services.Repository;
 using Messag.Utility.EntLib.IoC;
+using System.Net.Http.Headers;
 
 namespace Message.WebAPI
 {
@@ -22,6 +23,7 @@ namespace Message.WebAPI
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 
             // Web API routes
             config.MapHttpAttributeRoutes();

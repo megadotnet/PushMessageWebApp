@@ -26,11 +26,19 @@ namespace Message.WebAPI.Controllers.Api
 
         private IMessageRepository messageRepository;
 
+        /// <summary>
+        /// MessageController
+        /// </summary>
+        /// <param name="_messageRepository"></param>
         public MessageController(IMessageRepository _messageRepository)
         {
             this.messageRepository = _messageRepository;
         }
 
+        /// <summary>
+        /// Get
+        /// </summary>
+        /// <returns></returns>
         public IHttpActionResult Get()
         {
             return Ok("Call method Ok");
@@ -60,18 +68,18 @@ namespace Message.WebAPI.Controllers.Api
             {
                 if (messageRepository.SendMessage(messagemodel))
                 {
-                    log.Debug("发送成功！");
+                    log.Debug("发送成功 Send success！");
                     return Ok();
                 }
                 else
                 {
-                    log.ErrorFormat("发送失败！{0}", messagemodel);
+                    log.ErrorFormat("发送失败！Sent fail ! {0}", messagemodel);
                     return Content(HttpStatusCode.ExpectationFailed, new Exception("send message error"));
                 }
             }
             else
             {
-                log.ErrorFormat("参数验证失败！{0}", messagemodel);
+                log.ErrorFormat("参数验证失败！ModelState is not Valid{0}", messagemodel);
                 return Content(HttpStatusCode.BadRequest, ModelState);
             }
 

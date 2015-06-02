@@ -1,15 +1,14 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Message.WebAPI.Services.IRepository;
 using Message.WebAPI.Services.Repository;
 using BusniessEntities.Models;
+using Xunit;
 
 namespace Message.UnitTest
 {
-    [TestClass]
     public class MessageRepositoryTests
     {
-        [TestMethod]
+        [Fact]
         public void ShouldSendMessage()
         {
             IMessageRepository messageRepository = new MessageRepository();
@@ -25,7 +24,7 @@ namespace Message.UnitTest
                 Users = new string[] { "peter","john"}
             });
 
-            Assert.IsTrue(isSuccess);
+            Assert.True(isSuccess);
 
         }
     }
