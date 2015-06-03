@@ -21,7 +21,7 @@ namespace Message.UnitTest
                 MsgSendType="1",
                 ExpirationTime=DateTime.MaxValue,
                 IsRead=false,
-                Users = new string[] { "peter","john"}
+                Users = new string[] { "peter@163.com","john@gmail.com"}
             });
 
             Assert.True(isSuccess);
