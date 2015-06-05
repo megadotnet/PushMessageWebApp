@@ -79,6 +79,13 @@ namespace WebAuth.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "User name")]
+        public string UserName { get; set; }
+
+
+        public string HomeTown { get; set; }
     }
 
     public class ResetPasswordViewModel
