@@ -110,14 +110,23 @@ namespace WebAuth.Controllers
         }
 
         //
-        // GET: /Users/Edit/1
+        // GET: /Users/Edit/[GUID]
         public async Task<ActionResult> Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ViewBag.RoleId = new SelectList(RoleManager.Roles, "Id", "Name");
+            var currentRoleId = await UserManager.GetRolesAsync(id);
+            if (currentRoleId!=null && currentRoleId.Count>0)
+            {
+                var rolesofUser = await RoleManager.FindByNameAsync(currentRoleId.FirstOrDefault());
+                ViewBag.RoleId = new SelectList(RoleManager.Roles, "Id", "Name", rolesofUser.Id);
+            }
+            else
+            {
+                ViewBag.RoleId = new SelectList(RoleManager.Roles, "Id", "Name");
+            }
 
             var user = await UserManager.FindByIdAsync(id); 
             if (user == null)
