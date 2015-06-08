@@ -25,6 +25,10 @@ namespace WebAuth.Models
           
         }
 
+        static ApplicationDbContext()
+        {
+            Database.SetInitializer(new MySqlInitializer());
+        }
 
         public static ApplicationDbContext Create()
         {

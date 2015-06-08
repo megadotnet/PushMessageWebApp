@@ -12,8 +12,7 @@ using WebAuth.Models;
 
 namespace WebAuth.Controllers
 {
-    [Authorize]
-    //[Authorize(Roles = "Administrator")]
+     [Authorize(Roles = "Administrators")]
     public class RolesAdminController : Controller
     {
         public RolesAdminController()
