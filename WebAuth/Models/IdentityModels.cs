@@ -37,6 +37,7 @@ namespace WebAuth.Models
             return new ApplicationDbContext();
         }
 
+        public new IDbSet<ApplicationRole> Roles { get; set; }
         public virtual IDbSet<ApplicationPermission> Permissions { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
     }
