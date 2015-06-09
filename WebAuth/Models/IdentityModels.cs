@@ -17,6 +17,8 @@ namespace WebAuth.Models
         }
     }
 
+
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -34,5 +36,8 @@ namespace WebAuth.Models
         {
             return new ApplicationDbContext();
         }
+
+        public virtual IDbSet<ApplicationPermission> Permissions { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
     }
 }

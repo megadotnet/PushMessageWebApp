@@ -208,11 +208,14 @@
     <Compile Include="Hubs\FeedHub.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModels.cs" />
+    <Compile Include="Models\ApplicationPermission.cs" />
+    <Compile Include="Models\ApplicationRolePermission.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MySqlConfiguration.cs" />
     <Compile Include="Models\MySqlHistoryContext.cs" />
     <Compile Include="Models\MySqlInitializer.cs" />
+    <Compile Include="Models\UserDepartment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
