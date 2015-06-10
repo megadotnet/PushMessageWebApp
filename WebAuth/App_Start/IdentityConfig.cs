@@ -120,7 +120,6 @@ namespace WebAuth
             return new ApplicationRoleManager(new RoleStore<ApplicationRole>(context.Get<ApplicationDbContext>()));
         }
 
-
         /// <summary>
         /// 获取角色的权限列表
         /// </summary>
@@ -163,5 +162,7 @@ namespace WebAuth
             }
             return userPermissions;
         }
+
     }
+
 }

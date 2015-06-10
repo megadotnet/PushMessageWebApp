@@ -14,7 +14,7 @@ namespace WebAuth.Controllers
     /// <summary>
     /// 基础类
     /// </summary>
-    [IdentityAuthorize(Roles = "管理员")]
+    [IdentityAuthorize(Roles = "Administrators")]
     public abstract class BaseController : Controller
     {
         public BaseController()
