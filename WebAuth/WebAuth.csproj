@@ -202,6 +202,8 @@
   <ItemGroup>
     <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserDepartmentController.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\EditUserDepartmentViewModel.cs" />
     <Compile Include="Models\EditUserRoleViewModel.cs" />
@@ -256,6 +258,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\UserDepartment\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\UserDepartment\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\UserDepartment\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -328,7 +336,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
