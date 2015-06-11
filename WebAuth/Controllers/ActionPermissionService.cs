@@ -6,11 +6,11 @@ using System.Reflection;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using WebAuth.Areas.Admin.Controllers;
 using WebAuth.Controllers;
 using WebAuth.Models;
 
-namespace WebAuth
-
+namespace WebAuth.Controllers
 {
     internal static class ActionPermissionService
     {

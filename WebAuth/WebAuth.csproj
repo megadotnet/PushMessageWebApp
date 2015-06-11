@@ -201,6 +201,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutoMapperConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\EditUserDepartmentViewModel.cs" />
     <Compile Include="Models\EditUserRoleViewModel.cs" />
@@ -215,11 +216,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ActionPermissionService.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\DepartmentController.cs">
+    <Compile Include="Areas\Admin\Controllers\DepartmentController.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\IdentityAuthorize.cs" />
-    <Compile Include="Models\DepartmentViewModel.cs" />
+    <Compile Include="Areas\Admin\Controllers\IdentityAuthorize.cs" />
+    <Compile Include="Areas\Admin\Models\DepartmentViewModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
@@ -237,7 +238,7 @@
     <Compile Include="Models\MySqlConfiguration.cs" />
     <Compile Include="Models\MySqlHistoryContext.cs" />
     <Compile Include="Models\MySqlInitializer.cs" />
-    <Compile Include="Models\UserDepartment.cs" />
+    <Compile Include="Areas\Admin\Models\UserDepartment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -254,6 +255,7 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -318,14 +320,15 @@
     <Content Include="Views\UsersAdmin\Details.cshtml" />
     <Content Include="Views\UsersAdmin\Edit.cshtml" />
     <Content Include="Views\UsersAdmin\Index.cshtml" />
-    <Content Include="Views\Department\Create.cshtml" />
-    <Content Include="Views\Department\Delete.cshtml" />
-    <Content Include="Views\Department\Details.cshtml" />
-    <Content Include="Views\Department\Edit.cshtml" />
-    <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

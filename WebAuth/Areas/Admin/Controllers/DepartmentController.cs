@@ -8,10 +8,11 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using WebAuth.Controllers;
 using WebAuth.Models;
 using Webdiyer.WebControls.Mvc;
 
-namespace WebAuth.Controllers
+namespace WebAuth.Areas.Admin.Controllers
 {
     public class DepartmentController : BaseController
     {

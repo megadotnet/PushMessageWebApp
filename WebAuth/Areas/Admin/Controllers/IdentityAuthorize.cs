@@ -7,8 +7,9 @@ using System.Web;
 using System.Web.Mvc;
 using WebAuth.Models;
 using Microsoft.AspNet.Identity.Owin;
+using WebAuth.Controllers;
 
-namespace WebAuth.Controllers
+namespace WebAuth.Areas.Admin.Controllers
 {
     /// <summary>
     /// 访问授权验证
@@ -57,6 +58,12 @@ namespace WebAuth.Controllers
         /// <returns></returns>
         private bool HasPermission(AuthorizationContext filterContext)
         {
+            if (string.IsNullOrEmpty(filterContext.HttpContext.User.Identity.Name))
+            {
+                //if login then return false
+               return false;
+            }
+
             //取当前用户的权限            
             var rolePermissions = GetUserPermissions(filterContext.HttpContext);
             //待访问的Action的Permission

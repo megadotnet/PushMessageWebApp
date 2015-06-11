@@ -145,6 +145,9 @@ namespace WebAuth
         /// <returns></returns>
         public IEnumerable<ApplicationPermission> GetUserPermissions(string username)
         {
+            if (string.IsNullOrEmpty(username))
+                throw new UnauthorizedAccessException("please login system");
+
             //用户权限集合
             var userPermissions = new List<ApplicationPermission>();
             //取数据上下文

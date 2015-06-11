@@ -8,6 +8,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using System.Web;
 using WebAuth.Models;
+using WebAuth.Areas.Admin.Controllers;
 
 namespace WebAuth.Controllers
 {
