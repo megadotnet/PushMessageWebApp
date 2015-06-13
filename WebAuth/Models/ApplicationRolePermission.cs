@@ -23,7 +23,7 @@ namespace WebAuth.Models
                 return true;
             }
             //而后比较Controller,Action,Description和Params
-            if (x.Controller == y.Controller || x.Action == y.Action || x.Description == y.Description)
+            if (x.Controller == y.Controller && x.Action == y.Action && x.Description == y.Description)
             {
                 return true;
             }

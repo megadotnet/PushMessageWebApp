@@ -63,7 +63,7 @@ namespace WebAuth.Controllers
         {
             var result = new List<ApplicationPermission>();
             //取程序集中的全部类型
-            var types = Assembly.Load("AspNetIdentity2Permission.Mvc").GetTypes();
+            var types = Assembly.Load(Assembly.GetAssembly(typeof(ActionPermissionService)).FullName).GetTypes();
             //取控制器
             foreach (var type in types)
             {

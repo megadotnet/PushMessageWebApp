@@ -1,0 +1,101 @@
+﻿@using Webdiyer.WebControls.Mvc
+
+@model IPagedList<WebAuth.Models.PermissionViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm(new { roleId = ((SelectList)ViewBag.RoleID).SelectedValue }))
+{
+    @Html.AntiForgeryToken()
+    <p>
+        @Html.ActionLink("添加", "Create", new { roleId = ((SelectList)ViewBag.RoleID).SelectedValue })
+    </p>
+
+    @Html.Label("角色", new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.DropDownList("RoleID")
+        <input type="submit" value="确定" class="btn btn-default" />
+    </div>
+
+}
+
+<div id="views">
+    <table class="table table-hover table-striped">
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Action)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Controller)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+    {
+    <tr>
+        <td>@Html.HiddenFor(modelItem => item.Id, new { @id = "permissionId" })</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Action)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Controller)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("详情", "Details", new { roleId = item.RoleId, permissionId = item.Id }) |
+            @Html.ActionLink("删除", "Delete", new { roleId = ((SelectList)ViewBag.RoleID).SelectedValue, permissionId = item.Id })
+        </td>
+    </tr>
+    }
+
+
+    </table>
+    @*@Html.Pager(
+            Model,
+            new PagerOptions
+            {
+                PageIndexParameterName = "index",
+                ContainerTagName = "ul",
+                PagerItemWrapperFormatString = "<li>{0}</li>",
+                CurrentPagerItemWrapperFormatString =
+                "<li class='active'>" +
+                "<a href='#'>{0}" +
+                "<span class='sr-only'>(current)" +
+                "</span></a></li>"
+            },
+            new { @class = "pagination" }
+        )*@
+
+    @Ajax.Pager(
+    Model,
+    new PagerOptions
+    {
+        PageIndexParameterName = "index",
+        ContainerTagName = "ul",
+        PagerItemWrapperFormatString = "<li>{0}</li>",
+        CurrentPagerItemWrapperFormatString =
+        "<li class='active'>" +
+        "<a href='#'>{0}" +
+        "<span class='sr-only'>(current)" +
+        "</span></a></li>"
+    },
+    new MvcAjaxOptions
+    {
+        UpdateTargetId = "views",
+        EnablePartialLoading = true
+    },
+    new { @class = "pagination" }
+)
+</div>
+@section Scripts{@{Html.RegisterMvcPagerScriptResource();}}

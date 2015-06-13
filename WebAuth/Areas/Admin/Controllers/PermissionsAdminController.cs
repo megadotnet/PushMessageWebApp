@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Infragistics.Web.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,7 +51,7 @@ namespace WebAuth.Areas.Admin.Controllers
 
         // GET: PermissionsAdmin/Create
         [Description("新建权限，列表")]
-       // [GridDataSourceAction]
+        [GridDataSourceAction]
         public ActionResult Create()
         {
             //创建ViewModel

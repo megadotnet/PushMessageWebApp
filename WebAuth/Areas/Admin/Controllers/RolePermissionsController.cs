@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Infragistics.Web.Mvc;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Entity;
@@ -70,7 +71,7 @@ namespace WebAuth.Areas.Admin.Controllers
 
         // POST: RolePermissions/Create
         [Description("新建角色-权限,列表")]
-        //[GridDataSourceAction]
+        [GridDataSourceAction]
         public ActionResult Create(string roleId)
         {
             if (string.IsNullOrWhiteSpace(roleId))

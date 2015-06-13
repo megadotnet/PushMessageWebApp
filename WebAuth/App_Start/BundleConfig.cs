@@ -27,7 +27,25 @@ namespace WebAuth
             bundles.Add(new StyleBundle("~/Content/css").Include(
           "~/Content/bootstrap.css",
           "~/Content/site.css",
+          "~/Content/bootstrap-responsive.css", //新增，用于管理后台菜单
           "~/Content/pnotify.core.css"));
+
+            //jquery-ui
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                 "~/Scripts/jquery-ui-{version}.js"
+                ));
+            //<!-- Ignite UI Required Combined CSS Files -->
+            bundles.Add(new StyleBundle("~/IgniteUI/css").Include(
+                "~/igniteui/css/themes/metro/infragistics.theme.css",
+                "~/igniteui/css/structure/infragistics.css"
+                ));
+            //<!-- Ignite UI Required Combined JavaScript Files -->
+            bundles.Add(new ScriptBundle("~/IgniteUI/js").Include(
+                "~/igniteui/js/infragistics.core.js",
+                "~/igniteui/js/infragistics.dv.js",
+                "~/igniteui/js/infragistics.loader.js",
+                "~/igniteui/js/infragistics.lob.js"
+                ));
 
             bundles.Add(new ScriptBundle("~/Scripts/project.js")
                 .IncludeDirectory("~/Scripts/Project", "*.js", false));
