@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Net;
 using WebAuth.Models;
 using WebAuth.Controllers;
+using System.ComponentModel;
 
 namespace WebAuth.Areas.Admin.Controllers
 {
@@ -52,6 +53,7 @@ namespace WebAuth.Areas.Admin.Controllers
             }
         }
 
+        [Description("Roles List")]
         public ActionResult Index()
         {
             return View(RoleManager.Roles);//显示角色清单
@@ -59,6 +61,8 @@ namespace WebAuth.Areas.Admin.Controllers
 
         //异步读取角色详情
         // GET: /Roles/Details/5
+
+        [Description("Role Detail")]
         public async Task<ActionResult> Details(string id)
         {
             if (id == null)
@@ -83,6 +87,7 @@ namespace WebAuth.Areas.Admin.Controllers
         //
         //读取角色创建
         // GET: /Roles/Create
+        [Description("Create Role WebPage")]
         public ActionResult Create()
         {
             return View();
@@ -91,6 +96,7 @@ namespace WebAuth.Areas.Admin.Controllers
         //异步写入角色创建
         // POST: /Roles/Create
         [HttpPost]
+        [Description("Create Role action")]
         public async Task<ActionResult> Create(RoleViewModel roleViewModel)
         {
             if (ModelState.IsValid)
@@ -111,6 +117,7 @@ namespace WebAuth.Areas.Admin.Controllers
         //
         //异步读取角色编辑
         // GET: /Roles/Edit/Admin
+        [Description("Edit Role Page")]
         public async Task<ActionResult> Edit(string id)
         {
             if (id == null)
@@ -148,6 +155,7 @@ namespace WebAuth.Areas.Admin.Controllers
         //
         //异步读取角色删除
         // GET: /Roles/Delete/5
+        [Description("Delete Role Page")]
         public async Task<ActionResult> Delete(string id)
         {
             if (id == null)

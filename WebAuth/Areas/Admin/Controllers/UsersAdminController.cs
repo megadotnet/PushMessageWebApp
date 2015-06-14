@@ -13,6 +13,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using WebAuth.Models;
 using WebAuth.Controllers;
+using System.ComponentModel;
 
 namespace WebAuth.Areas.Admin.Controllers
 {
@@ -37,6 +38,7 @@ namespace WebAuth.Areas.Admin.Controllers
 
         //
         // GET: /Users/
+        [Description("Users List Page")]
         public async Task<ActionResult> Index()
         {
             return View(await UserManager.Users.ToListAsync());
@@ -44,6 +46,7 @@ namespace WebAuth.Areas.Admin.Controllers
 
         //
         // GET: /Users/Details/5
+        [Description("User Detail")]
         public async Task<ActionResult> Details(string id)
         {
             if (id == null)
@@ -57,6 +60,7 @@ namespace WebAuth.Areas.Admin.Controllers
 
         //
         // GET: /Users/Create
+       [Description("User Create Page")]
         public async Task<ActionResult> Create()
         {
             //Get the list of Roles
@@ -67,6 +71,7 @@ namespace WebAuth.Areas.Admin.Controllers
         //
         // POST: /Users/Create
         [HttpPost]
+        [Description("User Create Action")]
         public async Task<ActionResult>  Create(RegisterViewModel userViewModel, string RoleId)
         {
             if (ModelState.IsValid)
@@ -110,6 +115,7 @@ namespace WebAuth.Areas.Admin.Controllers
 
         //
         // GET: /Users/Edit/[GUID]
+        [Description("User Edit Page")]
         public async Task<ActionResult> Edit(string id)
         {
             if (id == null)
@@ -139,6 +145,7 @@ namespace WebAuth.Areas.Admin.Controllers
         // POST: /Users/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Description("User Edit Action")]
         public async Task<ActionResult> Edit([Bind(Include = "UserName,Id,HomeTown")] ApplicationUser formuser, string id, string RoleId)
         {
             if (id == null)
@@ -190,56 +197,48 @@ namespace WebAuth.Areas.Admin.Controllers
 
         ////
         //// GET: /Users/Delete/5
-        //public async Task<ActionResult> Delete(string id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    var user = await context.Users.FindAsync(id);
-        //    if (user == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(user);
-        //}
+        [Description("User Delete Page")]
+        public async Task<ActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var user = await UserManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user);
+        }
 
         ////
         //// POST: /Users/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> DeleteConfirmed(string id)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        if (id == null)
-        //        {
-        //            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //        }
-
-        //        var user = await context.Users.FindAsync(id);
-        //        var logins = user.Logins;
-        //        foreach (var login in logins)
-        //        {
-        //            context.UserLogins.Remove(login);
-        //        }
-        //        var rolesForUser = await IdentityManager.Roles.GetRolesForUserAsync(id, CancellationToken.None);
-        //        if (rolesForUser.Count() > 0)
-        //        {
-
-        //            foreach (var item in rolesForUser)
-        //            {
-        //                var result = await IdentityManager.Roles.RemoveUserFromRoleAsync(user.Id, item.Id, CancellationToken.None);
-        //            }
-        //        }
-        //        context.Users.Remove(user);
-        //        await context.SaveChangesAsync();
-        //        return RedirectToAction("Index");
-        //    }
-        //    else
-        //    {
-        //        return View();
-        //    }
-        //}
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        [Description("User DeleteConfirmed")]
+        public async Task<ActionResult> DeleteConfirmed(string id)
+        {
+            if (ModelState.IsValid)
+            {
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                var user = await _userManager.FindByIdAsync(id);
+                if (user == null)
+                {
+                    return HttpNotFound();
+                }
+                var result = await _userManager.DeleteAsync(user);
+                if (!result.Succeeded)
+                {
+                    ModelState.AddModelError("", result.Errors.First());
+                    return View();
+                }
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }
