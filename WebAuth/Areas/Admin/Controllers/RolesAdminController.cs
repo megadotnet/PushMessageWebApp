@@ -9,11 +9,11 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Threading.Tasks;
 using System.Net;
 using WebAuth.Models;
+using WebAuth.Controllers;
 
-namespace WebAuth.Controllers
+namespace WebAuth.Areas.Admin.Controllers
 {
-     [Authorize(Roles = "Administrators")]
-    public class RolesAdminController : Controller
+    public class RolesAdminController : BaseController
     {
         public RolesAdminController()
         {

@@ -12,11 +12,11 @@ using System.Net;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using WebAuth.Models;
+using WebAuth.Controllers;
 
-namespace WebAuth.Controllers
+namespace WebAuth.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Administrators")]
-    public class UsersAdminController : Controller
+    public class UsersAdminController : BaseController
     {
         public UsersAdminController()
         {

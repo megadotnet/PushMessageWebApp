@@ -54,7 +54,7 @@
                         @if (Request.IsAuthenticated && User.IsInRole("Administrators"))
                         {
                             <li class="nav-header">用户管理</li>
-                            <li>@Html.ActionLink("用户-角色管理", "Index", "UserRole")</li>
+                            <li>@Html.ActionLink("用户-管理", "Index", "UsersAdmin")</li>
                             <li>@Html.ActionLink("部门管理", "Index", "Department")</li>
                             <li>@Html.ActionLink("用户-部门管理", "Index", "UserDepartment")</li>
                             <li class="nav-header">权限管理</li>
