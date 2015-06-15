@@ -12,6 +12,7 @@ using System.Web;
 
 namespace WebAuth.Models
 {
+    [System.Obsolete("Use class ApplicationDbInitializer")]
     public class MySqlInitializer : IDatabaseInitializer<ApplicationDbContext>
     {
         public void InitializeDatabase(ApplicationDbContext context)

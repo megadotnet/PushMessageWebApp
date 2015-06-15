@@ -210,10 +210,10 @@
     <Compile Include="Areas\Admin\Controllers\RolePermissionsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserDepartmentController.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
-    <Compile Include="Models\EditUserDepartmentViewModel.cs" />
-    <Compile Include="Models\EditUserRoleViewModel.cs" />
-    <Compile Include="Models\PermissionViewModel.cs" />
-    <Compile Include="Models\ApplicationRole.cs" />
+    <Compile Include="Areas\Admin\Models\EditUserDepartmentViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\EditUserRoleViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\PermissionViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\ApplicationRole.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -237,15 +237,17 @@
     </Compile>
     <Compile Include="Hubs\FeedHub.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AdminViewModels.cs" />
-    <Compile Include="Models\ApplicationPermission.cs" />
-    <Compile Include="Models\ApplicationRolePermission.cs" />
+    <Compile Include="Areas\Admin\Models\RoleViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\ApplicationPermission.cs" />
+    <Compile Include="Areas\Admin\Models\ApplicationRolePermission.cs" />
+    <Compile Include="Areas\Admin\Models\EditUserViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MySqlConfiguration.cs" />
     <Compile Include="Models\MySqlHistoryContext.cs" />
     <Compile Include="Models\MySqlInitializer.cs" />
     <Compile Include="Areas\Admin\Models\UserDepartment.cs" />
+    <Compile Include="Areas\Admin\Models\PermissionViewModelComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
