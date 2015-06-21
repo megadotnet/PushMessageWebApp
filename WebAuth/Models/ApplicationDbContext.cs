@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using BusinessEntities;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -61,7 +62,7 @@ namespace WebAuth.Models
         public virtual IDbSet<ApplicationPermission> Permissions { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
 
-        //public virtual DbSet<T_BD_PushMessage> T_BD_PushMessage { get; set; }
-        //public virtual DbSet<T_BD_PushMessageConfig> T_BD_PushMessageConfig { get; set; }
+        public virtual DbSet<T_BD_PushMessage> T_BD_PushMessage { get; set; }
+        public virtual DbSet<T_BD_PushMessageConfig> T_BD_PushMessageConfig { get; set; }
     }
 }

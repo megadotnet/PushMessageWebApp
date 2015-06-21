@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Message.WebAPI.Models
+namespace BusinessEntities
 {
     using System;
     using System.Collections.Generic;

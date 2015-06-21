@@ -7,25 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Message.WebAPI.Models
+namespace BusinessEntities
 {
     using System;
     using System.Collections.Generic;
-
-    public partial class T_BD_PushMessage
+    
+    public partial class T_BD_PushMessageConfig
     {
         public int Id { get; set; }
-        public string MsgContent { get; set; }
-        public string MsgTitle { get; set; }
-        public int MsgType { get; set; }
-        public string MsgSendType { get; set; }
-        public string Remark { get; set; }
-        public Nullable<System.DateTime> ExpirationTime { get; set; }
         public Nullable<int> Userid { get; set; }
-        public bool IsRead { get; set; }
+        public int MsgType { get; set; }
+        public System.DateTime UpdateTime { get; set; }
+        /// <summary>
+        /// Updator
+        /// </summary>
+        public Nullable<int> Updator { get; set; }
+    
 
     }
-
-
-
 }
