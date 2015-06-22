@@ -1,30 +1,60 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ApplicationRole.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The application role.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 namespace WebAuth.Models
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
+    using Microsoft.AspNet.Identity.EntityFramework;
+
+    /// <summary>
+    ///     The application role.
+    /// </summary>
     public class ApplicationRole : IdentityRole
     {
+        #region Constructors and Destructors
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="ApplicationRole" /> class.
+        /// </summary>
         public ApplicationRole()
-            : base()
         {
-            Permissions = new List<ApplicationRolePermission>();
+            this.Permissions = new List<ApplicationRolePermission>();
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApplicationRole"/> class.
+        /// </summary>
+        /// <param name="roleName">
+        /// The role name.
+        /// </param>
         public ApplicationRole(string roleName)
             : this()
         {
             base.Name = roleName;
         }
 
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        ///     Gets or sets the description.
+        /// </summary>
         [Display(Name = "角色描述")]
         public string Description { get; set; }
+
         /// <summary>
-        /// 权限列表
+        ///     权限列表
         /// </summary>
         public ICollection<ApplicationRolePermission> Permissions { get; set; }
+
+        #endregion
     }
 }

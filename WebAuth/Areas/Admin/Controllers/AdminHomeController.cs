@@ -1,20 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using WebAuth.Controllers;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AdminHomeController.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The admin home controller.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace WebAuth.Areas.Admin.Controllers
 {
+    using System.ComponentModel;
+    using System.Web.Mvc;
+
+    using WebAuth.Controllers;
+
+    /// <summary>
+    /// The admin home controller.
+    /// </summary>
     public class AdminHomeController : BaseController
     {
         // GET: SuperAdmin/Home
-         [Description("AdminHomeMainPage")]
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// The index.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="ActionResult"/>.
+        /// </returns>
+        [Description("AdminHomeMainPage")]
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
+
+        #endregion
     }
 }
