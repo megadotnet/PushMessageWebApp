@@ -31,7 +31,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// <summary>
     /// The permissions admin controller.
     /// </summary>
-    public class PermissionsAdminController : BaseController
+    public class PermissionsAdminController : BaseAdminController
     {
         // GET: PermissionsAdmin/Create
         #region Public Methods and Operators

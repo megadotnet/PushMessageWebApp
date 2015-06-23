@@ -17,7 +17,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// <summary>
     /// The admin home controller.
     /// </summary>
-    public class AdminHomeController : BaseController
+    public class AdminHomeController : BaseAdminController
     {
         // GET: SuperAdmin/Home
         #region Public Methods and Operators

@@ -26,7 +26,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// <summary>
     /// The department controller.
     /// </summary>
-    public class DepartmentController : BaseController
+    public class DepartmentController : BaseAdminController
     {
         // GET: /Department/
 

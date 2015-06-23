@@ -27,7 +27,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// <summary>
     /// The users admin controller.
     /// </summary>
-    public class UsersAdminController : BaseController
+    public class UsersAdminController : BaseAdminController
     {
         #region Constructors and Destructors
 

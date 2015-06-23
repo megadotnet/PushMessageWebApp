@@ -28,7 +28,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// The user department controller.
     /// </summary>
     [Description("用户-部门维护")]
-    public class UserDepartmentController : BaseController
+    public class UserDepartmentController : BaseAdminController
     {
         // GET: UsersAdmin
 

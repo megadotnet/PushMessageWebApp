@@ -29,7 +29,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// <summary>
     /// The role permissions controller.
     /// </summary>
-    public class RolePermissionsController : BaseController
+    public class RolePermissionsController : BaseAdminController
     {
         // GET: RolePermissions
 

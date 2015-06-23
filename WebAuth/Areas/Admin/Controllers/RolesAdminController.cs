@@ -26,7 +26,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// <summary>
     /// The roles admin controller.
     /// </summary>
-    public class RolesAdminController : BaseController
+    public class RolesAdminController : BaseAdminController
     {
         #region Fields
 

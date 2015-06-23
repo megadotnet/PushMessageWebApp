@@ -26,7 +26,7 @@ namespace WebAuth.Controllers
             //取控制器
             foreach (var type in types)
             {
-                if (type.BaseType == typeof(BaseController))//如果是BaseController                
+                if (type.BaseType == typeof(BaseAdminController))//如果是BaseController                
                 {
                     //反射控制器
                     var controller = new ReflectedControllerDescriptor(type);
