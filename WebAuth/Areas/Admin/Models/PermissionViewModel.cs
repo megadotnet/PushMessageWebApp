@@ -8,7 +8,9 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace WebAuth.Models
 {
+    using Resources.App_LocalResources;
     using System.ComponentModel.DataAnnotations;
+
 
     /// <summary>
     ///     The permission view model.
@@ -21,14 +23,14 @@ namespace WebAuth.Models
         ///     方法名
         /// </summary>
         [Required(AllowEmptyStrings = false)]
-        [Display(Name = "方法名")]
+        [Display(Name="Action", ResourceType = typeof(Resource))]   
         public string Action { get; set; }
 
         /// <summary>
         ///     控制器名
         /// </summary>
         [Required(AllowEmptyStrings = false)]
-        [Display(Name = "控制器名")]
+        [Display(Name = "Controller", ResourceType = typeof(Resource))]
         public string Controller { get; set; }
 
         /// <summary>
