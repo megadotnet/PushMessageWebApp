@@ -22,8 +22,10 @@ namespace WebAuth.Models
         /// <summary>
         ///     方法名
         /// </summary>
-        [Required(AllowEmptyStrings = false)]
-        [Display(Name="Action", ResourceType = typeof(Resource))]   
+        [Required(AllowEmptyStrings = false,ErrorMessageResourceType = typeof(Resource),
+                  ErrorMessageResourceName = "ActionRequire")]
+        [Display(Name="Action", ResourceType = typeof(Resource))] 
+  
         public string Action { get; set; }
 
         /// <summary>

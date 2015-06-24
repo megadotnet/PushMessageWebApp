@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("前台首页", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.Label("管理后台", new { @class = "navbar-brand" })
+                @Html.Label(Resources.App_LocalResources.Resource.AdminLayout_View_AdminText, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 @Html.Partial("_LoginPartial")

@@ -70,6 +70,24 @@ namespace Resources.App_LocalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ActionRequire.
+        /// </summary>
+        public static string ActionRequire {
+            get {
+                return ResourceManager.GetString("ActionRequire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AdminLayout_View_AdminText.
+        /// </summary>
+        public static string AdminLayout_View_AdminText {
+            get {
+                return ResourceManager.GetString("AdminLayout_View_AdminText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ApplicationRole.Description.
         /// </summary>
         public static string ApplicationRole_Description {

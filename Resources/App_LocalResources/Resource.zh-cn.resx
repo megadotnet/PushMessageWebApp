@@ -120,6 +120,12 @@
   <data name="Action" xml:space="preserve">
     <value>方法名</value>
   </data>
+  <data name="ActionRequire" xml:space="preserve">
+    <value>请输入方法名</value>
+  </data>
+  <data name="AdminLayout_View_AdminText" xml:space="preserve">
+    <value>管理后台</value>
+  </data>
   <data name="ApplicationRole_Description" xml:space="preserve">
     <value>角色描述</value>
   </data>

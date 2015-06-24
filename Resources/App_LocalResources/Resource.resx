@@ -120,6 +120,12 @@
   <data name="Action" xml:space="preserve">
     <value>ActionName</value>
   </data>
+  <data name="ActionRequire" xml:space="preserve">
+    <value>ActionRequire</value>
+  </data>
+  <data name="AdminLayout_View_AdminText" xml:space="preserve">
+    <value>AdminLayout_View_AdminText</value>
+  </data>
   <data name="ApplicationRole_Description" xml:space="preserve">
     <value>ApplicationRole.Description</value>
   </data>
