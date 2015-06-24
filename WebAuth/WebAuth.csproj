@@ -213,6 +213,7 @@
     <Compile Include="Controllers\BaseController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Areas\Admin\Controllers\ResourceController.cs" />
     <Compile Include="Helper\CultureHelper.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Areas\Admin\Models\EditUserDepartmentViewModel.cs" />
@@ -1235,6 +1236,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Resource\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
