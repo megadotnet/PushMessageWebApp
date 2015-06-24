@@ -1175,6 +1175,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jsrender.js" />
+    <Content Include="Scripts\JsRes.js">
+      <DependentUpon>JsRes.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Content>
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\pnotify.core.js" />
     <Content Include="Scripts\Project\App.js" />
@@ -1233,6 +1238,10 @@
     <Content Include="Areas\Admin\Views\Department\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Department\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Department\Index.cshtml" />
+    <Content Include="Scripts\JsRes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>JsRes.js</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1253,6 +1262,9 @@
       <Project>{64e14896-9e1d-45a6-a358-7ffeba82ad57}</Project>
       <Name>Resources</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

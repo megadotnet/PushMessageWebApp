@@ -24,7 +24,7 @@ namespace WebAuth.Models
         /// </summary>
         [Required(AllowEmptyStrings = false,ErrorMessageResourceType = typeof(Resource),
                   ErrorMessageResourceName = "ActionRequire")]
-        [Display(Name="Action", ResourceType = typeof(Resource))] 
+        [Display(Name = Resource.Keys.Action, ResourceType = typeof(Resource))] 
   
         public string Action { get; set; }
 
@@ -32,7 +32,7 @@ namespace WebAuth.Models
         ///     控制器名
         /// </summary>
         [Required(AllowEmptyStrings = false)]
-        [Display(Name = "Controller", ResourceType = typeof(Resource))]
+        [Display(Name = Resource.Keys.Controller, ResourceType = typeof(Resource))]
         public string Controller { get; set; }
 
         /// <summary>

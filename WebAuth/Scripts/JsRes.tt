@@ -1,0 +1,37 @@
+﻿<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ assembly name="System.Windows.Forms" #>
+<#@ import namespace="System.Resources" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.IO" #>
+<#@ output extension=".js"#>
+/**
+//http://jiffie.blogspot.com/2012/11/localized-javascript-resources-based-on.html
+**/
+<#
+ var path = Path.GetDirectoryName(Host.TemplateFile) + "/../../Resources/App_LocalResources/";
+ var resourceNames = new string[1]
+ {
+  "Resource"
+ };
+ 
+#>
+
+var resources = {
+ <# foreach (var name in resourceNames) { #>
+ <#=name #>: {},
+ <# } #>
+};
+<# foreach (var name in resourceNames) { 
+ var nlFile = Host.ResolvePath(path + name + ".zh-cn.resx" );
+ var enFile = Host.ResolvePath(path + name + ".en-us.resx" );
+ ResXResourceSet nlResxSet = new ResXResourceSet(nlFile);
+ ResXResourceSet enResxSet = new ResXResourceSet(enFile);
+#>
+ 
+<# foreach (DictionaryEntry item in nlResxSet) { #>
+resources.<#=name#>.<#=item.Key.ToString()#> = { 
+ 'zh-CN': '<#= ("" + item.Value).Replace("\r\n", string.Empty).Replace("'","\\'")#>',
+ 'en-US': '<#= ("" + enResxSet.GetString(item.Key.ToString())).Replace("\r\n", string.Empty).Replace("'","\\'")#>'
+ };
+<# } #>
+<# } #>

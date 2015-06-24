@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
+    <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -65,18 +65,21 @@
         </footer>
     </div>
 
-    @RenderSection("scripts", required: false)
+        @RenderSection("scripts", required: false)
+    <script src="~/Scripts/JsRes.js"></script>
     <script type="text/javascript">
+        var locale = '@System.Threading.Thread.CurrentThread.CurrentCulture.Name';
+        $("#titleh2").text(resources.Resource.AdminLayout_View_AdminText[locale]);
+    </script>  
+    @*<script type="text/javascript">
     var resources = {}; // Global variable.
 
     (function ($) {
         $.getJSON("@Url.Action("GetResources", "Resource", new { area = "Admin" })", function(data){
             resources = data;
         });
-        
-    })(jQuery);
 
-        $("#titleh2").text(resources.PermissionViewModel_Description);
-    </script>
+    })(jQuery);
+    </script>*@
 </body>
 </html>
