@@ -120,7 +120,13 @@
   <data name="Action" xml:space="preserve">
     <value>Action</value>
   </data>
+  <data name="ApplicationRole_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
   <data name="Controller" xml:space="preserve">
     <value>Controller</value>
+  </data>
+  <data name="PermissionViewModel_Description" xml:space="preserve">
+    <value>Description</value>
   </data>
 </root>

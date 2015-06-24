@@ -120,7 +120,13 @@
   <data name="Action" xml:space="preserve">
     <value>方法名</value>
   </data>
+  <data name="ApplicationRole_Description" xml:space="preserve">
+    <value>角色描述</value>
+  </data>
   <data name="Controller" xml:space="preserve">
     <value>控制器</value>
+  </data>
+  <data name="PermissionViewModel_Description" xml:space="preserve">
+    <value>功能描述</value>
   </data>
 </root>

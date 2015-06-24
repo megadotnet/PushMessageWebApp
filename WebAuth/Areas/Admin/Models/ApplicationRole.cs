@@ -12,6 +12,7 @@ namespace WebAuth.Models
     using System.ComponentModel.DataAnnotations;
 
     using Microsoft.AspNet.Identity.EntityFramework;
+using Resources.App_LocalResources;
 
     /// <summary>
     ///     The application role.
@@ -47,7 +48,7 @@ namespace WebAuth.Models
         /// <summary>
         ///     Gets or sets the description.
         /// </summary>
-        [Display(Name = "角色描述")]
+        [Display(Name = "ApplicationRole_Description", ResourceType = typeof(Resource))]
         public string Description { get; set; }
 
         /// <summary>

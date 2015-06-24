@@ -70,11 +70,29 @@ namespace Resources.App_LocalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ApplicationRole.Description.
+        /// </summary>
+        public static string ApplicationRole_Description {
+            get {
+                return ResourceManager.GetString("ApplicationRole_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ControllerName.
         /// </summary>
         public static string Controller {
             get {
                 return ResourceManager.GetString("Controller", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PermissionViewModel_Description.
+        /// </summary>
+        public static string PermissionViewModel_Description {
+            get {
+                return ResourceManager.GetString("PermissionViewModel_Description", resourceCulture);
             }
         }
     }

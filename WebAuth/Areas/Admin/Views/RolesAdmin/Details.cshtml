@@ -1,4 +1,4 @@
-﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+﻿@model WebAuth.Models.ApplicationRole
 
 @{
     ViewBag.Title = "角色详情";
@@ -15,6 +15,9 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
         </dd>
     </dl>
 </div>

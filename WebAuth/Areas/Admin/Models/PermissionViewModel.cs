@@ -37,7 +37,7 @@ namespace WebAuth.Models
         ///     功能描述
         /// </summary>
         [Required(AllowEmptyStrings = true)]
-        [Display(Name = "功能描述")]
+        [Display(Name = "PermissionViewModel_Description", ResourceType = typeof(Resource))]
         public string Description { get; set; }
 
         /// <summary>
