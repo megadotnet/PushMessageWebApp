@@ -10,9 +10,9 @@
 <#
 
     var nameSpace =  Host.ResolveParameterValue("directiveId", "namespaceDirectiveProcessor", "namespaceHint");
-    var enumName = "ResourceEnum";
+    var enumName = "AdminResourceEnum";
 
-    var fileName = "Resource.resx";
+    var fileName = "AdminResource.resx";
     var filePath = Path.Combine(Path.GetDirectoryName(this.Host.ResolvePath("")), "App_LocalResources", fileName);
 
     using (var reader = new ResXResourceReader(filePath))

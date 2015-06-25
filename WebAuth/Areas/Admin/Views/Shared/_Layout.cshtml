@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("前台首页", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.Label(Resources.App_LocalResources.Resource.AdminLayout_View_AdminText, new { @class = "navbar-brand" })
+                @Html.Label(Resources.App_LocalResources.AdminResource.AdminLayout_View_AdminText, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 @Html.Partial("_LoginPartial")
@@ -69,7 +69,7 @@
     <script src="~/Scripts/JsRes.js"></script>
     <script type="text/javascript">
         var locale = '@System.Threading.Thread.CurrentThread.CurrentCulture.Name';
-        $("#titleh2").text(resources.Resource.AdminLayout_View_AdminText[locale]);
+        $("#titleh2").text(resources.AdminResource.AdminLayout_View_AdminText[locale]);
     </script>  
     @*<script type="text/javascript">
     var resources = {}; // Global variable.

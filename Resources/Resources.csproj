@@ -11,6 +11,8 @@
     <AssemblyName>Resources</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,23 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_LocalResources\Resource.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_LocalResources\Resource.Designer.cs">
-      <DependentUpon>Resource.resx</DependentUpon>
+    <Compile Include="App_LocalResources\AdminResource.Designer.cs">
+      <DependentUpon>AdminResource.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="App_LocalResources\Resource.en-US.Designer.cs">
-      <DependentUpon>Resource.en-us.resx</DependentUpon>
+    <Compile Include="App_LocalResources\AdminResource.en-us.Designer.cs">
+      <DependentUpon>AdminResource.en-us.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="App_LocalResources\Resource.zh-CN.Designer.cs">
-      <DependentUpon>Resource.zh-cn.resx</DependentUpon>
+    <Compile Include="App_LocalResources\AdminResource.zh-cn.Designer.cs">
+      <DependentUpon>AdminResource.zh-cn.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -64,21 +62,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceEnumGen.tt</DependentUpon>
     </Compile>
+    <Compile Include="App_LocalResources\T4Resoures.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4Resoures.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App_LocalResources\Resource.en-us.resx">
+    <EmbeddedResource Include="App_LocalResources\AdminResource.en-us.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.en-US.Designer.cs</LastGenOutput>
+      <LastGenOutput>AdminResource.en-us.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Content Include="App_LocalResources\Resource.resx">
+    <Content Include="App_LocalResources\AdminResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <LastGenOutput>AdminResource.Designer.cs</LastGenOutput>
     </Content>
-    <EmbeddedResource Include="App_LocalResources\Resource.zh-cn.resx">
+    <EmbeddedResource Include="App_LocalResources\AdminResource.zh-cn.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.zh-CN.Designer.cs</LastGenOutput>
+      <LastGenOutput>AdminResource.zh-cn.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -86,15 +89,22 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ResourceEnumGen.cs</LastGenOutput>
     </None>
-    <None Include="App_LocalResources\Resource.tt">
+    <None Include="App_LocalResources\T4Resoures.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Resource.cs</LastGenOutput>
+      <LastGenOutput>T4Resoures.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

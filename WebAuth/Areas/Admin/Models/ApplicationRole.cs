@@ -48,7 +48,7 @@ using Resources.App_LocalResources;
         /// <summary>
         ///     Gets or sets the description.
         /// </summary>
-        [Display(Name = "ApplicationRole_Description", ResourceType = typeof(Resource))]
+        [Display(Name = "ApplicationRole_Description", ResourceType = typeof(AdminResource))]
         public string Description { get; set; }
 
         /// <summary>

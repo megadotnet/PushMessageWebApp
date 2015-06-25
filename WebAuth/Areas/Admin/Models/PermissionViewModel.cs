@@ -8,7 +8,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace WebAuth.Models
 {
-    using Resources.App_LocalResources;
+
+    using Resources.Resources.App_LocalResources;
     using System.ComponentModel.DataAnnotations;
 
 
@@ -22,9 +23,9 @@ namespace WebAuth.Models
         /// <summary>
         ///     方法名
         /// </summary>
-        [Required(AllowEmptyStrings = false,ErrorMessageResourceType = typeof(Resource),
+        [Required(AllowEmptyStrings = false,ErrorMessageResourceType = typeof(AdminResource),
                   ErrorMessageResourceName = "ActionRequire")]
-        [Display(Name = Resource.Keys.Action, ResourceType = typeof(Resource))] 
+        [Display(Name = AdminResource.Names.Action, ResourceType = typeof(AdminResource))] 
   
         public string Action { get; set; }
 
@@ -32,14 +33,14 @@ namespace WebAuth.Models
         ///     控制器名
         /// </summary>
         [Required(AllowEmptyStrings = false)]
-        [Display(Name = Resource.Keys.Controller, ResourceType = typeof(Resource))]
+        [Display(Name = AdminResource.Names.Controller, ResourceType = typeof(AdminResource))]
         public string Controller { get; set; }
 
         /// <summary>
         ///     功能描述
         /// </summary>
         [Required(AllowEmptyStrings = true)]
-        [Display(Name = "PermissionViewModel_Description", ResourceType = typeof(Resource))]
+        [Display(Name = AdminResource.Names.PermissionViewModel_Description, ResourceType = typeof(AdminResource))]
         public string Description { get; set; }
 
         /// <summary>

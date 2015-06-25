@@ -1,4 +1,4 @@
-﻿using Resources.App_LocalResources;
+﻿using Resources.Resources.App_LocalResources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +17,9 @@ namespace WebAuth.Areas.Admin.Controllers
         public JsonResult GetResources()
         {
             return Json(new Dictionary<string, string> { 
-                {"Action", Resource.Action},
-                {"ApplicationRole_Description", Resource.ApplicationRole_Description},
-                {"Controller", Resource.Controller},
-                {"PermissionViewModel_Description", Resource.PermissionViewModel_Description}
+                {AdminResource.Names.Action, AdminResource.Names.Action},
+                {AdminResource.Names.ApplicationRole_Description,AdminResource.Names.ApplicationRole_Description},
+                {AdminResource.Names.Controller, AdminResource.Names.Controller},
                    //resources.PermissionViewModel_Description
             }, JsonRequestBehavior.AllowGet);
         }

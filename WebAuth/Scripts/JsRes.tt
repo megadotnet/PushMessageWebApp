@@ -11,7 +11,7 @@
  var path = Path.GetDirectoryName(Host.TemplateFile) + "/../../Resources/App_LocalResources/";
  var resourceNames = new string[1]
  {
-  "Resource"
+  "AdminResource"
  };
  
 #>
