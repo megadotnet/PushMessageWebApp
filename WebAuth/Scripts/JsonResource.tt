@@ -1,0 +1,28 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="$(TargetPath)" #>
+<#@ assembly name="System.Windows.Forms" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Resources" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".js" #>
+<# 
+    var path =  Path.GetDirectoryName(Host.TemplateFile) + "/../../Resources/App_LocalResources/";
+    var resourceNames = new string[1]
+    {
+        "Resource"
+    };
+#>
+var $.Resources = {
+<# foreach ( var name in resourceNames ) {
+    var localeFile = Host.ResolvePath(path + "\\" + name + ".resx");
+    ResXResourceSet jpResxSet = new ResXResourceSet(localeFile);
+#>
+<# foreach (DictionaryEntry item in jpResxSet) { #>
+    '<#=item.Key.ToString()#>' : '<#= ("" + item.Value).Replace("\r\n", string.Empty).Replace("'", "\\'")#>',
+<# } #>
+<# } #>
+};

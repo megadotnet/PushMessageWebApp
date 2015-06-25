@@ -59,6 +59,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="App_LocalResources\ResourceEnumGen.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceEnumGen.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +82,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_LocalResources\ResourceEnumGen.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceEnumGen.cs</LastGenOutput>
+    </None>
     <None Include="App_LocalResources\Resource.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Resource.cs</LastGenOutput>
