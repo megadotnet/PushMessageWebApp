@@ -58,11 +58,21 @@ namespace Resources.Resources.App_LocalResources
 
 		public static string ActionRequire { get { return GetResourceString("ActionRequire"); } }
 
+		public static string AdminLayout_ActionLink_DeptAdmin { get { return GetResourceString("AdminLayout_ActionLink_DeptAdmin"); } }
+
+		public static string AdminLayout_ActionLink_UserAdmin { get { return GetResourceString("AdminLayout_ActionLink_UserAdmin"); } }
+
 		public static string AdminLayout_View_AdminText { get { return GetResourceString("AdminLayout_View_AdminText"); } }
+
+		public static string AdminLayout_View_FrontEndText { get { return GetResourceString("AdminLayout_View_FrontEndText"); } }
 
 		public static string ApplicationRole_Description { get { return GetResourceString("ApplicationRole_Description"); } }
 
 		public static string Controller { get { return GetResourceString("Controller"); } }
+
+		public static string DepartmentViewModelId { get { return GetResourceString("DepartmentViewModelId"); } }
+
+		public static string DepartmentViewModelName { get { return GetResourceString("DepartmentViewModelName"); } }
 
 		public static string PermissionViewModel_Description { get { return GetResourceString("PermissionViewModel_Description"); } }
 
@@ -80,9 +90,24 @@ namespace Resources.Resources.App_LocalResources
 			public const string ActionRequire = "ActionRequire";
 
 			/// <summary>
+			/// AdminLayout_ActionLink_DeptAdmin
+			/// </summary>
+			public const string AdminLayout_ActionLink_DeptAdmin = "AdminLayout_ActionLink_DeptAdmin";
+
+			/// <summary>
+			/// AdminLayout_ActionLink_UserAdmin
+			/// </summary>
+			public const string AdminLayout_ActionLink_UserAdmin = "AdminLayout_ActionLink_UserAdmin";
+
+			/// <summary>
 			/// AdminLayout_View_AdminText
 			/// </summary>
 			public const string AdminLayout_View_AdminText = "AdminLayout_View_AdminText";
+
+			/// <summary>
+			/// AdminLayout_View_FrontEndText
+			/// </summary>
+			public const string AdminLayout_View_FrontEndText = "AdminLayout_View_FrontEndText";
 
 			/// <summary>
 			/// ApplicationRole_Description
@@ -93,6 +118,16 @@ namespace Resources.Resources.App_LocalResources
 			/// Controller
 			/// </summary>
 			public const string Controller = "Controller";
+
+			/// <summary>
+			/// DepartmentViewModelId
+			/// </summary>
+			public const string DepartmentViewModelId = "DepartmentViewModelId";
+
+			/// <summary>
+			/// DepartmentViewModelName
+			/// </summary>
+			public const string DepartmentViewModelName = "DepartmentViewModelName";
 
 			/// <summary>
 			/// PermissionViewModel_Description

@@ -141,6 +141,12 @@
   <data name="Controller" xml:space="preserve">
     <value>ControllerName</value>
   </data>
+  <data name="DepartmentViewModelId" xml:space="preserve">
+    <value>DepartmentViewModelId</value>
+  </data>
+  <data name="DepartmentViewModelName" xml:space="preserve">
+    <value>DepartmentViewModelName</value>
+  </data>
   <data name="PermissionViewModel_Description" xml:space="preserve">
     <value>PermissionViewModel_Description</value>
   </data>

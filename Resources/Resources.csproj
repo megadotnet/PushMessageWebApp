@@ -62,10 +62,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceEnumGen.tt</DependentUpon>
     </Compile>
-    <Compile Include="App_LocalResources\T4Resoures.cs">
+    <Compile Include="App_LocalResources\T4AdminResoures.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>T4Resoures.tt</DependentUpon>
+      <DependentUpon>T4AdminResoures.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -89,9 +89,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ResourceEnumGen.cs</LastGenOutput>
     </None>
-    <None Include="App_LocalResources\T4Resoures.tt">
+    <None Include="App_LocalResources\T4AdminResoures.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>T4Resoures.cs</LastGenOutput>
+      <LastGenOutput>T4AdminResoures.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

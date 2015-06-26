@@ -133,6 +133,24 @@ namespace Resources.App_LocalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DepartmentViewModelId.
+        /// </summary>
+        public static string DepartmentViewModelId {
+            get {
+                return ResourceManager.GetString("DepartmentViewModelId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DepartmentViewModelName.
+        /// </summary>
+        public static string DepartmentViewModelName {
+            get {
+                return ResourceManager.GetString("DepartmentViewModelName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PermissionViewModel_Description.
         /// </summary>
         public static string PermissionViewModel_Description {

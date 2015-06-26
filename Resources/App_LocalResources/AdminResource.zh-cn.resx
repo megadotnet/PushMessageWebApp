@@ -141,6 +141,12 @@
   <data name="Controller" xml:space="preserve">
     <value>控制器</value>
   </data>
+  <data name="DepartmentViewModelId" xml:space="preserve">
+    <value>部门编号</value>
+  </data>
+  <data name="DepartmentViewModelName" xml:space="preserve">
+    <value>机构名称</value>
+  </data>
   <data name="PermissionViewModel_Description" xml:space="preserve">
     <value>功能描述</value>
   </data>

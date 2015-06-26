@@ -9,6 +9,7 @@
 
 namespace WebAuth.Models
 {
+    using Resources.Resources.App_LocalResources;
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
@@ -21,13 +22,15 @@ namespace WebAuth.Models
         /// <summary>
         ///     机构编号
         /// </summary>
+        [Required]
+        [Display(Name = AdminResource.Names.DepartmentViewModelId, ResourceType = typeof(AdminResource))]
         public int Id { get; set; }
 
         /// <summary>
         ///     机构名称
         /// </summary>
         [Required]
-        [Display(Name = "机构名称")]
+        [Display(Name = AdminResource.Names.DepartmentViewModelName,ResourceType = typeof(AdminResource))]
         public string Name { get; set; }
 
         #endregion
