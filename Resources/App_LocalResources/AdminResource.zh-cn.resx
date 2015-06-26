@@ -123,8 +123,17 @@
   <data name="ActionRequire" xml:space="preserve">
     <value>请输入方法名</value>
   </data>
+  <data name="AdminLayout_ActionLink_DeptAdmin" xml:space="preserve">
+    <value>部门管理</value>
+  </data>
+  <data name="AdminLayout_ActionLink_UserAdmin" xml:space="preserve">
+    <value>用户管理</value>
+  </data>
   <data name="AdminLayout_View_AdminText" xml:space="preserve">
     <value>管理后台</value>
+  </data>
+  <data name="AdminLayout_View_FrontEndText" xml:space="preserve">
+    <value>前台</value>
   </data>
   <data name="ApplicationRole_Description" xml:space="preserve">
     <value>角色描述</value>

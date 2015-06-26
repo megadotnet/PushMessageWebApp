@@ -123,8 +123,17 @@
   <data name="ActionRequire" xml:space="preserve">
     <value>Please  add Action name</value>
   </data>
+  <data name="AdminLayout_ActionLink_DeptAdmin" xml:space="preserve">
+    <value>Department Admin</value>
+  </data>
+  <data name="AdminLayout_ActionLink_UserAdmin" xml:space="preserve">
+    <value>UserAdmin</value>
+  </data>
   <data name="AdminLayout_View_AdminText" xml:space="preserve">
     <value>Admin web platform</value>
+  </data>
+  <data name="AdminLayout_View_FrontEndText" xml:space="preserve">
+    <value>FrontEnd</value>
   </data>
   <data name="ApplicationRole_Description" xml:space="preserve">
     <value>Description</value>

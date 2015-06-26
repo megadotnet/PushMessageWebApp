@@ -16,6 +16,7 @@
 <#@ import namespace="EnvDTE80" #>
 <#@ import namespace="Microsoft.VisualStudio.TextTemplating" #>
 <#
+	//http://blog.baltrinic.com/software-development/dotnet/t4-template-replace-resxfilecodegenerator
    var serviceProvider = Host as IServiceProvider;
     if (serviceProvider != null) {
         Dte = serviceProvider.GetService(typeof(SDTE)) as DTE;
