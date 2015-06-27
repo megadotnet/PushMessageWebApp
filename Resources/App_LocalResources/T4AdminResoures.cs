@@ -76,6 +76,8 @@ namespace Resources.Resources.App_LocalResources
 
 		public static string PermissionViewModel_Description { get { return GetResourceString("PermissionViewModel_Description"); } }
 
+		public static string PermissionViewModel_RoleName { get { return GetResourceString("PermissionViewModel_RoleName"); } }
+
 		public static class Names
 		{
 
@@ -133,6 +135,11 @@ namespace Resources.Resources.App_LocalResources
 			/// PermissionViewModel_Description
 			/// </summary>
 			public const string PermissionViewModel_Description = "PermissionViewModel_Description";
+
+			/// <summary>
+			/// PermissionViewModel_RoleName
+			/// </summary>
+			public const string PermissionViewModel_RoleName = "PermissionViewModel_RoleName";
 		}
 	}
 }

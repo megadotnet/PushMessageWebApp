@@ -150,4 +150,7 @@
   <data name="PermissionViewModel_Description" xml:space="preserve">
     <value>功能描述</value>
   </data>
+  <data name="PermissionViewModel_RoleName" xml:space="preserve">
+    <value>角色名</value>
+  </data>
 </root>

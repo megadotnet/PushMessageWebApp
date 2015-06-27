@@ -58,7 +58,7 @@ namespace WebAuth.Models
         /// <summary>
         ///     Gets or sets the role name.
         /// </summary>
-        [Display(Name = "角色名")]
+        [Display(Name = AdminResource.Names.PermissionViewModel_RoleName, ResourceType = typeof(AdminResource))]
         public string RoleName { get; set; }
 
         /// <summary>
