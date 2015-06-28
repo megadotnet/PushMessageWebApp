@@ -25,10 +25,14 @@ namespace WebAuth
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-          "~/Content/bootstrap.css",
+           "~/Content/bootstrap.css",
           "~/Content/site.css",
           "~/Content/bootstrap-responsive.css", //新增，用于管理后台菜单
           "~/Content/pnotify.core.css"));
+
+
+            bundles.Add(new StyleBundle("~/Content/jqueryuiall").Include(
+           "~/Content/themes/base/all.css"));
 
             //jquery-ui
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(

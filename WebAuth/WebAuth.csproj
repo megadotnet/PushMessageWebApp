@@ -215,7 +215,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Areas\Admin\Controllers\ResourceController.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Helper\CultureHelper.cs" />
+    <Compile Include="Hubs\ChatHub.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Areas\Admin\Models\EditUserDepartmentViewModel.cs" />
     <Compile Include="Areas\Admin\Models\EditUserRoleViewModel.cs" />
@@ -261,6 +263,7 @@
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ChatStyle.css" />
     <Content Include="Content\pnotify.core.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
@@ -1252,6 +1255,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>JsonResource.js</LastGenOutput>
     </Content>
+    <Content Include="Views\Chat\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
