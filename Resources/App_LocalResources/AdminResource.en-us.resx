@@ -153,4 +153,7 @@
   <data name="PermissionViewModel_RoleName" xml:space="preserve">
     <value>RoleName</value>
   </data>
+  <data name="RoleViewModel_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
 </root>

@@ -8,7 +8,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace WebAuth.Models
 {
-    using System.ComponentModel.DataAnnotations;
+    using Resources.Resources.App_LocalResources;
+using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     ///     The role view model.
@@ -26,7 +27,7 @@ namespace WebAuth.Models
         ///     Gets or sets the name.
         /// </summary>
         [Required(AllowEmptyStrings = false)]
-        [Display(Name = "角色名称")]
+        [Display(Name = AdminResource.Names.RoleViewModel_Name, ResourceType = typeof(AdminResource))]
         public string Name { get; set; }
 
         #endregion

@@ -167,5 +167,14 @@ namespace Resources.App_LocalResources {
                 return ResourceManager.GetString("PermissionViewModel_RoleName", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RoleViewModel_Name.
+        /// </summary>
+        public static string RoleViewModel_Name {
+            get {
+                return ResourceManager.GetString("RoleViewModel_Name", resourceCulture);
+            }
+        }
     }
 }
