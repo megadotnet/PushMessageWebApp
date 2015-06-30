@@ -1,9 +1,7 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-
-<link href="~/Content/ChatStyle.css" rel="stylesheet" />
-@Styles.Render("~/Content/jqueryuiall")
+@model WebAuth.Models.ApplicationUser
 <div id="header">
     Chat Room
 </div>
@@ -48,7 +46,7 @@
 
         $(function () {
 
-            setScreen(false);
+            setScreen(true);
 
             // Declare a proxy to reference the hub.
             var chatHub = $.connection.chatHub;
@@ -59,6 +57,14 @@
             $.connection.hub.start().done(function () {
 
                 registerEvents(chatHub)
+
+                var name = "@Html.DisplayFor(model => model.UserName)";
+                if (name.length > 0) {
+                    chatHub.server.connect(name);
+                }
+                else {
+                    alert("Please enter name");
+                }
 
             });
 
@@ -80,18 +86,6 @@
         }
 
         function registerEvents(chatHub) {
-
-            $("#btnStartChat").click(function () {
-
-                var name = $("#txtNickName").val();
-                if (name.length > 0) {
-                    chatHub.server.connect(name);
-                }
-                else {
-                    alert("Please enter name");
-                }
-
-            });
 
 
             $('#btnSendMsg').click(function () {

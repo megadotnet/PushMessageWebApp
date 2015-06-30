@@ -1,18 +1,41 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using WebAuth.Controllers;
+using WebAuth.Models;
 
 namespace WebAuth.Areas.Chat.Controllers
 {
+    [Authorize]
     public class ChatController : BaseController
     {
-        // GET: Chat
-        public ActionResult Index()
+        /// <summary>
+        /// Gets the user manager.
+        /// </summary>
+        public UserManager<ApplicationUser> UserManager { get; private set; }
+
+
+        /// <summary>
+        /// Gets the context.
+        /// </summary>
+        public ApplicationDbContext context { get; private set; }
+
+        public ChatController()
         {
-            return View();
+            this.context = new ApplicationDbContext();
+            this.UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.context));
+        }
+
+        // GET: Chat
+        public async Task<ActionResult> Index()
+        {
+            ApplicationUser user = await this.UserManager.FindByEmailAsync(User.Identity.GetUserName());
+            return View(user);
         }
     }
 }

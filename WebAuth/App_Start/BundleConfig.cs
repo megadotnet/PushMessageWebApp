@@ -30,9 +30,9 @@ namespace WebAuth
           "~/Content/bootstrap-responsive.css", //新增，用于管理后台菜单
           "~/Content/pnotify.core.css"));
 
-
             bundles.Add(new StyleBundle("~/Content/jqueryuiall").Include(
-           "~/Content/themes/base/all.css"));
+           "~/Content/themes/base/all.css"
+           , "~/Content/ChatStyle.css"));
 
             //jquery-ui
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
