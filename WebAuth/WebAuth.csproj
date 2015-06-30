@@ -210,12 +210,13 @@
     <Compile Include="Areas\Admin\Controllers\RolePermissionsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserDepartmentController.cs" />
     <Compile Include="Areas\Admin\Models\Department.cs" />
+    <Compile Include="Areas\Chat\ChatAreaRegistration.cs" />
+    <Compile Include="Areas\Chat\Controllers\ChatController.cs" />
     <Compile Include="Controllers\BaseAdminController.cs" />
     <Compile Include="Controllers\BaseController.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Areas\Admin\Controllers\ResourceController.cs" />
-    <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Helper\CultureHelper.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -1166,6 +1167,9 @@
     <Content Include="Areas\Admin\Views\RolePermissions\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\RolePermissions\Details.cshtml" />
     <Content Include="Areas\Admin\Views\RolePermissions\Index.cshtml" />
+    <Content Include="Areas\Chat\Views\web.config" />
+    <Content Include="Areas\Chat\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Chat\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1255,10 +1259,11 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>JsonResource.js</LastGenOutput>
     </Content>
-    <Content Include="Views\Chat\Index.cshtml" />
+    <Content Include="Areas\Chat\Views\Chat\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Chat\Models\" />
     <Folder Include="Views\Resource\" />
   </ItemGroup>
   <ItemGroup>
