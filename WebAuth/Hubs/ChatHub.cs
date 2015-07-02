@@ -17,22 +17,30 @@ namespace WebAuth.Hubs
 
         #region Methods
 
+        /// <summary>
+        /// Connect
+        /// </summary>
+        /// <param name="userName"></param>
         public void Connect(string userName)
         {
+            //TODO:consider use database id instead context.ConnectionId
             var id = Context.ConnectionId;
 
 
-            if (ConnectedUsers.Count(x => x.ConnectionId == id) == 0)
+            if (ConnectedUsers.Count(x => x.UserName == userName) == 0)
             {
                 ConnectedUsers.Add(new UserDetail { ConnectionId = id, UserName = userName });
 
                 // send to caller
                 Clients.Caller.onConnected(id, userName, ConnectedUsers, CurrentMessage);
 
-                // send to all except caller client
-                Clients.AllExcept(id).onNewUserConnected(id, userName);
+            }
+            else
+            {
+                Clients.Caller.onConnected(id, userName, ConnectedUsers, CurrentMessage);
 
             }
+         
 
         }
 
@@ -47,16 +55,16 @@ namespace WebAuth.Hubs
 
         public void SendPrivateMessage(string toUserId, string message)
         {
+            string tempusername = Context.User.Identity.Name;
+            string fromUserId = tempusername.Substring(0, tempusername.IndexOf('@'));
 
-            string fromUserId = Context.ConnectionId;
-
-            var toUser = ConnectedUsers.FirstOrDefault(x => x.ConnectionId == toUserId);
-            var fromUser = ConnectedUsers.FirstOrDefault(x => x.ConnectionId == fromUserId);
+            var toUser = ConnectedUsers.FirstOrDefault(x => x.UserName == toUserId);
+            var fromUser = ConnectedUsers.FirstOrDefault(x => x.UserName == fromUserId);
 
             if (toUser != null && fromUser != null)
             {
-                // send to 
-                Clients.Client(toUserId).sendPrivateMessage(fromUserId, fromUser.UserName, message);
+                // send to target User, when use asp.net form auth
+                Clients.User(toUserId+"@163.com").sendPrivateMessage(fromUserId, fromUser.UserName, message);
 
                 // send to caller user
                 Clients.Caller.sendPrivateMessage(toUserId, fromUser.UserName, message);
@@ -66,7 +74,9 @@ namespace WebAuth.Hubs
 
         public override System.Threading.Tasks.Task OnDisconnected(bool stopCalled)
         {
-            var item = ConnectedUsers.FirstOrDefault(x => x.ConnectionId == Context.ConnectionId);
+            string tempusername = Context.User.Identity.Name;
+            tempusername = tempusername.Substring(0, tempusername.IndexOf('@'));
+            var item = ConnectedUsers.FirstOrDefault(x => x.UserName == tempusername);
             if (item != null)
             {
                 ConnectedUsers.Remove(item);

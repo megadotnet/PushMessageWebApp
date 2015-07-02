@@ -151,9 +151,9 @@
             // On User Disconnected
             chatHub.client.onUserDisconnected = function (id, userName) {
 
-                $('#' + id).remove();
+                $('#' + userName).remove();
 
-                var ctrId = 'private_' + id;
+                var ctrId = 'private_' + userName;
                 $('#' + ctrId).remove();
 
 
@@ -194,25 +194,25 @@
 
         function AddUser(chatHub, id, name) {
 
-            var userId = $('#hdId').val();
+            var userName = $('#hdUserName').val();
 
             var code = "";
 
-            if (userId == id) {
+            if (userName == name) {
 
                 code = $('<div class="loginUserlist">' + name + "</div>");
 
             }
             else {
 
-                code = $('<a id="' + id + '" class="user" >' + name + '<a>');
+                code = $('<a id="' + name + '" class="user" >' + name + '<a>');
 
                 $(code).dblclick(function () {
 
                     var id = $(this).attr('id');
 
-                    if (userId != id)
-                        OpenPrivateChatWindow(chatHub, id, name);
+                    if (userName != name)
+                        OpenPrivateChatWindow(chatHub, name, name);
 
                 });
             }
@@ -230,7 +230,7 @@
 
         function OpenPrivateChatWindow(chatHub, id, userName) {
 
-            var ctrId = 'private_' + id;
+            var ctrId = 'private_' + userName;
 
             if ($('#' + ctrId).length > 0) return;
 

@@ -35,6 +35,14 @@ namespace WebAuth.Areas.Chat.Controllers
         public async Task<ActionResult> Index()
         {
             ApplicationUser user = await this.UserManager.FindByEmailAsync(User.Identity.GetUserName());
+
+            //trim mail address from orginal username
+            if (user != null)
+            {
+                string tempusername = user.UserName;
+                user.UserName = tempusername.Substring(0, tempusername.IndexOf('@'));
+            }
+            
             return View(user);
         }
     }
