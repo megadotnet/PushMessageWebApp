@@ -44,6 +44,11 @@ namespace WebAuth.Hubs
 
         }
 
+        /// <summary>
+        /// SendMessageToAll user
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="message"></param>
         public void SendMessageToAll(string userName, string message)
         {
             // store last 100 messages in cache
@@ -53,6 +58,11 @@ namespace WebAuth.Hubs
             Clients.All.messageReceived(userName, message);
         }
 
+        /// <summary>
+        /// SendPrivateMessage 
+        /// </summary>
+        /// <param name="toUserId">user</param>
+        /// <param name="message"></param>
         public void SendPrivateMessage(string toUserId, string message)
         {
             string tempusername = Context.User.Identity.Name;
@@ -72,6 +82,11 @@ namespace WebAuth.Hubs
 
         }
 
+        /// <summary>
+        /// OnDisconnected
+        /// </summary>
+        /// <param name="stopCalled"></param>
+        /// <returns></returns>
         public override System.Threading.Tasks.Task OnDisconnected(bool stopCalled)
         {
             string tempusername = Context.User.Identity.Name;
