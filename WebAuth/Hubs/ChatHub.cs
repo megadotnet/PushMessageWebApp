@@ -34,7 +34,11 @@ namespace WebAuth.Hubs
                 // send to caller
                 Clients.Caller.onConnected(id, userName, ConnectedUsers, CurrentMessage);
 
+                // send to all except caller client
+                Clients.AllExcept(id).onNewUserConnected(id, userName);
+
             }
+            //if user was existed in ConnectedUsers List, do not notify other client
             else
             {
                 Clients.Caller.onConnected(id, userName, ConnectedUsers, CurrentMessage);
