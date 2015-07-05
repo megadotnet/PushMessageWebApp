@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace WebAuth.Hubs
 {
@@ -24,24 +26,24 @@ namespace WebAuth.Hubs
         public void Connect(string userName)
         {
             //TODO:consider use database id instead context.ConnectionId
-            var id = Context.ConnectionId;
+            var connectedId = Context.ConnectionId;
 
-
+            string userId=Context.User.Identity.GetUserId();
             if (ConnectedUsers.Count(x => x.UserName == userName) == 0)
             {
-                ConnectedUsers.Add(new UserDetail { ConnectionId = id, UserName = userName });
+                ConnectedUsers.Add(new UserDetail { Id = userId, ConnectionId = connectedId, UserName = userName });
 
                 // send to caller
-                Clients.Caller.onConnected(id, userName, ConnectedUsers, CurrentMessage);
+                Clients.Caller.onConnected(connectedId, userName, ConnectedUsers, CurrentMessage);
 
                 // send to all except caller client
-                Clients.AllExcept(id).onNewUserConnected(id, userName);
+                Clients.AllExcept(connectedId).onNewUserConnected(connectedId, userName);
 
             }
             //if user was existed in ConnectedUsers List, do not notify other client
             else
             {
-                Clients.Caller.onConnected(id, userName, ConnectedUsers, CurrentMessage);
+                Clients.Caller.onConnected(connectedId, userName, ConnectedUsers, CurrentMessage);
 
             }
          
@@ -134,6 +136,7 @@ namespace WebAuth.Hubs
 
     public class UserDetail
     {
+        public string Id { get; set; }
         public string ConnectionId { get; set; }
         public string UserName { get; set; }
     }
