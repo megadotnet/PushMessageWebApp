@@ -10,16 +10,6 @@
 <br />
 
 <div id="divContainer">
-    <div id="divLogin" class="login">
-        <div>
-            Your Name:<br />
-            <input id="txtNickName" type="text" class="textBox" />
-        </div>
-        <div id="divButton">
-            <input id="btnStartChat" type="button" class="submitButton" value="Start Chat" />
-        </div>
-    </div>
-
     <div id="divChat" class="chatRoom">
         <div class="title">
             Welcome to Chat Room [<span id='spanUser'></span>]
@@ -46,8 +36,6 @@
 
         $(function () {
 
-            setScreen(true);
-
             // Declare a proxy to reference the hub.
             var chatHub = $.connection.chatHub;
 
@@ -70,20 +58,6 @@
 
         });
 
-        function setScreen(isLogin) {
-
-            if (!isLogin) {
-
-                $("#divChat").hide();
-                $("#divLogin").show();
-            }
-            else {
-
-                $("#divChat").show();
-                $("#divLogin").hide();
-            }
-
-        }
 
         function registerEvents(chatHub) {
 
@@ -100,12 +74,6 @@
             });
 
 
-            $("#txtNickName").keypress(function (e) {
-                if (e.which == 13) {
-                    $("#btnStartChat").click();
-                }
-            });
-
             $("#txtMessage").keypress(function (e) {
                 if (e.which == 13) {
                     $('#btnSendMsg').click();
@@ -119,8 +87,6 @@
 
             // Calls when user successfully logged in
             chatHub.client.onConnected = function (id, userName, allUsers, messages) {
-
-                setScreen(true);
 
                 $('#hdId').val(id);
                 $('#hdUserName').val(userName);
