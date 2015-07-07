@@ -22,6 +22,11 @@ namespace WebAuth.Hubs
     /// </summary>
     public class ChatHub : Hub
     {
+        /// <summary>
+        /// The identity name suffix
+        /// </summary>
+        private static readonly string identityNameSuffix = "@163.com";
+
         #region Static Fields
 
         /// <summary>
@@ -51,6 +56,7 @@ namespace WebAuth.Hubs
             IIdentity princpleUser = this.Context.User.Identity;
 
             string userId = princpleUser.GetUserId();
+            //name like admin@163.com, we just want to remove @163.com
             string tempusername = princpleUser.Name;
             string userName = tempusername.Substring(0, tempusername.IndexOf('@'));
 
@@ -133,7 +139,7 @@ namespace WebAuth.Hubs
             if (toUser != null && fromUser != null)
             {
                 // send to target User, when use asp.net form auth
-                this.Clients.User(toUserId + "@163.com").sendPrivateMessage(fromUserId, fromUser.UserName, message);
+                this.Clients.User(toUserId + identityNameSuffix).sendPrivateMessage(fromUserId, fromUser.UserName, message);
 
                 // send to caller user
                 this.Clients.Caller.sendPrivateMessage(toUserId, fromUser.UserName, message);

@@ -11,11 +11,18 @@ using WebAuth.Models;
 
 namespace WebAuth.Areas.Chat.Controllers
 {
+    /// <summary>
+    /// ChatController
+    /// </summary>
     [Authorize]
     public class ChatController : BaseController
     {
 
         // GET: Chat
+        /// <summary>
+        /// Indexes this instance.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             return View();

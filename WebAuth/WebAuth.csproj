@@ -250,7 +250,7 @@
     <Compile Include="Areas\Admin\Models\ApplicationPermission.cs" />
     <Compile Include="Areas\Admin\Models\ApplicationRolePermission.cs" />
     <Compile Include="Areas\Admin\Models\EditUserViewModel.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MySqlConfiguration.cs" />
     <Compile Include="Models\MySqlHistoryContext.cs" />
