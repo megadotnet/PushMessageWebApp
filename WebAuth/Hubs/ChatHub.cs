@@ -1,29 +1,54 @@
-﻿using Microsoft.AspNet.SignalR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ChatHub.cs" company="Megadotnet">
+//   ChatHub
+// </copyright>
+// <summary>
+//   ChatHub
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace WebAuth.Hubs
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Security.Principal;
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.SignalR;
+
+    /// <summary>
+    ///     ChatHub
+    /// </summary>
     public class ChatHub : Hub
     {
-        #region Data Members
+        #region Static Fields
 
-        static List<UserDetail> ConnectedUsers = new List<UserDetail>();
-        static List<MessageDetail> CurrentMessage = new List<MessageDetail>();
+        /// <summary>
+        /// The connected users.
+        /// </summary>
+        private static readonly List<UserDetail> ConnectedUsers = new List<UserDetail>();
+
+        /// <summary>
+        /// The current message.
+        /// </summary>
+        private static readonly List<MessageDetail> CurrentMessage = new List<MessageDetail>();
 
         #endregion
 
-        #region Methods
+        #region Public Methods and Operators
 
-        public override System.Threading.Tasks.Task OnConnected()
+        /// <summary>
+        /// The on connected.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        public override Task OnConnected()
         {
-            //TODO:consider use database id instead context.ConnectionId
-            var connectedId = Context.ConnectionId;
-            var princpleUser = Context.User.Identity;
+            // TODO:consider use database id instead context.ConnectionId
+            string connectedId = this.Context.ConnectionId;
+            IIdentity princpleUser = this.Context.User.Identity;
 
             string userId = princpleUser.GetUserId();
             string tempusername = princpleUser.Name;
@@ -34,121 +59,155 @@ namespace WebAuth.Hubs
                 ConnectedUsers.Add(new UserDetail { Id = userId, ConnectionId = connectedId, UserName = userName });
 
                 // send to caller
-                Clients.Caller.onConnected(connectedId, userName, ConnectedUsers, CurrentMessage);
+                this.Clients.Caller.onConnected(connectedId, userName, ConnectedUsers, CurrentMessage);
 
                 // send to all except caller client
-                Clients.AllExcept(connectedId).onNewUserConnected(connectedId, userName);
-
+                this.Clients.AllExcept(connectedId).onNewUserConnected(connectedId, userName);
             }
-            //if user was existed in ConnectedUsers List, do not notify other client
+                
+                // if user was existed in ConnectedUsers List, do not notify other client
             else
             {
-                Clients.Caller.onConnected(connectedId, userName, ConnectedUsers, CurrentMessage);
-
+                this.Clients.Caller.onConnected(connectedId, userName, ConnectedUsers, CurrentMessage);
             }
-         
 
             return base.OnConnected();
         }
 
         /// <summary>
-        /// Connect
+        /// OnDisconnected
         /// </summary>
-        /// <param name="userName"></param>
-        public void Connect(string userName)
+        /// <param name="stopCalled">
+        /// </param>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        public override Task OnDisconnected(bool stopCalled)
         {
+            string tempusername = this.Context.User.Identity.Name;
+            tempusername = tempusername.Substring(0, tempusername.IndexOf('@'));
+            UserDetail item = ConnectedUsers.FirstOrDefault(x => x.UserName == tempusername);
+            if (item != null)
+            {
+                ConnectedUsers.Remove(item);
 
+                string id = this.Context.ConnectionId;
+                this.Clients.All.onUserDisconnected(id, item.UserName);
+            }
 
+            return base.OnDisconnected(stopCalled);
         }
 
         /// <summary>
         /// SendMessageToAll user
         /// </summary>
-        /// <param name="userName"></param>
-        /// <param name="message"></param>
+        /// <param name="userName">
+        /// </param>
+        /// <param name="message">
+        /// </param>
         public void SendMessageToAll(string userName, string message)
         {
             // store last 100 messages in cache
-            AddMessageinCache(userName, message);
+            this.AddMessageinCache(userName, message);
 
             // Broad cast message
-            Clients.All.messageReceived(userName, message);
+            this.Clients.All.messageReceived(userName, message);
         }
 
         /// <summary>
-        /// SendPrivateMessage 
+        /// SendPrivateMessage
         /// </summary>
-        /// <param name="toUserId">user</param>
-        /// <param name="message"></param>
+        /// <param name="toUserId">
+        /// user
+        /// </param>
+        /// <param name="message">
+        /// </param>
         public void SendPrivateMessage(string toUserId, string message)
         {
-            string tempusername = Context.User.Identity.Name;
+            string tempusername = this.Context.User.Identity.Name;
             string fromUserId = tempusername.Substring(0, tempusername.IndexOf('@'));
 
-            var toUser = ConnectedUsers.FirstOrDefault(x => x.UserName == toUserId);
-            var fromUser = ConnectedUsers.FirstOrDefault(x => x.UserName == fromUserId);
+            UserDetail toUser = ConnectedUsers.FirstOrDefault(x => x.UserName == toUserId);
+            UserDetail fromUser = ConnectedUsers.FirstOrDefault(x => x.UserName == fromUserId);
 
             if (toUser != null && fromUser != null)
             {
                 // send to target User, when use asp.net form auth
-                Clients.User(toUserId+"@163.com").sendPrivateMessage(fromUserId, fromUser.UserName, message);
+                this.Clients.User(toUserId + "@163.com").sendPrivateMessage(fromUserId, fromUser.UserName, message);
 
                 // send to caller user
-                Clients.Caller.sendPrivateMessage(toUserId, fromUser.UserName, message);
+                this.Clients.Caller.sendPrivateMessage(toUserId, fromUser.UserName, message);
             }
-
         }
-
-        /// <summary>
-        /// OnDisconnected
-        /// </summary>
-        /// <param name="stopCalled"></param>
-        /// <returns></returns>
-        public override System.Threading.Tasks.Task OnDisconnected(bool stopCalled)
-        {
-            string tempusername = Context.User.Identity.Name;
-            tempusername = tempusername.Substring(0, tempusername.IndexOf('@'));
-            var item = ConnectedUsers.FirstOrDefault(x => x.UserName == tempusername);
-            if (item != null)
-            {
-                ConnectedUsers.Remove(item);
-
-                var id = Context.ConnectionId;
-                Clients.All.onUserDisconnected(id, item.UserName);
-
-            }
-            return base.OnDisconnected(stopCalled);
-        }
-
 
         #endregion
 
-        #region private Messages
+        #region Methods
 
+        /// <summary>
+        /// The add messagein cache.
+        /// </summary>
+        /// <param name="userName">
+        /// The user name.
+        /// </param>
+        /// <param name="message">
+        /// The message.
+        /// </param>
         private void AddMessageinCache(string userName, string message)
         {
             CurrentMessage.Add(new MessageDetail { UserName = userName, Message = message });
 
             if (CurrentMessage.Count > 100)
+            {
                 CurrentMessage.RemoveAt(0);
+            }
         }
 
         #endregion
     }
 
+    /// <summary>
+    /// The message detail.
+    /// </summary>
     public class MessageDetail
     {
+        #region Public Properties
 
-        public string UserName { get; set; }
-
+        /// <summary>
+        /// Gets or sets the message.
+        /// </summary>
         public string Message { get; set; }
 
+        /// <summary>
+        /// Gets or sets the user name.
+        /// </summary>
+        public string UserName { get; set; }
+
+        #endregion
     }
 
+    /// <summary>
+    /// The user detail.
+    /// </summary>
     public class UserDetail
     {
-        public string Id { get; set; }
+        #region Public Properties
+
+        /// <summary>
+        /// Gets or sets the connection id.
+        /// </summary>
         public string ConnectionId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the id.
+        /// </summary>
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the user name.
+        /// </summary>
         public string UserName { get; set; }
+
+        #endregion
     }
 }
