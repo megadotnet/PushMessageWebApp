@@ -19,16 +19,16 @@ namespace WebAuth.Hubs
 
         #region Methods
 
-        /// <summary>
-        /// Connect
-        /// </summary>
-        /// <param name="userName"></param>
-        public void Connect(string userName)
+        public override System.Threading.Tasks.Task OnConnected()
         {
             //TODO:consider use database id instead context.ConnectionId
             var connectedId = Context.ConnectionId;
+            var princpleUser = Context.User.Identity;
 
-            string userId=Context.User.Identity.GetUserId();
+            string userId = princpleUser.GetUserId();
+            string tempusername = princpleUser.Name;
+            string userName = tempusername.Substring(0, tempusername.IndexOf('@'));
+
             if (ConnectedUsers.Count(x => x.UserName == userName) == 0)
             {
                 ConnectedUsers.Add(new UserDetail { Id = userId, ConnectionId = connectedId, UserName = userName });
@@ -47,6 +47,17 @@ namespace WebAuth.Hubs
 
             }
          
+
+            return base.OnConnected();
+        }
+
+        /// <summary>
+        /// Connect
+        /// </summary>
+        /// <param name="userName"></param>
+        public void Connect(string userName)
+        {
+
 
         }
 

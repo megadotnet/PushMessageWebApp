@@ -38,21 +38,12 @@
 
             // Declare a proxy to reference the hub.
             var chatHub = $.connection.chatHub;
-
             registerClientMethods(chatHub);
 
             // Start Hub
             $.connection.hub.start().done(function () {
 
                 registerEvents(chatHub)
-
-                var name = "@Html.DisplayFor(model => model.UserName)";
-                if (name.length > 0) {
-                    chatHub.server.connect(name);
-                }
-                else {
-                    alert("Please enter name");
-                }
 
             });
 
