@@ -15,8 +15,19 @@ using System.Threading;
 namespace WebAuth.Controllers
 {
 
+    /// <summary>
+    /// BaseController
+    /// </summary>
     public abstract class BaseController : Controller
     {
+        /// <summary>
+        /// Begins to invoke the action in the current controller context.
+        /// </summary>
+        /// <param name="callback">The callback.</param>
+        /// <param name="state">The state.</param>
+        /// <returns>
+        /// Returns an IAsyncController instance.
+        /// </returns>
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
             string cultureName = null;

@@ -10,6 +10,9 @@ using WebAuth.Models;
 
 namespace WebAuth.Controllers
 {
+    /// <summary>
+    /// ManageController
+    /// </summary>
     [Authorize]
     public class ManageController : Controller
     {

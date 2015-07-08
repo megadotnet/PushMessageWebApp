@@ -20,10 +20,18 @@ namespace WebAuth.Controllers
     [IdentityAuthorize(Roles = "Administrators")]
     public abstract class BaseAdminController : BaseController
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BaseAdminController"/> class.
+        /// </summary>
         public BaseAdminController()
         {
 
         }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BaseAdminController"/> class.
+        /// </summary>
+        /// <param name="userManager">The user manager.</param>
+        /// <param name="roleManager">The role manager.</param>
         public BaseAdminController(ApplicationUserManager userManager, ApplicationRoleManager roleManager)
         {
             _userManager = userManager;

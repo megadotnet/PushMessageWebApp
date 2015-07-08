@@ -12,13 +12,46 @@ namespace BusinessEntities
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// T_BD_PushMessage
+    /// </summary>
     public partial class T_BD_PushMessage
     {
         public int Id { get; set; }
+        /// <summary>
+        /// Gets or sets the content of the MSG.
+        /// </summary>
+        /// <value>
+        /// The content of the MSG.
+        /// </value>
         public string MsgContent { get; set; }
+        /// <summary>
+        /// Gets or sets the MSG title.
+        /// </summary>
+        /// <value>
+        /// The MSG title.
+        /// </value>
         public string MsgTitle { get; set; }
+        /// <summary>
+        /// Gets or sets the type of the MSG.
+        /// </summary>
+        /// <value>
+        /// The type of the MSG.
+        /// </value>
         public int MsgType { get; set; }
+        /// <summary>
+        /// Gets or sets the type of the MSG send.
+        /// </summary>
+        /// <value>
+        /// The type of the MSG send.
+        /// </value>
         public string MsgSendType { get; set; }
+        /// <summary>
+        /// Gets or sets the remark.
+        /// </summary>
+        /// <value>
+        /// The remark.
+        /// </value>
         public string Remark { get; set; }
         public Nullable<System.DateTime> ExpirationTime { get; set; }
         public Nullable<int> Userid { get; set; }

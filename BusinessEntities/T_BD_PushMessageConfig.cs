@@ -15,8 +15,26 @@ namespace BusinessEntities
     public partial class T_BD_PushMessageConfig
     {
         public int Id { get; set; }
+        /// <summary>
+        /// Gets or sets the userid.
+        /// </summary>
+        /// <value>
+        /// The userid.
+        /// </value>
         public Nullable<int> Userid { get; set; }
+        /// <summary>
+        /// Gets or sets the type of the MSG.
+        /// </summary>
+        /// <value>
+        /// The type of the MSG.
+        /// </value>
         public int MsgType { get; set; }
+        /// <summary>
+        /// Gets or sets the update time.
+        /// </summary>
+        /// <value>
+        /// The update time.
+        /// </value>
         public System.DateTime UpdateTime { get; set; }
         /// <summary>
         /// Updator
