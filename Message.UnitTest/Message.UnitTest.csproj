@@ -126,6 +126,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="ChatHubTests.cs" />
     <Compile Include="MessageRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -12,6 +12,9 @@ namespace Message.UnitTest
 {
     public class MessageRepositoryTests
     {
+        /// <summary>
+        /// Shoulds the send message.
+        /// </summary>
         [Fact]
         public void ShouldSendMessage()
         {
@@ -32,25 +35,6 @@ namespace Message.UnitTest
 
         }
 
-        /// <summary>
-        /// Hubses the are mockable via dynamic.
-        /// </summary>
-        /// <see cref="http://www.asp.net/signalr/overview/testing-and-debugging/unit-testing-signalr-applications"/>
-        [Fact]
-        public void HubsAreMockableViaDynamic()
-        {
-            bool sendCalled = false;
-            var hub = new ChatHub();
-            var mockClients = new Mock<IHubCallerConnectionContext<dynamic>>();
-            hub.Clients = mockClients.Object;
-            dynamic all = new ExpandoObject();
-            all.messageReceived = new Action<string, string>((name, message) =>
-            {
-                sendCalled = true;
-            });
-            mockClients.Setup(m => m.All).Returns((ExpandoObject)all);
-            hub.SendMessageToAll("peter", "TestMessage");
-            Assert.True(sendCalled);
-        }
+
     }
 }
