@@ -29,6 +29,16 @@ namespace WebAuth.Models
         /// </summary>
         public virtual ICollection<UserDepartment> Departments { get; set; }
 
+
+        /// <summary>
+        /// Gets or sets the name of the chinese.
+        /// </summary>
+        /// <value>
+        /// The name of the chinese.
+        /// </value>
+        public string ChineseName { get; set; }
+
+
         /// <summary>
         /// Generates the user identity asynchronous.
         /// </summary>
