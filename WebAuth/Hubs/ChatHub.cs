@@ -58,7 +58,11 @@ namespace WebAuth.Hubs
             string userId = princpleUser.GetUserId();
             //name like admin@163.com, we just want to remove @163.com
             string tempusername = princpleUser.Name;
-            string userName = tempusername.Substring(0, tempusername.IndexOf('@'));
+            string userName = string.Empty; 
+            if (!string.IsNullOrEmpty(tempusername))
+            {
+                userName = tempusername.Substring(0, tempusername.IndexOf('@'));
+            }
 
             if (ConnectedUsers.Count(x => x.UserName == userName) == 0)
             {
