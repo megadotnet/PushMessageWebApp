@@ -10,6 +10,9 @@ using Microsoft.AspNet.SignalR.Hubs;
 
 namespace Message.UnitTest
 {
+    /// <summary>
+    /// MessageRepositoryTests
+    /// </summary>
     public class MessageRepositoryTests
     {
         /// <summary>
