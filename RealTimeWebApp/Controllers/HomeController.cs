@@ -28,6 +28,10 @@ namespace RealTimeApp.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Contacts this instance.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
