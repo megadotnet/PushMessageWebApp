@@ -95,7 +95,11 @@ namespace WebAuth.Hubs
         public override Task OnDisconnected(bool stopCalled)
         {
             string tempusername = this.Context.User.Identity.Name;
-            tempusername = tempusername.Substring(0, tempusername.IndexOf('@'));
+            if (!string.IsNullOrEmpty(tempusername))
+            {
+                tempusername = tempusername.Substring(0, tempusername.IndexOf('@'));
+            }
+
             UserDetail item = ConnectedUsers.FirstOrDefault(x => x.UserName == tempusername);
             if (item != null)
             {
