@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "ErrorLog";
+}
+
+<h2>ErrorLog</h2>
+<table id="logTable"></table> 
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            var logTable = $("#logTable");
+
+            var nlog = $.connection.signalRTargetHub;
+
+            nlog.client.logEvent = function (datetime, logLevel, message) {
+                var tr = $("<tr>");
+                tr.append($("<td>").text(datetime));
+                tr.append($("<td>").text(logLevel));
+                tr.append($("<td style='white-space: pre;'>").text(message));
+                logTable.append(tr);
+            };
+
+            $.connection.hub.start().done(function () {
+                nlog.server.hello();
+            });
+        });
+    </script>
+}
+
+

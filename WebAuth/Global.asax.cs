@@ -19,5 +19,12 @@ namespace WebAuth
             AutoMapperConfig.Configure();
             MQHubsConfig.RegisterMQListenAndHubs();
         }
+
+        void Application_Error(object sender, EventArgs e)
+        {
+            Exception lastException = Server.GetLastError();
+            NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+            logger.Fatal("Request: '{0}'\n Exception:{1}", HttpContext.Current.Request.Url, lastException);
+        }
     }
 }

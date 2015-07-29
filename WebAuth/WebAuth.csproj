@@ -22,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -239,6 +240,7 @@
     <Compile Include="Areas\Admin\Controllers\ResourceController.cs" />
     <Compile Include="Helper\CultureHelper.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
+    <Compile Include="Hubs\SignalRTargetHub.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Areas\Admin\Models\EditUserDepartmentViewModel.cs" />
     <Compile Include="Areas\Admin\Models\EditUserRoleViewModel.cs" />
@@ -1281,6 +1283,7 @@
       <LastGenOutput>JsonResource.js</LastGenOutput>
     </Content>
     <Content Include="Areas\Chat\Views\Chat\Index.cshtml" />
+    <Content Include="Views\Home\ErrorLog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
