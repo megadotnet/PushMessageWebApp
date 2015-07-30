@@ -22,8 +22,14 @@ namespace WebAuth.Hubs
                 "info",
                 "SignalR connected");
         }
-  
 
+
+        /// <summary>
+        /// Sends the specified longdate.
+        /// </summary>
+        /// <param name="longdate">The longdate.</param>
+        /// <param name="logLevel">The log level.</param>
+        /// <param name="message">The message.</param>
         public static void Send(string longdate, string logLevel, String message)
         {
             if (signalRHub == null)

@@ -4,6 +4,17 @@
 }
 
 <h2>ErrorLog</h2>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid lightgray;
+        padding: 0 5px;
+    }
+</style>
+
 <table id="logTable"></table> 
 @section scripts {
     <script type="text/javascript">
@@ -13,7 +24,24 @@
             var nlog = $.connection.signalRTargetHub;
 
             nlog.client.logEvent = function (datetime, logLevel, message) {
-                var tr = $("<tr>");
+                var logLevelLower = logLevel.toLowerCase();
+
+                var color = "transparent";
+                switch (logLevelLower) {
+                    case "fatal": color = "#FF9966";
+                        break;
+                    case "error": color = "#FFCC66";
+                        break;
+                    case "warn": color = "#FFFF99";
+                        break;
+                    case "info": colors = "#CCFFCC";
+                        break;
+                    case "debug": colors = "#CCCCFF";
+                        break;
+                        //"trace"
+                }
+
+                var tr = $("<tr>").css("background-color", color);
                 tr.append($("<td>").text(datetime));
                 tr.append($("<td>").text(logLevel));
                 tr.append($("<td style='white-space: pre;'>").text(message));
