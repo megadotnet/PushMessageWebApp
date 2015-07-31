@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Elmah;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,6 +24,19 @@ namespace WebAuth.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Contact us";
+
+            //http://blog.elmah.io/how-to-log-errors-to-elmah-programmatically/
+            //http://blog.elmah.io/elmah-tutorial/
+            try
+            {
+                int i = 0;
+                int result = 42 / i;
+            }
+            catch (DivideByZeroException e)
+            {
+                ErrorSignal.FromCurrentContext().Raise(e);
+ 
+            }
 
             return View();
         }
