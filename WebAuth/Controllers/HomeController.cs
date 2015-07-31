@@ -27,6 +27,10 @@ namespace WebAuth.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Errors the log.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult ErrorLog()
         {
             return View();

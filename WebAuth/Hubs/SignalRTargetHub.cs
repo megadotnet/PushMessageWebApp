@@ -13,8 +13,14 @@ namespace WebAuth.Hubs
     /// <seealso cref="http://www.cnblogs.com/Irving/archive/2013/01/13/2858601.html"/>
     public class SignalRTargetHub : Hub
     {
+        /// <summary>
+        /// The signal r hub
+        /// </summary>
         private static IHubContext signalRHub;
 
+        /// <summary>
+        /// Helloes this instance.
+        /// </summary>
         public void Hello()
         {
             this.Clients.Caller.logEvent(
