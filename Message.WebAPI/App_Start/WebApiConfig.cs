@@ -10,6 +10,8 @@ using Message.WebAPI.Services.IRepository;
 using Message.WebAPI.Services.Repository;
 using Messag.Utility.EntLib.IoC;
 using System.Net.Http.Headers;
+using System.Web.Http.ExceptionHandling;
+using Elmah.Contrib.WebApi;
 
 namespace Message.WebAPI
 {
@@ -33,6 +35,9 @@ namespace Message.WebAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            //http://blog.elmah.io/logging-to-elmah-io-from-web-api/
+            config.Services.Add(typeof(IExceptionLogger), new ElmahExceptionLogger());
         }
     }
 }
