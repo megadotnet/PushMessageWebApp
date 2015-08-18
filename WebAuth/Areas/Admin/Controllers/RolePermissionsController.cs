@@ -18,6 +18,7 @@ namespace WebAuth.Areas.Admin.Controllers
     using System.Web.Mvc;
 
     using AutoMapper;
+    using AutoMapper.Internal;
 
     using Infragistics.Web.Mvc;
 

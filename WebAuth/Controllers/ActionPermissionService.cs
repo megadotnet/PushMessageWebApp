@@ -49,6 +49,7 @@ namespace WebAuth.Controllers
             }
             return result;
         }
+
         /// <summary>
         /// 取Action的描述文本
         /// </summary>
@@ -62,6 +63,7 @@ namespace WebAuth.Controllers
             var result = description.Length > 0 ? (description[0] as DescriptionAttribute).Description : null;
             return result;
         }
+
         /// <summary>
         /// 格式化Method的参数字符串
         /// </summary>
@@ -84,6 +86,7 @@ namespace WebAuth.Controllers
                 return null;
             }
         }
+
         /// <summary>
         /// 格式化Action的参数字符串
         /// </summary>
