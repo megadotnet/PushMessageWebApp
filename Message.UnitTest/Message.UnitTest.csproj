@@ -112,6 +112,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="xunit.abstractions">
       <HintPath>..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
     </Reference>
@@ -131,6 +132,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Areas\Admin\Controllers\DepartmentControllerTests.cs" />
     <Compile Include="ChatHubTests.cs" />
     <Compile Include="MessageRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
