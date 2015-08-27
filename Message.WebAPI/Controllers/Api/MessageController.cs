@@ -11,6 +11,9 @@ using System.Web.Http;
 
 namespace Message.WebAPI.Controllers.Api
 {
+    /// <summary>
+    /// MessageController
+    /// </summary>
     public class MessageController : ApiController
     {
         private static ILogger log = new Logger("MessageController");
@@ -24,6 +27,9 @@ namespace Message.WebAPI.Controllers.Api
         /// </summary>
         private static string QUEUE_DESTINATION = MQConfig.QueueDestination;
 
+        /// <summary>
+        /// The message repository
+        /// </summary>
         private IMessageRepository messageRepository;
 
         /// <summary>
@@ -36,24 +42,23 @@ namespace Message.WebAPI.Controllers.Api
         }
 
         /// <summary>
-        /// Get
+        /// Get string 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>IHttpActionResult</returns>
         public IHttpActionResult Get()
         {
             return Ok("Call method Ok");
         }
 
         /// <summary>
-        /// SendMessage
+        /// Send message to client
         /// </summary>
         /// <param name="messagemodel">The messagemodel.</param>
-        /// <returns></returns>
+        /// <returns>IHttpActionResult</returns>
         [HttpPost]
         public IHttpActionResult SendMessage(PushMsg messagemodel)
         {
             return SendToServer(messagemodel);
-
         }
 
         /// <summary>

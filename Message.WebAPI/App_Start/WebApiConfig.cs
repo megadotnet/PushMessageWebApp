@@ -12,6 +12,8 @@ using Messag.Utility.EntLib.IoC;
 using System.Net.Http.Headers;
 using System.Web.Http.ExceptionHandling;
 using Elmah.Contrib.WebApi;
+using Message.WebAPI.Areas.HelpPage;
+using System.Web;
 
 namespace Message.WebAPI
 {
@@ -38,6 +40,8 @@ namespace Message.WebAPI
 
             //http://blog.elmah.io/logging-to-elmah-io-from-web-api/
             config.Services.Add(typeof(IExceptionLogger), new ElmahExceptionLogger());
+
+            config.SetDocumentationProvider(new XmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml")));
         }
     }
 }

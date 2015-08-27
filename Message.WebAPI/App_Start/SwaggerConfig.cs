@@ -2,6 +2,9 @@ using System.Web.Http;
 using WebActivatorEx;
 using Message.WebAPI;
 using Swashbuckle.Application;
+using System.IO;
+using System.Reflection;
+using System;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -153,7 +156,7 @@ namespace Message.WebAPI
                         // those comments into the generated docs and UI. You can enable this by providing the path to one or
                         // more Xml comment files.
                         //
-                        //c.IncludeXmlComments(GetXmlCommentsPath());
+                        c.IncludeXmlComments(GetXmlCommentsPath());
 
                         // In contrast to WebApi, Swagger 2.0 does not include the query string component when mapping a URL
                         // to an action. As a result, Swashbuckle will raise an exception if it encounters multiple actions
@@ -214,6 +217,19 @@ namespace Message.WebAPI
                         //
                         //c.EnableOAuth2Support("test-client-id", "test-realm", "Swagger UI");
                     });
+        }
+
+        /// <summary>
+        /// Gets the XML comments path.
+        /// </summary>
+        /// <returns>string</returns>
+        private static string GetXmlCommentsPath()
+        {
+            string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+            UriBuilder uri = new UriBuilder(codeBase);
+            string path = Uri.UnescapeDataString(uri.Path);
+            path = Path.Combine(Path.GetDirectoryName(path), "XmlDocument.xml");
+            return path;
         }
     }
 }
