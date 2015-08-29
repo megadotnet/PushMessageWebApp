@@ -46,6 +46,9 @@ namespace Message.WebAPI
             config.Services.Add(typeof(IExceptionLogger), new ElmahExceptionLogger());
 
             config.SetDocumentationProvider(new XmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml")));
+
+            //http://www.asp.net/web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
+            config.EnableSystemDiagnosticsTracing();
         }
     }
 }
