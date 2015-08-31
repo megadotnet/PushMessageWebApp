@@ -11,7 +11,10 @@ namespace BusinessEntities
 {
     using System;
     using System.Collections.Generic;
-    
+
+    /// <summary>
+    /// T_BD_PushMessageConfig
+    /// </summary>
     public partial class T_BD_PushMessageConfig
     {
         public int Id { get; set; }

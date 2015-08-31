@@ -6,6 +6,9 @@ using System.Web.Mvc;
 
 namespace RealTimeApp.Controllers
 {
+    /// <summary>
+    /// HomeController
+    /// </summary>
     public class HomeController : Controller
     {
         /// <summary>
