@@ -8,6 +8,9 @@ namespace WebAuth.Models
 {
     public class MySqlConfiguration : DbConfiguration
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MySqlConfiguration"/> class.
+        /// </summary>
         public MySqlConfiguration()
         {
             SetHistoryContext(

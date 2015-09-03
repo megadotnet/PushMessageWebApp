@@ -8,6 +8,9 @@ using System.Web;
 
 namespace WebAuth.Models
 {
+    /// <summary>
+    /// MySqlHistoryContext
+    /// </summary>
     public class MySqlHistoryContext : HistoryContext
     {
         public MySqlHistoryContext(
@@ -17,6 +20,12 @@ namespace WebAuth.Models
         {
         }
 
+        /// <summary>
+        /// Applies the default configuration for the migrations history table. If you override
+        /// this method it is recommended that you call this base implementation before applying your
+        /// custom configuration.
+        /// </summary>
+        /// <param name="modelBuilder">The builder that defines the model for the context being created.</param>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
