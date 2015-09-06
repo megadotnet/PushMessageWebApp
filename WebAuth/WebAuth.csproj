@@ -1190,7 +1190,7 @@
     <Content Include="Areas\Chat\Views\web.config" />
     <Content Include="Areas\Chat\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Chat\Views\_ViewStart.cshtml" />
-    <Content Include="DecryptConnectingstr.bat" />
+    <Content Include="EncryptConnectingstr.bat" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
