@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RealTimeApp.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,6 +16,7 @@ namespace RealTimeApp.Controllers
         /// Indexes this instance.
         /// </summary>
         /// <returns></returns>
+        [AuditLogActionFilter(ActionType = "Access Index info")]
         public ActionResult Index()
         {
             return View();
