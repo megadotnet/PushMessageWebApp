@@ -18,6 +18,9 @@ namespace Message.WebAPI.Services.Repository
 {
     public class MessageRepository:IMessageRepository
     {
+        /// <summary>
+        /// The log
+        /// </summary>
         private static ILogger log = new Logger("MessageRepository");
 
         /// <summary>
@@ -98,6 +101,13 @@ namespace Message.WebAPI.Services.Repository
             return sendflag > 0 ? true : false;
         }
 
+        /// <summary>
+        /// Pushes the messages.
+        /// </summary>
+        /// <param name="pushMsgs">The push MSGS.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">Push Message model should not be null</exception>
+        /// <exception cref="System.ArgumentException">Insert PushMessage Model to Db Fail</exception>
         public bool PushMessages(PushMsg[] pushMsgs)
         {
             if (pushMsgs == null && pushMsgs.Length > 0)
@@ -123,6 +133,16 @@ namespace Message.WebAPI.Services.Repository
             return isSendSuccess;
         }
 
+        /// <summary>
+        /// Pushes the message to mq.
+        /// </summary>
+        /// <param name="pushmsg">The pushmsg.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">
+        /// PushMsg object should not be null
+        /// or
+        /// User list should not be null
+        /// </exception>
         protected bool PushMessageToMQ(PushMsg pushmsg)
         {
             if (pushmsg == null)
@@ -144,6 +164,10 @@ namespace Message.WebAPI.Services.Repository
             return false;
         }
 
+        /// <summary>
+        /// Creates the active mq instance.
+        /// </summary>
+        /// <returns></returns>
         private static ActiveMQAdapter<PushMsg> CreateActiveMQInstance()
         {
             var activemq = new ActiveMQAdapter<PushMsg>(MQConfig.MQIpAddress, MQConfig.QueueDestination);
