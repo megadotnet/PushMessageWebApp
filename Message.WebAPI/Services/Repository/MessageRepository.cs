@@ -16,6 +16,9 @@ using Message.WebAPI.Models;
 
 namespace Message.WebAPI.Services.Repository
 {
+    /// <summary>
+    /// MessageRepository
+    /// </summary>
     public class MessageRepository:IMessageRepository
     {
         /// <summary>
@@ -37,11 +40,37 @@ namespace Message.WebAPI.Services.Repository
         }
 
 
-        private int GetUserIdListByUserAccount(string userAccount)
+        /// <summary>
+        /// Pushes the messages.
+        /// </summary>
+        /// <param name="pushMsgs">The push MSGS.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">Push Message model should not be null</exception>
+        /// <exception cref="System.ArgumentException">Insert PushMessage Model to Db Fail</exception>
+        public bool PushMessages(PushMsg[] pushMsgs)
         {
-            return 0;
-        }
+            if (pushMsgs == null && pushMsgs.Length > 0)
+            {
+                throw new ArgumentNullException("Push Message model should not be null");
+            }
 
+            bool isSendSuccess = false;
+            foreach (var messagebody in pushMsgs)
+            {
+                //Write Db and get Pk list
+                int[] results = InsertPushMessage(messagebody);
+                if (results == null && results.Length == 0)
+                {
+                    throw new ArgumentException("Insert PushMessage Model to Db Fail");
+                }
+
+                //set Id of Db to Common MQ model 
+                messagebody.Id = results.FirstOrDefault();
+                //send to front
+                isSendSuccess = PushMessageToMQ(messagebody);
+            }
+            return isSendSuccess;
+        }
 
         /// <summary>
         /// Inserts the push message.
@@ -88,50 +117,6 @@ namespace Message.WebAPI.Services.Repository
  
         }
 
-        /// <summary>
-        /// Sends the push message.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <returns></returns>
-        private bool SendPushMessageToMQ(PushMsg msg)
-        {
-            var activemq = CreateActiveMQInstance();
-            int sendflag = activemq.SendMessage<PushMsg>(msg);
-
-            return sendflag > 0 ? true : false;
-        }
-
-        /// <summary>
-        /// Pushes the messages.
-        /// </summary>
-        /// <param name="pushMsgs">The push MSGS.</param>
-        /// <returns></returns>
-        /// <exception cref="System.ArgumentNullException">Push Message model should not be null</exception>
-        /// <exception cref="System.ArgumentException">Insert PushMessage Model to Db Fail</exception>
-        public bool PushMessages(PushMsg[] pushMsgs)
-        {
-            if (pushMsgs == null && pushMsgs.Length > 0)
-            {
-                throw new ArgumentNullException("Push Message model should not be null");
-            }
-
-            bool isSendSuccess = false;
-            foreach (var messagebody in pushMsgs)
-            {
-                //Write Db and get Pk list
-                int[] results = InsertPushMessage(messagebody);
-                if (results == null && results.Length == 0)
-                {
-                    throw new ArgumentException("Insert PushMessage Model to Db Fail");
-                }
-
-                //set Id of Db to Common MQ model 
-                messagebody.Id = results.FirstOrDefault();
-                //send to front
-                isSendSuccess = PushMessageToMQ(messagebody);
-            }
-            return isSendSuccess;
-        }
 
         /// <summary>
         /// Pushes the message to mq.
@@ -163,6 +148,31 @@ namespace Message.WebAPI.Services.Repository
             }
             return false;
         }
+
+
+        /// <summary>
+        /// Gets the user identifier list by user account.
+        /// </summary>
+        /// <param name="userAccount">The user account.</param>
+        /// <returns></returns>
+        private int GetUserIdListByUserAccount(string userAccount)
+        {
+            return 0;
+        }
+
+        /// <summary>
+        /// Sends the push message.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        private bool SendPushMessageToMQ(PushMsg msg)
+        {
+            var activemq = CreateActiveMQInstance();
+            int sendflag = activemq.SendMessage<PushMsg>(msg);
+
+            return sendflag > 0 ? true : false;
+        }
+
 
         /// <summary>
         /// Creates the active mq instance.
