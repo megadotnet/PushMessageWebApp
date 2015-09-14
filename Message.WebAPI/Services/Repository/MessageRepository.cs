@@ -104,14 +104,22 @@ namespace Message.WebAPI.Services.Repository
             {
                 //save db
 
-                dbcontext.T_BD_PushMessage.Add(u);
-                dbcontext.SaveChanges();
+                try
+                {
+                    dbcontext.T_BD_PushMessage.Add(u);
+                    dbcontext.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    log.Error(ex);
+                }
+
                 //entiesrepository.Add(u);
                 //entiesrepository.Save();
 
                 pushMessageEntiyIdList.Add(u.Id);
-            }
-            );
+            });
+
 
             return pushMessageEntiyIdList.ToArray();
  
