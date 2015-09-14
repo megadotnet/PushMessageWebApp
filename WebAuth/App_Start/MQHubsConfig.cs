@@ -62,7 +62,7 @@ namespace WebAuth
 
             var userAccounts = m.Users.ToArray();
 
-            log.InfoFormat("从MQ收到消息{0}, Current:{1}", m.MSGCONTENT);
+            log.InfoFormat("从MQ收到消息{0}", m.MSGCONTENT);
             //GlobalHost.ConnectionManager.GetHubContext<FeedHub>().Clients.All.receive(m);
             //push via 
             GlobalHost.ConnectionManager.GetHubContext<FeedHub>().Clients.Users(userAccounts).receive(m);
