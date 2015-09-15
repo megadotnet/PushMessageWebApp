@@ -16,6 +16,9 @@ namespace Message.WebAPI.Controllers.Api
     /// </summary>
     public class MessageController : ApiController
     {
+        /// <summary>
+        /// The log
+        /// </summary>
         private static ILogger log = new Logger("MessageController");
 
         /// <summary>
@@ -78,7 +81,7 @@ namespace Message.WebAPI.Controllers.Api
                 }
                 else
                 {
-                    log.ErrorFormat("发送失败！Sent fail ! {0}", messagemodel);
+                    log.ErrorFormat("发送失败！Sent failure ! {0}", messagemodel);
                     return Content(HttpStatusCode.ExpectationFailed, new Exception("send message error"));
                 }
             }
