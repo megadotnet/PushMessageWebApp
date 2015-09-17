@@ -25,6 +25,9 @@
     <Content Include="AssemblyDependencies1.dgml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ComponmentGraph.dgml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package10_2046.uml">
       <SubType>Content</SubType>
     </Content>
