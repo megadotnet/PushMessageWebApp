@@ -18,6 +18,9 @@ namespace Message.WebAPI.Models
         }
     }
 
+    /// <summary>
+    /// ApplicationDbContext
+    /// </summary>
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerDiagram dslVersion="1.0.0.0" Id="bbd297d5-290f-431e-99b2-f6a6e00f6275" absoluteBounds="0, 0, 11, 8.5" name="PushMessage">
+  <layerModelMoniker Id="7a91e7c1-18a8-4a37-8801-9f468c606e84" />
+  <nestedChildShapes>
+    <layerShape Id="effd9891-cacb-4fe2-8e75-65b2076f1dcc" absoluteBounds="5.125, 4.75, 2, 0.75" customColor="161, 199, 231">
+      <layerMoniker Id="6e1b6052-7341-4737-a293-dbac7b89d83e" />
+    </layerShape>
+    <layerShape Id="5e2d60c6-7092-4ebf-9c89-c13eba3ede41" absoluteBounds="5.125, 3.75, 2, 0.75" customColor="161, 199, 231">
+      <layerMoniker Id="982f194b-5870-462a-b076-d989899dda5c" />
+    </layerShape>
+    <lineShape Id="500b6b02-f353-407a-af48-aef91bb8e8b7" absoluteBounds="6.125, 4.5, 0.03125, 0.25" outlineColor="83, 134, 191" outlineThickness="0.03125" />
+    <layerShape Id="8a0c0179-0fb0-46be-8984-b7ac55f5c23a" absoluteBounds="5.125, 2.625, 2, 0.75" customColor="MediumTurquoise">
+      <layerMoniker Id="801719ce-8c11-4e3d-ad37-5d59d5694046" />
+    </layerShape>
+    <layerShape Id="c6d29945-9cfe-4d00-b19f-a8274470bba9" absoluteBounds="5.125, 1.5, 2, 0.75" customColor="161, 199, 231">
+      <layerMoniker Id="7c260d95-30f0-464d-9984-f3a81161cd71" />
+    </layerShape>
+    <lineShape Id="a1c4a8a0-3a43-4002-981f-e22a7391abda" absoluteBounds="6.125, 3.375, 0.03125, 0.375" outlineColor="83, 134, 191" outlineThickness="0.03125" />
+  </nestedChildShapes>
+</layerDiagram>

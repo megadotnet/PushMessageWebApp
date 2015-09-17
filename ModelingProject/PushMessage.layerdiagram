@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="7a91e7c1-18a8-4a37-8801-9f468c606e84" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="6e1b6052-7341-4737-a293-dbac7b89d83e" name="Database" />
+    <layer Id="982f194b-5870-462a-b076-d989899dda5c" name="DataAccess" />
+    <layer Id="801719ce-8c11-4e3d-ad37-5d59d5694046" name="WebApi" />
+    <layer Id="7c260d95-30f0-464d-9984-f3a81161cd71" name="WebApp" />
+  </layers>
+</layerModel>

@@ -76,4 +76,17 @@
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Validate Include="PushMessage.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="PushMessage.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>PushMessage.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="PushMessage.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>PushMessage.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
 </Project>
