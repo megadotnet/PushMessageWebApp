@@ -1,8 +1,12 @@
 ﻿@using WebAuth.Models
+@using jCryption
 @model LoginViewModel
 @{
     ViewBag.Title = "Log in";
 }
+@{
+        jCryption.HandleRequest(Request);
+    }
 
 <h2>@ViewBag.Title.</h2>
 <div class="row">
@@ -10,7 +14,7 @@
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
-                @Html.AntiForgeryToken()
+                @*@Html.AntiForgeryToken()*@
                 <h4>Use a local account to log in.</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -60,4 +64,5 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @jCryption.RenderScriptFor("form", src: "/Scripts/jquery.jcryption.3.1.0.mod.js")
 }

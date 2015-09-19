@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using WebAuth.Models;
+using jCryption;
 
 namespace WebAuth.Controllers
 {
@@ -55,6 +56,7 @@ namespace WebAuth.Controllers
         //
         // GET: /Account/Login
         [AllowAnonymous]
+        [jCryptionHandler]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
@@ -65,7 +67,8 @@ namespace WebAuth.Controllers
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        [jCryptionHandler]
+        //[ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
