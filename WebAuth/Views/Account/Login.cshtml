@@ -65,4 +65,11 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     @jCryption.RenderScriptFor("form", src: "/Scripts/jquery.jcryption.3.1.0.mod.js")
+<div style="border: solid; padding: 1em;">
+    @jCryption.SecureText(@"Peter Liu")
+</div>
+    <div style="border: solid; padding: 1em;">
+        @jCryption.SecureHtml(@"<h4>Peter Liu</h4>")
+    </div>
+    @jCryption.LoadSecureContents()
 }
