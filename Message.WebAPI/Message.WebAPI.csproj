@@ -319,6 +319,8 @@
     <Compile Include="Services\IRepository\IMessageRepository.cs" />
     <Compile Include="Services\MessageCenterEntities.cs" />
     <Compile Include="Services\Repository\MessageRepository.cs" />
+    <Compile Include="Services\RSAClass.cs" />
+    <Compile Include="Services\User.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
