@@ -320,6 +320,7 @@
     <Compile Include="Services\MessageCenterEntities.cs" />
     <Compile Include="Services\Repository\MessageRepository.cs" />
     <Compile Include="Services\RSAClass.cs" />
+    <Compile Include="Services\TokenValidationAttribute.cs" />
     <Compile Include="Services\User.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
