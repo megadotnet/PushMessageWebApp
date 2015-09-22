@@ -22,11 +22,11 @@ namespace Message.UnitTest
 
             //Export private parameter XML representation of privateParameters
             //object created above
-            Debug.WriteLine(rsa.ToXmlString(true));
+            Console.WriteLine(rsa.ToXmlString(true));
 
             //Export private parameter XML representation of publicParameters
             //object created above
-            Debug.WriteLine(rsa.ToXmlString(false));
+            Console.WriteLine(rsa.ToXmlString(false));
         }
 
         [Fact]
@@ -37,6 +37,7 @@ namespace Message.UnitTest
             var encryptedToken = RSAClass.Encrypt(token);
             var decryptedToken = RSAClass.Decrypt(encryptedToken);
 
+            Console.WriteLine(encryptedToken);
             Assert.Equal(token, decryptedToken);
 
         }

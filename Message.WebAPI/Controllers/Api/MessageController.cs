@@ -1,6 +1,7 @@
 ﻿using BusniessEntities.Models;
 using Messag.Logger;
 using Messag.Utility.Config;
+using Message.WebAPI.Services;
 using Message.WebAPI.Services.IRepository;
 using System;
 using System.Collections.Generic;
@@ -48,6 +49,7 @@ namespace Message.WebAPI.Controllers.Api
         /// Get string 
         /// </summary>
         /// <returns>IHttpActionResult</returns>
+        [TokenValidation]
         public IHttpActionResult Get()
         {
             return Ok("Call method Ok");
