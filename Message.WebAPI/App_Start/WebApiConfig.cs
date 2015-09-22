@@ -14,6 +14,7 @@ using System.Web.Http.ExceptionHandling;
 using Elmah.Contrib.WebApi;
 using Message.WebAPI.Areas.HelpPage;
 using System.Web;
+using Message.WebAPI.Services;
 
 namespace Message.WebAPI
 {
@@ -49,6 +50,9 @@ namespace Message.WebAPI
 
             //http://www.asp.net/web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
             config.EnableSystemDiagnosticsTracing();
+
+            //config.Filters.Add(new TokenValidationAttribute());;
+            //config.Filters.Add(new IPHostValidationAttribute());
         }
     }
 }

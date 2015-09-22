@@ -12,14 +12,20 @@ namespace Message.WebAPI.Services
 {
 
     /// <summary>
-    /// http://codebetter.com/johnvpetersen/2012/04/02/making-your-asp-net-web-apis-secure/
+    ///RSAClass
     /// </summary>
+    /// <see cref="http://codebetter.com/johnvpetersen/2012/04/02/making-your-asp-net-web-apis-secure/"/>
     public class RSAClass
     {
-        private static string _privateKey = "<RSAKeyValue><Modulus>s6lpjspk+3o2GOK5TM7JySARhhxE5gB96e9XLSSRuWY2W9F951MfistKRzVtg0cjJTdSk5mnWAVHLfKOEqp8PszpJx9z4IaRCwQ937KJmn2/2VyjcUsCsor+fdbIHOiJpaxBlsuI9N++4MgF/jb0tOVudiUutDqqDut7rhrB/oc=</Modulus><Exponent>AQAB</Exponent><P>3J2+VWMVWcuLjjnLULe5TmSN7ts0n/TPJqe+bg9avuewu1rDsz+OBfP66/+rpYMs5+JolDceZSiOT+ACW2Neuw==</P><Q>0HogL5BnWjj9BlfpILQt8ajJnBHYrCiPaJ4npghdD5n/JYV8BNOiOP1T7u1xmvtr2U4mMObE17rZjNOTa1rQpQ==</Q><DP>jbXh2dVQlKJznUMwf0PUiy96IDC8R/cnzQu4/ddtEe2fj2lJBe3QG7DRwCA1sJZnFPhQ9svFAXOgnlwlB3D4Gw==</DP><DQ>evrP6b8BeNONTySkvUoMoDW1WH+elVAH6OsC8IqWexGY1YV8t0wwsfWegZ9IGOifojzbgpVfIPN0SgK1P+r+kQ==</DQ><InverseQ>LeEoFGI+IOY/J+9SjCPKAKduP280epOTeSKxs115gW1b9CP4glavkUcfQTzkTPe2t21kl1OrnvXEe5Wrzkk8rA==</InverseQ><D>HD0rn0sGtlROPnkcgQsbwmYs+vRki/ZV1DhPboQJ96cuMh5qeLqjAZDUev7V2MWMq6PXceW73OTvfDRcymhLoNvobE4Ekiwc87+TwzS3811mOmt5DJya9SliqU/ro+iEicjO4v3nC+HujdpDh9CVXfUAWebKnd7Vo5p6LwC9nIk=</D></RSAKeyValue>";
-        private static string _publicKey = "<RSAKeyValue><Modulus>s6lpjspk+3o2GOK5TM7JySARhhxE5gB96e9XLSSRuWY2W9F951MfistKRzVtg0cjJTdSk5mnWAVHLfKOEqp8PszpJx9z4IaRCwQ937KJmn2/2VyjcUsCsor+fdbIHOiJpaxBlsuI9N++4MgF/jb0tOVudiUutDqqDut7rhrB/oc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>";
+        private static string _privateKey = "<RSAKeyValue><Modulus>xiGkd3ptspY8n8POOmIU3+fkBAceDEPy2z6HDmBcQbAkewXAnaGK+0nO5txa1CaZKL9xz/6vEMcRu36R7O3mRf02Tmx7+xno9cmrKHhiZPfweO0FL3cq9T62/hbIxLm3iyAMYRQsNoDZMPE1tLCSXr5XIVRrb75UqrIcfGss9m8=</Modulus><Exponent>AQAB</Exponent><P>445OF9b6usTdXCf6L9ODmlF7hTBkgBJpvgbO9aA8LlB/eKaZOorBsz9HuYnwFvFFwX9+Af+mxr1yr35wpCXiXQ==</P><Q>3uXEQT64+A7HbaVMIlIPdjRMEBnZZVt01+xp0M71JRL/68gsAIkd2NwObR60ghyYoisZEcHLXWEBBwIgcLJHOw==</Q><DP>p9PZls2QKFVvaTt20vUtt4/nCMkzJh3ubR86Xn/qQsJN8V713e5eg+Pk81tffpw9tUNhXPn/N86bmgEn9HiYZQ==</DP><DQ>iwCy4RVieJ+O0tvwnL6cEdUPUkMshb8BIN64JpXJ3zL4EmwktLjNuj2RaY9qdnGq5gcGfUJjtnoWD+7NmDo1nQ==</DQ><InverseQ>xmFPKpCtLEKVfmpkO35GrnIi6SjEr4aZAPsrkxpqx1Qyx5prrqO1tO4iyd8kkCpRUHdShl7/RrFS+2Y5w+ZP2Q==</InverseQ><D>W7oVj27xvF1Lodef8W2ZJnQQH0FASwNmOtR+6Ev6SjsHGKF4JEI2utHX5Q+dSVy5SaEgSuApIoZXEkutuVgGZA4kAHYmwuXZe4+JpPp46+DMh2ALX21OcmAdiosBfXlBbdElTZK7bv6Nqu5dUlbg9B+Gg9ceHBe6A8iGzfRA/Dk=</D></RSAKeyValue>";
+        private static string _publicKey = "<RSAKeyValue><Modulus>xiGkd3ptspY8n8POOmIU3+fkBAceDEPy2z6HDmBcQbAkewXAnaGK+0nO5txa1CaZKL9xz/6vEMcRu36R7O3mRf02Tmx7+xno9cmrKHhiZPfweO0FL3cq9T62/hbIxLm3iyAMYRQsNoDZMPE1tLCSXr5XIVRrb75UqrIcfGss9m8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>";
         private static UnicodeEncoding _encoder = new UnicodeEncoding();
 
+        /// <summary>
+        /// Decrypts the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <returns></returns>
         public static string Decrypt(string data)
         {
             var rsa = new RSACryptoServiceProvider();
@@ -35,6 +41,11 @@ namespace Message.WebAPI.Services
             return _encoder.GetString(decryptedByte);
         }
 
+        /// <summary>
+        /// Encrypts the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <returns></returns>
         public static string Encrypt(string data)
         {
             var rsa = new RSACryptoServiceProvider();

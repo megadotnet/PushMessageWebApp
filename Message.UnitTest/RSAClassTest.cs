@@ -22,11 +22,15 @@ namespace Message.UnitTest
 
             //Export private parameter XML representation of privateParameters
             //object created above
-            Console.WriteLine(rsa.ToXmlString(true));
+            Debug.WriteLine("private key:");
+            string privatekey = rsa.ToXmlString(true);
+            Debug.WriteLine(privatekey);
 
             //Export private parameter XML representation of publicParameters
             //object created above
-            Console.WriteLine(rsa.ToXmlString(false));
+            Debug.WriteLine("public key:");
+            string publickey = rsa.ToXmlString(false);
+            Debug.WriteLine(publickey);
         }
 
         [Fact]
