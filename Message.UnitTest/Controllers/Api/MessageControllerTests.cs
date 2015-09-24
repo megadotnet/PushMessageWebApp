@@ -36,5 +36,27 @@ namespace Message.WebAPI.Controllers.Api.Tests
                 Assert.NotNull(results);
             }
         }
+
+
+        /// <summary>
+        /// Sends the message with out authorization token test.
+        /// </summary>
+        [Fact()]
+        public void SendMessageWithOutAuthorizationTokenTest()
+        {
+            Assert.ThrowsAsync<HttpRequestException>(async () =>
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://localhost:2493/");
+
+                    client.DefaultRequestHeaders.Accept.Add(
+                       new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    string results = await client.GetStringAsync("api/Message");
+                }
+            });
+
+        }
     }
 }
