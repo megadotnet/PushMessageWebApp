@@ -253,6 +253,9 @@
     <Reference Include="WebActivatorEx">
       <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
+    <Reference Include="WebApiThrottle">
+      <HintPath>..\packages\WebApiThrottle.1.4.1\lib\net45\WebApiThrottle.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>

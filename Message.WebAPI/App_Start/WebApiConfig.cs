@@ -15,6 +15,7 @@ using Elmah.Contrib.WebApi;
 using Message.WebAPI.Areas.HelpPage;
 using System.Web;
 using Message.WebAPI.Services;
+using WebApiThrottle;
 
 namespace Message.WebAPI
 {
@@ -53,6 +54,12 @@ namespace Message.WebAPI
 
             //config.Filters.Add(new TokenValidationAttribute());;
             //config.Filters.Add(new IPHostValidationAttribute());
+
+            config.MessageHandlers.Add(new ThrottlingHandler()
+            {
+                Policy = ThrottlePolicy.FromStore(new PolicyConfigurationProvider()),
+                Repository = new CacheRepository()
+            });
         }
     }
 }
