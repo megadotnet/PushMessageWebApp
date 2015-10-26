@@ -1,4 +1,5 @@
 ﻿using Elmah;
+using Messag.Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,18 @@ namespace WebAuth.Controllers
 {
     public class HomeController : BaseController
     {
+        private ILogger log = new Logger("HomeController");
+
         public ActionResult Index()
         {
+            log.DebugFormat("Index {0}", DateTime.Now);
             return View();
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Message Center";
-
+           
             return View();
         }
 
