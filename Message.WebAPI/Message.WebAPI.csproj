@@ -303,9 +303,13 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Api\MessageController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -326,7 +330,9 @@
     <Compile Include="Services\RSAClass.cs" />
     <Compile Include="Services\TokenValidationAttribute.cs" />
     <Compile Include="Services\User.cs" />
+    <Compile Include="Models\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Models\UserModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
