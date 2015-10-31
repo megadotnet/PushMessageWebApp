@@ -145,6 +145,8 @@ namespace WebAuth.Areas.Admin.Controllers
                     this.ViewBag.RoleId = new SelectList(this.RoleManager.Roles, "Id", "Name");
                     return this.View();
                 }
+                //force clear caching
+                Response.RemoveOutputCacheItem(Url.Action("Index", "UsersAdmin"));
 
                 return this.RedirectToAction("Index");
             }
@@ -219,6 +221,9 @@ namespace WebAuth.Areas.Admin.Controllers
                     this.ModelState.AddModelError(string.Empty, result.Errors.First());
                     return this.View();
                 }
+
+                //force clear caching
+                Response.RemoveOutputCacheItem(Url.Action("Index", "UsersAdmin"));
 
                 return this.RedirectToAction("Index");
             }
@@ -349,11 +354,13 @@ namespace WebAuth.Areas.Admin.Controllers
                         return this.View();
                     }
                 }
-
+                //force clear caching
+                Response.RemoveOutputCacheItem(Url.Action("Index", "UsersAdmin"));
                 return this.RedirectToAction("Index");
             }
 
             this.ViewBag.RoleId = new SelectList(this.RoleManager.Roles, "Id", "Name");
+
             return this.View();
         }
 

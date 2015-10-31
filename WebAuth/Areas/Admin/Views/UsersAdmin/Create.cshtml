@@ -21,6 +21,12 @@
             </div>
         </div>
         <div class="control-group">
+            @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+            <div class="controls">
+                @Html.TextBoxFor(m => m.Email)
+            </div>
+        </div>
+        <div class="control-group">
             @Html.LabelFor(m => m.Password, new { @class = "control-label" })
             <div class="controls">
                 @Html.PasswordFor(m => m.Password)
