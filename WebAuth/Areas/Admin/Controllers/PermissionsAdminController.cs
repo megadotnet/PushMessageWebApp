@@ -45,6 +45,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// </returns>
         [Description("新建权限，列表")]
         [GridDataSourceAction]
+        [OutputCache(VaryByParam = "none", Duration = 3600)]
         public ActionResult Create()
         {
             // 创建ViewModel

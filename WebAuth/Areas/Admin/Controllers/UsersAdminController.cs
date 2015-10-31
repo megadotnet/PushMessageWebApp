@@ -364,6 +364,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("Users List Page")]
+        [OutputCache(VaryByParam = "none", Duration = 3600)]
         public async Task<ActionResult> Index()
         {
             return this.View(await this.UserManager.Users.ToListAsync());
