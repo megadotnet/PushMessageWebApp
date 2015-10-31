@@ -18,6 +18,9 @@ namespace WebAuth
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutoMapperConfig.Configure();
             MQHubsConfig.RegisterMQListenAndHubs();
+
+            //http://www.cnblogs.com/xuanhun/p/3611768.html
+            MvcHandler.DisableMvcResponseHeader = true;
         }
 
         void Application_Error(object sender, EventArgs e)
