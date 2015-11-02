@@ -146,13 +146,21 @@ namespace WebAuth.Areas.Admin.Controllers
                     return this.View();
                 }
                 //force clear caching
-                Response.RemoveOutputCacheItem(Url.Action("Index", "UsersAdmin"));
+                ClearCache();
 
                 return this.RedirectToAction("Index");
             }
 
             this.ViewBag.RoleId = new SelectList(this.RoleManager.Roles, "Id", "Name");
             return this.View();
+        }
+
+        /// <summary>
+        /// Clears the cache.
+        /// </summary>
+        private void ClearCache()
+        {
+            Response.RemoveOutputCacheItem(Url.Action("Index", "UsersAdmin"));
         }
 
         // GET: /Users/Edit/[GUID]
@@ -223,7 +231,7 @@ namespace WebAuth.Areas.Admin.Controllers
                 }
 
                 //force clear caching
-                Response.RemoveOutputCacheItem(Url.Action("Index", "UsersAdmin"));
+                ClearCache();
 
                 return this.RedirectToAction("Index");
             }
@@ -355,7 +363,7 @@ namespace WebAuth.Areas.Admin.Controllers
                     }
                 }
                 //force clear caching
-                Response.RemoveOutputCacheItem(Url.Action("Index", "UsersAdmin"));
+                ClearCache();
                 return this.RedirectToAction("Index");
             }
 
