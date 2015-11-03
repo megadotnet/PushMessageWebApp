@@ -232,6 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutoMapperConfig.cs" />
+    <Compile Include="App_Start\RemoveServerResponseHeader.cs" />
     <Compile Include="App_Start\jCryption.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
