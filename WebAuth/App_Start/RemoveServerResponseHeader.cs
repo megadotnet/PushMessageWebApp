@@ -12,7 +12,7 @@ namespace WebAuth.App_Start
     /// <example><code>
     /// <<system.webserver>
      ///    <modules>
-     ///      <add name="CustomHeaderModule" type="VectorShop.Helpers.RemoveServerResponseHeader">
+    ///      <add name="CustomHeaderModule" type="WebAuth.App_Start.Helpers.RemoveServerResponseHeader">
      ///    </add> 
      ///</modules>
      /// </system.webserver>
