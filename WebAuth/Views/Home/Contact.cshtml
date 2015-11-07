@@ -1,8 +1,10 @@
-﻿@{
+﻿@using BotDetect.Web.UI.Mvc;
+@{
     ViewBag.Title = "Contact";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
+<link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css" />
 
 <address>
     One Microsoft Way<br />
@@ -15,3 +17,13 @@
     <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
 </address>
+<form action="/Home/Contact" method="post">
+
+    @{MvcCaptcha sampleCaptcha = new MvcCaptcha("SampleCaptcha"); }
+    @Html.Captcha(sampleCaptcha)
+    @Html.TextBox("CaptchaCode")
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Go" class="btn" />
+    </div>
+</form>

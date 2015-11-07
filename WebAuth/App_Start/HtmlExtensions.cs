@@ -131,5 +131,15 @@ namespace WebAuth.App_Start
         {
             return (exp.NodeType == ExpressionType.Convert || exp.NodeType == ExpressionType.ConvertChecked);
         }
+
+        //public static MvcHtmlString Captcha(this HtmlHelper htmlHelper, string textRefreshButton, int length)
+        //{
+        //    return CaptchaHelper.GenerateFullCaptcha(htmlHelper, textRefreshButton, length);
+        //}
+
+        //public static MvcHtmlString Captcha(this HtmlHelper htmlHelper, int length)
+        //{
+        //    return CaptchaHelper.GenerateFullCaptcha(htmlHelper, length);
+        //}
     }
 }

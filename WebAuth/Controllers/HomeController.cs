@@ -1,4 +1,5 @@
-﻿using Elmah;
+﻿using BotDetect.Web.UI.Mvc;
+using Elmah;
 using Messag.Logger;
 using System;
 using System.Collections.Generic;
@@ -38,18 +39,31 @@ namespace WebAuth.Controllers
 
             //http://blog.elmah.io/how-to-log-errors-to-elmah-programmatically/
             //http://blog.elmah.io/elmah-tutorial/
-            try
-            {
-                int i = 0;
-                int result = 42 / i;
-            }
-            catch (DivideByZeroException e)
-            {
-                ErrorSignal.FromCurrentContext().Raise(e);
+            //try
+            //{
+            //    int i = 0;
+            //    int result = 42 / i;
+            //}
+            //catch (DivideByZeroException e)
+            //{
+            //    ErrorSignal.FromCurrentContext().Raise(e);
  
-            }
+            //}
 
             return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [CaptchaValidation("CaptchaCode", "SampleCaptcha", "Incorrect CAPTCHA code!")]
+        public ActionResult Contact(string model)
+        {
+            if (ModelState.IsValid)
+            {
+                // You should call ResetCaptcha as demonstrated in the following example.
+                MvcCaptcha.ResetCaptcha("SampleCaptcha");
+            }
+            return Json(model);
         }
 
         /// <summary>
