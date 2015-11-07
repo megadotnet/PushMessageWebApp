@@ -27,7 +27,7 @@ namespace WebAuth.Controllers
         [ValidateInput(false)]
         public ActionResult About()
         {
-            ViewBag.Message = "Message Center";
+            ViewBag.Message = "alert('Message Center');";
            
             return View();
         }
