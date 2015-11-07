@@ -18,6 +18,13 @@ namespace WebAuth.Controllers
             return View();
         }
 
+
+        /// <summary>
+        /// Abouts this instance.
+        /// </summary>
+        /// <returns></returns>
+        /// <see cref="http://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/avoiding-cross-site-scripting-xss-attacks-with-antixss-in/"/>
+        [ValidateInput(false)]
         public ActionResult About()
         {
             ViewBag.Message = "Message Center";

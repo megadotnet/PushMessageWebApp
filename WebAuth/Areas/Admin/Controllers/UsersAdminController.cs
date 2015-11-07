@@ -23,6 +23,7 @@ namespace WebAuth.Areas.Admin.Controllers
 
     using WebAuth.Controllers;
     using WebAuth.Models;
+    using Microsoft.Security.Application;
 
     /// <summary>
     /// The users admin controller.
@@ -116,7 +117,8 @@ namespace WebAuth.Areas.Admin.Controllers
             if (this.ModelState.IsValid)
             {
                 var user = new ApplicationUser();
-                user.UserName = userViewModel.UserName;
+                
+                user.UserName = Sanitizer.GetSafeHtmlFragment(userViewModel.UserName);
 
                 IdentityResult adminresult = await this.UserManager.CreateAsync(user, userViewModel.Password);
 
