@@ -17,7 +17,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// <summary>
     /// The admin home controller.
     /// </summary>
-    public class AdminHomeController : BaseAdminController
+    public partial class AdminHomeController : BaseAdminController
     {
         // GET: SuperAdmin/Home
         #region Public Methods and Operators
@@ -29,7 +29,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="ActionResult"/>.
         /// </returns>
         [Description("AdminHomeMainPage")]
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return this.View();
         }

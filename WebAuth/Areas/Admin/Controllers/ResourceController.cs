@@ -12,9 +12,9 @@ namespace WebAuth.Areas.Admin.Controllers
     /// ResourceController
     /// </summary>
     /// <see cref="http://afana.me/post/aspnet-mvc-internationalization-strings-localization-client-side.aspx"/>
-    public class ResourceController : BaseController
+    public partial class ResourceController : BaseController
     {
-        public JsonResult GetResources()
+        public virtual JsonResult GetResources()
         {
             return Json(new Dictionary<string, string> { 
                 {AdminResource.Names.Action, AdminResource.Names.Action},

@@ -18,7 +18,7 @@ namespace WebAuth.Controllers
     /// 基础类
     /// </summary>
     [IdentityAuthorize(Roles = "Administrators")]
-    public abstract class BaseAdminController : BaseController
+    public abstract partial class BaseAdminController : BaseController
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseAdminController"/> class.

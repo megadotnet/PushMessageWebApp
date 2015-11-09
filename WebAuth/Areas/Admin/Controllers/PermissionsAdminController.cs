@@ -32,7 +32,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// <summary>
     /// The permissions admin controller.
     /// </summary>
-    public class PermissionsAdminController : BaseAdminController
+    public partial class PermissionsAdminController : BaseAdminController
     {
         // GET: PermissionsAdmin/Create
         #region Public Methods and Operators
@@ -46,7 +46,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [Description("新建权限，列表")]
         [GridDataSourceAction]
         [OutputCache(VaryByParam = "none", Duration = 3600)]
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             // 创建ViewModel
             var permissionViews = new List<PermissionViewModel>();
@@ -85,7 +85,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [Description("新建权限，保存")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(IEnumerable<PermissionViewModel> data)
+        public virtual async Task<ActionResult> Create(IEnumerable<PermissionViewModel> data)
         {
             if (data == null)
             {
@@ -121,7 +121,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="ActionResult"/>.
         /// </returns>
         [Description("删除权限")]
-        public ActionResult Delete(string id)
+        public virtual ActionResult Delete(string id)
         {
             if (id == null)
             {
@@ -152,7 +152,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public virtual ActionResult DeleteConfirmed(string id)
         {
             ApplicationPermission applicationPermission = this._db.Permissions.Find(id);
             this._db.Permissions.Remove(applicationPermission);
@@ -170,7 +170,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="ActionResult"/>.
         /// </returns>
         [Description("权限详情")]
-        public ActionResult Details(string id)
+        public virtual ActionResult Details(string id)
         {
             if (id == null)
             {
@@ -197,7 +197,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="ActionResult"/>.
         /// </returns>
         [Description("编辑权限")]
-        public ActionResult Edit(string id)
+        public virtual ActionResult Edit(string id)
         {
             if (id == null)
             {
@@ -229,7 +229,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [Description("编辑权限，保存")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Controller,Action,Description")] PermissionViewModel view)
+        public virtual ActionResult Edit([Bind(Include = "Id,Controller,Action,Description")] PermissionViewModel view)
         {
             if (this.ModelState.IsValid)
             {
@@ -255,7 +255,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("权限列表")]
-        public async Task<ActionResult> Index(int index = 1)
+        public virtual async Task<ActionResult> Index(int index = 1)
         {
             List<ApplicationPermission> permissions = await this._db.Permissions.ToListAsync();
 

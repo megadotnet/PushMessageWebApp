@@ -26,7 +26,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// <summary>
     /// The roles admin controller.
     /// </summary>
-    public class RolesAdminController : BaseAdminController
+    public partial class RolesAdminController : BaseAdminController
     {
         #region Fields
 
@@ -115,7 +115,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="ActionResult"/>.
         /// </returns>
         [Description("Create Role WebPage")]
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             return this.View();
         }
@@ -133,7 +133,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// </returns>
         [HttpPost]
         [Description("Create Role action")]
-        public async Task<ActionResult> Create(RoleViewModel roleViewModel)
+        public virtual async Task<ActionResult> Create(RoleViewModel roleViewModel)
         {
             if (this.ModelState.IsValid)
             {
@@ -166,7 +166,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("Delete Role Page")]
-        public async Task<ActionResult> Delete(string id)
+        public virtual async Task<ActionResult> Delete(string id)
         {
             if (id == null)
             {
@@ -199,7 +199,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(string id, string deleteUser)
+        public virtual async Task<ActionResult> DeleteConfirmed(string id, string deleteUser)
         {
             if (this.ModelState.IsValid)
             {
@@ -246,7 +246,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("Role Detail")]
-        public async Task<ActionResult> Details(string id)
+        public virtual async Task<ActionResult> Details(string id)
         {
             if (id == null)
             {
@@ -280,7 +280,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("Edit Role Page")]
-        public async Task<ActionResult> Edit(string id)
+        public virtual async Task<ActionResult> Edit(string id)
         {
             if (id == null)
             {
@@ -310,7 +310,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// </returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Name,Id")] RoleViewModel roleModel)
+        public virtual async Task<ActionResult> Edit([Bind(Include = "Name,Id")] RoleViewModel roleModel)
         {
             if (this.ModelState.IsValid)
             {
@@ -330,7 +330,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="ActionResult"/>.
         /// </returns>
         [Description("Roles List")]
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return this.View(this.RoleManager.Roles); // 显示角色清单
         }

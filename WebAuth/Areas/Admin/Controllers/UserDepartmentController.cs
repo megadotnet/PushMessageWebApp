@@ -29,7 +29,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// The user department controller.
     /// </summary>
     [Description("用户-部门维护")]
-    public class UserDepartmentController : BaseAdminController
+    public partial class UserDepartmentController : BaseAdminController
     {
         // GET: UsersAdmin
 
@@ -47,7 +47,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("用户-部门详情")]
-        public async Task<ActionResult> Details(string id)
+        public virtual async Task<ActionResult> Details(string id)
         {
             // 用户为空时返回400错误
             if (id == null)
@@ -77,7 +77,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("编辑用户-部门")]
-        public async Task<ActionResult> Edit(string id)
+        public virtual async Task<ActionResult> Edit(string id)
         {
             if (id == null)
             {
@@ -126,7 +126,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [Description("编辑用户-部门，保存")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(
+        public virtual async Task<ActionResult> Edit(
             [Bind(Include = "UserName,Email,Id")] EditUserDepartmentViewModel editUser, 
             params int[] selectedDepartments)
         {
@@ -174,7 +174,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("用户-部门列表")]
-        public async Task<ActionResult> Index(int index = 1)
+        public virtual async Task<ActionResult> Index(int index = 1)
         {
             List<ApplicationUser> users = await this._userManager.Users.ToListAsync();
             var views = Mapper.Map<IList<EditUserDepartmentViewModel>>(users);

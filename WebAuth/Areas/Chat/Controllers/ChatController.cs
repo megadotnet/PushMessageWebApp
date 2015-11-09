@@ -15,7 +15,7 @@ namespace WebAuth.Areas.Chat.Controllers
     /// ChatController
     /// </summary>
     [Authorize]
-    public class ChatController : BaseController
+    public partial class ChatController : BaseController
     {
 
         // GET: Chat
@@ -23,7 +23,7 @@ namespace WebAuth.Areas.Chat.Controllers
         /// Indexes this instance.
         /// </summary>
         /// <returns></returns>
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return View();
         }

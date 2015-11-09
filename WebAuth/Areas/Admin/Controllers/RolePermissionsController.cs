@@ -30,7 +30,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// <summary>
     /// The role permissions controller.
     /// </summary>
-    public class RolePermissionsController : BaseAdminController
+    public partial class RolePermissionsController : BaseAdminController
     {
         // GET: RolePermissions
 
@@ -48,7 +48,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// </returns>
         [Description("新建角色-权限,列表")]
         [GridDataSourceAction]
-        public ActionResult Create(string roleId)
+        public virtual ActionResult Create(string roleId)
         {
             if (string.IsNullOrWhiteSpace(roleId))
             {
@@ -98,7 +98,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [Description("新建角色-权限，保存")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(string roleId, IEnumerable<ApplicationPermission> data)
+        public virtual async Task<ActionResult> Create(string roleId, IEnumerable<ApplicationPermission> data)
         {
             if (string.IsNullOrWhiteSpace(roleId) || data.Count() == 0)
             {
@@ -137,7 +137,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("删除角色-权限")]
-        public async Task<ActionResult> Delete(string roleId, string permissionId)
+        public virtual async Task<ActionResult> Delete(string roleId, string permissionId)
         {
             if (string.IsNullOrWhiteSpace(roleId) || string.IsNullOrWhiteSpace(permissionId))
             {
@@ -176,7 +176,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(string roleId, string permissionId)
+        public virtual async Task<ActionResult> DeleteConfirmed(string roleId, string permissionId)
         {
             if (string.IsNullOrWhiteSpace(roleId) || string.IsNullOrWhiteSpace(permissionId))
             {
@@ -217,7 +217,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("角色-权限详情")]
-        public async Task<ActionResult> Details(string roleId, string permissionId)
+        public virtual async Task<ActionResult> Details(string roleId, string permissionId)
         {
             if (string.IsNullOrWhiteSpace(roleId) || string.IsNullOrWhiteSpace(permissionId))
             {
@@ -254,7 +254,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="ActionResult"/>.
         /// </returns>
         [Description("角色-权限列表")]
-        public ActionResult Index(string roleId, int index = 1)
+        public virtual ActionResult Index(string roleId, int index = 1)
         {
             // 取role列表
             List<ApplicationRole> roles = this._roleManager.Roles.ToList();

@@ -26,7 +26,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// <summary>
     /// The department controller.
     /// </summary>
-    public class DepartmentController : BaseAdminController
+    public partial class DepartmentController : BaseAdminController
     {
         // GET: /Department/
 
@@ -40,7 +40,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="ActionResult"/>.
         /// </returns>
         [Description("新建部门")]
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             return this.View();
         }
@@ -60,7 +60,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Description("新建部门，保存")]
-        public async Task<ActionResult> Create([Bind(Include = "ID,Name")] Department department)
+        public virtual async Task<ActionResult> Create([Bind(Include = "ID,Name")] Department department)
         {
             if (this.ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("删除部门")]
-        public async Task<ActionResult> Delete(int? id)
+        public virtual async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
@@ -117,7 +117,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Description("删除部门，保存")]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public virtual async Task<ActionResult> DeleteConfirmed(int id)
         {
             Department department = await this._db.Departments.FindAsync(id);
             this._db.Departments.Remove(department);
@@ -135,7 +135,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("部门详情")]
-        public async Task<ActionResult> Details(int? id)
+        public virtual async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -162,7 +162,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("编辑部门")]
-        public async Task<ActionResult> Edit(int? id)
+        public virtual async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -194,7 +194,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Description("编辑部门，保存")]
-        public async Task<ActionResult> Edit([Bind(Include = "ID,Name")] Department department)
+        public virtual async Task<ActionResult> Edit([Bind(Include = "ID,Name")] Department department)
         {
             if (this.ModelState.IsValid)
             {
@@ -217,7 +217,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("部门列表")]
-        public async Task<ActionResult> Index(int index = 1)
+        public virtual async Task<ActionResult> Index(int index = 1)
         {
             List<Department> departments = await this._db.Departments.ToListAsync();
             var views = Mapper.Map<IList<DepartmentViewModel>>(departments);

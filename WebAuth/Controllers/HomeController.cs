@@ -9,11 +9,11 @@ using System.Web.Mvc;
 
 namespace WebAuth.Controllers
 {
-    public class HomeController : BaseController
+    public partial class HomeController : BaseController
     {
         private ILogger log = new Logger("HomeController");
 
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             log.DebugFormat("Index {0}", DateTime.Now);
             return View();
@@ -26,14 +26,14 @@ namespace WebAuth.Controllers
         /// <returns></returns>
         /// <see cref="http://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/avoiding-cross-site-scripting-xss-attacks-with-antixss-in/"/>
         [ValidateInput(false)]
-        public ActionResult About()
+        public virtual ActionResult About()
         {
             ViewBag.Message = "alert('Message Center');";
            
             return View();
         }
 
-        public ActionResult Contact()
+        public virtual ActionResult Contact()
         {
             ViewBag.Message = "Contact us";
 
@@ -56,7 +56,7 @@ namespace WebAuth.Controllers
         [HttpPost]
         [AllowAnonymous]
         [CaptchaValidation("CaptchaCode", "SampleCaptcha", "Incorrect CAPTCHA code!")]
-        public ActionResult Contact(string model)
+        public virtual ActionResult Contact(string model)
         {
             if (ModelState.IsValid)
             {
@@ -70,7 +70,7 @@ namespace WebAuth.Controllers
         /// Errors the log.
         /// </summary>
         /// <returns></returns>
-        public ActionResult ErrorLog()
+        public virtual ActionResult ErrorLog()
         {
             return View();
         }

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using WebAuth.Areas.Admin.Controllers
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -39,7 +40,8 @@
                         @if (Request.IsAuthenticated && User.IsInRole("Administrators"))
                         {
                             <li class="nav-header">@Resources.App_LocalResources.AdminResource.AdminLayout_ActionLink_UserAdmin</li>
-                            <li>@Html.ActionLink(Resources.App_LocalResources.AdminResource.AdminLayout_ActionLink_UserAdmin, "Index", "UsersAdmin")</li>
+                            <li>@Html.ActionLink(Resources.App_LocalResources.AdminResource.AdminLayout_ActionLink_UserAdmin,
+                             UsersAdminController.ActionNameConstants.Index, UsersAdminController.NameConst)</li>
                             <li>@Html.ActionLink(Resources.App_LocalResources.AdminResource.AdminLayout_ActionLink_DeptAdmin, "Index", "Department")</li>
                             <li>@Html.ActionLink("用户-部门管理", "Index", "UserDepartment")</li>
                             <li class="nav-header">权限管理</li>

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using WebAuth.Controllers
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -21,7 +22,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Home", HomeController.ActionNameConstants.Index, HomeController.NameConst)</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("AdminHome", "Index", "AdminHome", new { area = "Admin" }, null)</li>

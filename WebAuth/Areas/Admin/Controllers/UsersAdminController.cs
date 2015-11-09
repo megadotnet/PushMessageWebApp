@@ -28,7 +28,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// <summary>
     /// The users admin controller.
     /// </summary>
-    public class UsersAdminController : BaseAdminController
+    public partial class UsersAdminController : BaseAdminController
     {
         #region Constructors and Destructors
 
@@ -90,7 +90,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("User Create Page")]
-        public async Task<ActionResult> Create()
+        public virtual async Task<ActionResult> Create()
         {
             // Get the list of Roles
             this.ViewBag.RoleId = new SelectList(await this.RoleManager.Roles.ToListAsync(), "Id", "Name");
@@ -112,7 +112,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// </returns>
         [HttpPost]
         [Description("User Create Action")]
-        public async Task<ActionResult> Create(RegisterViewModel userViewModel, string RoleId)
+        public virtual async Task<ActionResult> Create(RegisterViewModel userViewModel, string RoleId)
         {
             if (this.ModelState.IsValid)
             {
@@ -179,7 +179,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("User Delete Page")]
-        public async Task<ActionResult> Delete(string id)
+        public virtual async Task<ActionResult> Delete(string id)
         {
             if (id == null)
             {
@@ -210,7 +210,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Description("User DeleteConfirmed")]
-        public async Task<ActionResult> DeleteConfirmed(string id)
+        public virtual async Task<ActionResult> DeleteConfirmed(string id)
         {
             if (this.ModelState.IsValid)
             {
@@ -251,7 +251,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("User Detail")]
-        public async Task<ActionResult> Details(string id)
+        public virtual async Task<ActionResult> Details(string id)
         {
             if (id == null)
             {
@@ -273,7 +273,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [Description("User Edit Page")]
-        public async Task<ActionResult> Edit(string id)
+        public virtual async Task<ActionResult> Edit(string id)
         {
             if (id == null)
             {
@@ -319,7 +319,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Description("User Edit Action")]
-        public async Task<ActionResult> Edit(
+        public virtual async Task<ActionResult> Edit(
             [Bind(Include = "UserName,Id,HomeTown")] ApplicationUser formuser, 
             string id, 
             string RoleId)
@@ -382,7 +382,7 @@ namespace WebAuth.Areas.Admin.Controllers
         /// </returns>
         [Description("Users List Page")]
         [OutputCache(VaryByParam = "none", Duration = 3600)]
-        public async Task<ActionResult> Index()
+        public virtual async Task<ActionResult> Index()
         {
             return this.View(await this.UserManager.Users.ToListAsync());
         }

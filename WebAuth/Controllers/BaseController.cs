@@ -18,7 +18,7 @@ namespace WebAuth.Controllers
     /// <summary>
     /// BaseController
     /// </summary>
-    public abstract class BaseController : Controller
+    public abstract partial class BaseController : Controller
     {
         /// <summary>
         /// Begins to invoke the action in the current controller context.
