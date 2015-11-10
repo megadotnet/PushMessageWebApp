@@ -58,8 +58,26 @@ namespace WebAuth.Models
             return new ApplicationDbContext();
         }
 
+        /// <summary>
+        /// Gets or sets the roles.
+        /// </summary>
+        /// <value>
+        /// The roles.
+        /// </value>
         public new IDbSet<ApplicationRole> Roles { get; set; }
+        /// <summary>
+        /// Gets or sets the permissions.
+        /// </summary>
+        /// <value>
+        /// The permissions.
+        /// </value>
         public virtual IDbSet<ApplicationPermission> Permissions { get; set; }
+        /// <summary>
+        /// Gets or sets the departments.
+        /// </summary>
+        /// <value>
+        /// The departments.
+        /// </value>
         public virtual DbSet<Department> Departments { get; set; }
 
         public virtual DbSet<T_BD_PushMessage> T_BD_PushMessage { get; set; }
