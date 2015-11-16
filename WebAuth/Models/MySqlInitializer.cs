@@ -65,8 +65,15 @@ namespace WebAuth.Models
     }
 
 
+    /// <summary>
+    /// ApplicationDbInitializer for database initial data 
+    /// </summary>
     public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
     {
+        /// <summary>
+        /// Seeds the specified context.
+        /// </summary>
+        /// <param name="context">The context.</param>
         protected override void Seed(ApplicationDbContext context)
         {
             InitializeIdentityForEF(context);

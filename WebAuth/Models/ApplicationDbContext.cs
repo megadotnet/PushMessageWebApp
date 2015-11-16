@@ -11,6 +11,10 @@ namespace WebAuth.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApplicationDbContext"/> class.
+        /// </summary>
+        /// <see cref="https://msdn.microsoft.com/en-us/data/jj819164.aspx"/>
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -51,6 +55,8 @@ namespace WebAuth.Models
 
             EntityTypeConfiguration<ApplicationUser> configuration4 = modelBuilder.Entity<ApplicationUser>();
             configuration4.HasMany(d => d.Departments).WithOptional().HasForeignKey(k => k.ApplicationUserId);
+            //ChineseName of ApplicationUser
+            configuration4.Property(x => x.ChineseName).HasMaxLength(30);
 
         }
         public static ApplicationDbContext Create()

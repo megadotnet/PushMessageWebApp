@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity.ModelConfiguration;
 using System.Collections.Generic;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebAuth.Models
 {
@@ -36,6 +37,7 @@ namespace WebAuth.Models
         /// <value>
         /// The name of the chinese.
         /// </value>
+        [StringLength(30, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
         public string ChineseName { get; set; }
 
 
