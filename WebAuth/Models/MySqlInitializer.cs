@@ -111,6 +111,7 @@ namespace WebAuth.Models
                 {
                     UserName = name1,
                     Email = email1,
+                    ChineseName="管理员",
                 };
                 var result = userManager.Create(user1, password1);
                // result = userManager.SetLockoutEnabled(user1.Id, false);
@@ -123,6 +124,7 @@ namespace WebAuth.Models
                 {
                     UserName = name2,
                     Email = email2,
+                    ChineseName="用户",
                 };
                 var result = userManager.Create(user2, password2);
                 //result = userManager.SetLockoutEnabled(user2.Id, false);

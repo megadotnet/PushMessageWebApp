@@ -320,7 +320,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         [Description("User Edit Action")]
         public virtual async Task<ActionResult> Edit(
-            [Bind(Include = "UserName,Id,HomeTown")] ApplicationUser formuser, 
+            [Bind(Include = "UserName,Id,ChineseName,Email")] ApplicationUser formuser, 
             string id, 
             string RoleId)
         {
@@ -332,6 +332,8 @@ namespace WebAuth.Areas.Admin.Controllers
             this.ViewBag.RoleId = new SelectList(this.RoleManager.Roles, "Id", "Name");
             ApplicationUser user = await this.UserManager.FindByIdAsync(id);
             user.UserName = formuser.UserName;
+            user.ChineseName = formuser.ChineseName;
+            user.Email = formuser.Email;
 
             if (this.ModelState.IsValid)
             {

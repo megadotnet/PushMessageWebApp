@@ -391,7 +391,7 @@ namespace WebAuth.Controllers
         //
         // POST: /Account/LogOff
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public virtual ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
