@@ -68,6 +68,7 @@ namespace WebAuth.Models
     /// <summary>
     /// ApplicationDbInitializer for database initial data 
     /// </summary>
+    /// <see cref="http://blog.csdn.net/luoweifu/article/details/8832492"/>
     public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
     {
         /// <summary>

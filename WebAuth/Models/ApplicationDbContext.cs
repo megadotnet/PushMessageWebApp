@@ -28,6 +28,11 @@ namespace WebAuth.Models
         //}
 
 
+        /// <summary>
+        /// Called when [model creating].
+        /// </summary>
+        /// <param name="modelBuilder">The model builder.</param>
+        /// <exception cref="System.ArgumentNullException">modelBuilder</exception>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
