@@ -321,16 +321,15 @@ namespace WebAuth.Areas.Admin.Controllers
         [Description("User Edit Action")]
         public virtual async Task<ActionResult> Edit(
             [Bind(Include = "UserName,Id,ChineseName,Email")] ApplicationUser formuser, 
-            string id, 
             string RoleId)
         {
-            if (id == null)
+            if (formuser == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
             this.ViewBag.RoleId = new SelectList(this.RoleManager.Roles, "Id", "Name");
-            ApplicationUser user = await this.UserManager.FindByIdAsync(id);
+            ApplicationUser user = await this.UserManager.FindByIdAsync(formuser.Id);
             user.UserName = formuser.UserName;
             user.ChineseName = formuser.ChineseName;
             user.Email = formuser.Email;
@@ -343,12 +342,12 @@ namespace WebAuth.Areas.Admin.Controllers
                 // If user has existing Role then remove the user from the role
                 // This also accounts for the case when the Admin selected Empty from the drop-down and
                 // this means that all roles for the user must be removed
-                IList<string> rolesForUser = await this.UserManager.GetRolesAsync(id);
+                IList<string> rolesForUser = await this.UserManager.GetRolesAsync(formuser.Id);
                 if (rolesForUser.Count() > 0)
                 {
                     foreach (string item in rolesForUser)
                     {
-                        IdentityResult result = await this.UserManager.RemoveFromRoleAsync(id, item);
+                        IdentityResult result = await this.UserManager.RemoveFromRoleAsync(formuser.Id, item);
                     }
                 }
 
@@ -358,7 +357,7 @@ namespace WebAuth.Areas.Admin.Controllers
                     IdentityRole role = await this.RoleManager.FindByIdAsync(RoleId);
 
                     // Add user to new role
-                    IdentityResult result = await this.UserManager.AddToRoleAsync(id, role.Name);
+                    IdentityResult result = await this.UserManager.AddToRoleAsync(formuser.Id, role.Name);
                     if (!result.Succeeded)
                     {
                         this.ModelState.AddModelError(string.Empty, result.Errors.First());

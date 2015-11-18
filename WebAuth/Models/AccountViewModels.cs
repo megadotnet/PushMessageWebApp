@@ -85,7 +85,15 @@ namespace WebAuth.Models
         public string UserName { get; set; }
 
 
-        public string HomeTown { get; set; }
+        /// <summary>
+        /// Gets or sets the name of the chinese.
+        /// </summary>
+        /// <value>
+        /// The name of the chinese.
+        /// </value>
+        [StringLength(30, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        [Display(Name = "Chinese Name")]
+        public string ChineseName { get; set; }
     }
 
     public class ResetPasswordViewModel

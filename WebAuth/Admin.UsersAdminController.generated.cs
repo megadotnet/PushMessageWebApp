@@ -265,16 +265,15 @@ namespace WebAuth.Areas.Admin.Controllers
         }
 
         [NonAction]
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, WebAuth.Models.ApplicationUser formuser, string id, string RoleId);
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, WebAuth.Models.ApplicationUser formuser, string RoleId);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Edit(WebAuth.Models.ApplicationUser formuser, string id, string RoleId)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Edit(WebAuth.Models.ApplicationUser formuser, string RoleId)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "formuser", formuser);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "RoleId", RoleId);
-            EditOverride(callInfo, formuser, id, RoleId);
+            EditOverride(callInfo, formuser, RoleId);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 
