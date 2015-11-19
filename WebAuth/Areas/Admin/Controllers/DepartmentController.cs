@@ -28,9 +28,7 @@ namespace WebAuth.Areas.Admin.Controllers
     /// </summary>
     public partial class DepartmentController : BaseAdminController
     {
-        // GET: /Department/
 
-        // GET: /Department/Create
         #region Public Methods and Operators
 
         /// <summary>
