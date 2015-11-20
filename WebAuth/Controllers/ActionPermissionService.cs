@@ -12,6 +12,9 @@ using WebAuth.Models;
 
 namespace WebAuth.Controllers
 {
+    /// <summary>
+    /// ActionPermissionService
+    /// </summary>
     internal static class ActionPermissionService
     {
         /// <summary>

@@ -39,6 +39,12 @@ namespace WebAuth.Controllers
         }
 
         private ApplicationUserManager userManager;
+        /// <summary>
+        /// Gets the _user manager.
+        /// </summary>
+        /// <value>
+        /// The _user manager.
+        /// </value>
         protected ApplicationUserManager _userManager
         {
             get
@@ -52,6 +58,12 @@ namespace WebAuth.Controllers
         }
 
         private ApplicationRoleManager roleManager;
+        /// <summary>
+        /// Gets the _role manager.
+        /// </summary>
+        /// <value>
+        /// The _role manager.
+        /// </value>
         protected ApplicationRoleManager _roleManager
         {
             get
@@ -65,6 +77,12 @@ namespace WebAuth.Controllers
         }
 
         private ApplicationDbContext db;
+        /// <summary>
+        /// Gets the _DB.
+        /// </summary>
+        /// <value>
+        /// The _DB.
+        /// </value>
         protected ApplicationDbContext _db
         {
             get

@@ -9,6 +9,9 @@ using System.Web;
 
 namespace WebAuth.Models
 {
+    /// <summary>
+    /// ApplicationDbContext
+    /// </summary>
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         /// <summary>
@@ -91,7 +94,20 @@ namespace WebAuth.Models
         /// </value>
         public virtual DbSet<Department> Departments { get; set; }
 
+        /// <summary>
+        /// Gets or sets the t_ b d_ push message. 推送消息表
+        /// </summary>
+        /// <value>
+        /// The t_ b d_ push message.
+        /// </value>
         public virtual DbSet<T_BD_PushMessage> T_BD_PushMessage { get; set; }
+
+        /// <summary>
+        /// Gets or sets the t_ b d_ push message configuration. 推送消息配置表
+        /// </summary>
+        /// <value>
+        /// The t_ b d_ push message configuration.
+        /// </value>
         public virtual DbSet<T_BD_PushMessageConfig> T_BD_PushMessageConfig { get; set; }
     }
 }
