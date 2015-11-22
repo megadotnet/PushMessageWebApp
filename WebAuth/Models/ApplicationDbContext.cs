@@ -61,10 +61,13 @@ namespace WebAuth.Models
             EntityTypeConfiguration<Department> configuration3 = modelBuilder.Entity<Department>();
             configuration3.HasMany(d => d.Users).WithRequired().HasForeignKey(k => k.DepartmentId);
 
+            //For ApplicationUser
             EntityTypeConfiguration<ApplicationUser> configuration4 = modelBuilder.Entity<ApplicationUser>();
             configuration4.HasMany(d => d.Departments).WithOptional().HasForeignKey(k => k.ApplicationUserId);
+
             //ChineseName of ApplicationUser
             configuration4.Property(x => x.ChineseName).HasMaxLength(30);
+            configuration4.Property(x => x.HeaderPhoto).HasMaxLength(200);
 
         }
         public static ApplicationDbContext Create()

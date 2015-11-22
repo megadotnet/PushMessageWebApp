@@ -120,6 +120,7 @@ namespace WebAuth.Models
                     UserName = name1,
                     Email = email1,
                     ChineseName="管理员",
+                    HeaderPhoto = "/Content/Images/SampleAvatar.gif"
                 };
                 var result = userManager.Create(user1, password1);
                // result = userManager.SetLockoutEnabled(user1.Id, false);
@@ -133,8 +134,9 @@ namespace WebAuth.Models
                     UserName = name2,
                     Email = email2,
                     ChineseName="用户",
+                    HeaderPhoto = "/Content/Images/SampleAvatar.gif"
                 };
-                var result = userManager.Create(user2, password2);
+                userManager.Create(user2, password2);
                 //result = userManager.SetLockoutEnabled(user2.Id, false);
             }
 
@@ -142,7 +144,7 @@ namespace WebAuth.Models
             var rolesForUser1 = userManager.GetRoles(user1.Id);
             if (!rolesForUser1.Contains(role1.Name))
             {
-                var result = userManager.AddToRole(user1.Id, role1.Name);
+                userManager.AddToRole(user1.Id, role1.Name);
             }
 
             //var rolesForUser2 = userManager.GetRoles(user2.Id);

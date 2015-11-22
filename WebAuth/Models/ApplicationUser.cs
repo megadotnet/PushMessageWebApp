@@ -40,6 +40,8 @@ namespace WebAuth.Models
         [StringLength(30, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
         public string ChineseName { get; set; }
 
+        public string HeaderPhoto { get; set; }
+
 
         /// <summary>
         /// Generates the user identity asynchronous.

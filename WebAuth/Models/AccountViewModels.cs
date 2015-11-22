@@ -84,6 +84,10 @@ namespace WebAuth.Models
         [Display(Name = "User name")]
         public string UserName { get; set; }
 
+        [Display(Name = "Photo")]
+        [StringLength(200, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        public string HeaderPhoto { get; set; }
+
 
         /// <summary>
         /// Gets or sets the name of the chinese.

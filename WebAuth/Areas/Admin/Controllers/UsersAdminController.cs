@@ -24,6 +24,8 @@ namespace WebAuth.Areas.Admin.Controllers
     using WebAuth.Controllers;
     using WebAuth.Models;
     using Microsoft.Security.Application;
+    using System.IO;
+    using System.Web;
 
     /// <summary>
     /// The users admin controller.
@@ -319,9 +321,8 @@ namespace WebAuth.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Description("User Edit Action")]
-        public virtual async Task<ActionResult> Edit(
-            [Bind(Include = "UserName,Id,ChineseName,Email")] ApplicationUser formuser, 
-            string RoleId)
+        public virtual async Task<ActionResult> Edit(ApplicationUser formuser,
+            string RoleId, HttpPostedFileBase file)
         {
             if (formuser == null)
             {
@@ -333,6 +334,33 @@ namespace WebAuth.Areas.Admin.Controllers
             user.UserName = formuser.UserName;
             user.ChineseName = formuser.ChineseName;
             user.Email = formuser.Email;
+
+            if (file != null)
+            {
+                string folderpath = "~/Uploads";
+                string dirpath = Server.MapPath(folderpath);
+                if(!Directory.Exists(dirpath))
+                {
+                    Directory.CreateDirectory(dirpath);
+                }
+                string filename = Path.GetFileName(file.FileName);
+                string path = Path.Combine(dirpath, filename);
+                file.SaveAs(path);
+                user.HeaderPhoto = "/Uploads/" + filename;
+            }
+
+            //if (Request.Files.Count > 0)
+            //{
+            //    var file = Request.Files[0];
+
+            //    if (file != null && file.ContentLength > 0)
+            //    {
+            //        var fileName = Path.GetFileName(file.FileName);
+            //        var path = Path.Combine(Server.MapPath("~/Images/"), fileName);
+            //        file.SaveAs(path);
+            //        user.HeaderPhoto = path;
+            //    }
+            //}
 
             if (this.ModelState.IsValid)
             {

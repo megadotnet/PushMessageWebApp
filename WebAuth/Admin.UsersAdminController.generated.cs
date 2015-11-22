@@ -162,6 +162,7 @@ namespace WebAuth.Areas.Admin.Controllers
             public readonly string id = "id";
             public readonly string formuser = "formuser";
             public readonly string RoleId = "RoleId";
+            public readonly string file = "file";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -265,15 +266,16 @@ namespace WebAuth.Areas.Admin.Controllers
         }
 
         [NonAction]
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, WebAuth.Models.ApplicationUser formuser, string RoleId);
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, WebAuth.Models.ApplicationUser formuser, string RoleId, System.Web.HttpPostedFileBase file);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Edit(WebAuth.Models.ApplicationUser formuser, string RoleId)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Edit(WebAuth.Models.ApplicationUser formuser, string RoleId, System.Web.HttpPostedFileBase file)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "formuser", formuser);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "RoleId", RoleId);
-            EditOverride(callInfo, formuser, RoleId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "file", file);
+            EditOverride(callInfo, formuser, RoleId, file);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 

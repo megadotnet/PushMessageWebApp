@@ -7,13 +7,11 @@
     <h1>@ViewBag.Title.</h1>
 </hgroup>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "UsersAdmin", new { area = "Admin" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
     @Html.HiddenFor(model => model.Id)
-
-
     <fieldset class="form-horizontal">
         <legend>Edit a user.</legend>
         <div class="control-group">
@@ -32,6 +30,13 @@
             @Html.LabelFor(m => m.Email, new { @class = "control-label" })
             <div class="controls">
                 @Html.TextBoxFor(m => m.Email)
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(m => m.HeaderPhoto, new { @class = "control-label" })
+            <div class="controls">
+                <img src="@Model.HeaderPhoto" alt="img" />
+                <input type="file" name="file" />
             </div>
         </div>
         <h4>Modify Role for User</h4>
