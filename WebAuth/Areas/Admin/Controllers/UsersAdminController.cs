@@ -403,6 +403,27 @@ namespace WebAuth.Areas.Admin.Controllers
             return this.View();
         }
 
+        [HttpPost]
+        public ActionResult Upload(HttpPostedFileBase Filedata)
+        {
+            if (Filedata == null ||
+     string.IsNullOrEmpty(Filedata.FileName) ||
+     Filedata.ContentLength == 0)
+            {
+                return this.HttpNotFound();
+            }
+
+
+            string filename = System.IO.Path.GetFileName(Filedata.FileName);
+            string virtualPath =
+                string.Format("~/Uploads/{0}", filename);
+
+            string path = this.Server.MapPath(virtualPath);
+
+            Filedata.SaveAs(path);
+            return this.Json("OK");
+        }
+
         /// <summary>
         /// The index.
         /// </summary>

@@ -3,6 +3,8 @@
     ViewBag.Title = "Edit";
 }
 
+<link href="~/Content/Uploadifive/uploadifive.css" rel="stylesheet" />
+
 <hgroup class="title">
     <h1>@ViewBag.Title.</h1>
 </hgroup>
@@ -39,6 +41,8 @@
                 <input type="file" name="file" />
             </div>
         </div>
+       
+
         <h4>Modify Role for User</h4>
         <hr />
         @Html.DropDownList("RoleId", "No Roles")
@@ -47,7 +51,31 @@
         </div>
     </fieldset>
 }
+<hr />
+<form id="formupload">
+    <div id="queue"></div>
+    <input id="file_upload" name="file_upload" type="file" multiple="true">
+    <a style="position: relative; top: 8px;" href="javascript:$('#file_upload').uploadifive('upload')">Upload Files</a>
+</form>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+   <script src="~/Scripts/jquery.uploadifive.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        $('#file_upload').uploadifive({
+            'auto': false,
+            'formData': {
+                'timestamp': '1113SDFDF',
+                'token': 'S343AS'
+            },
+            'queueID': 'queue',
+            'uploadScript': '/Admin/UsersAdmin/Upload',
+            'onUploadComplete': function (file, data) { console.log(data); }
+        });
+
+    });
+</script>
+
 }

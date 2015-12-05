@@ -408,6 +408,7 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\Uploadifive\uploadifive-cancel.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1290,6 +1291,8 @@
     <Content Include="Scripts\jquery.jcryption.3.1.0.mod.js" />
     <Content Include="Scripts\jquery.signalR-2.2.0.js" />
     <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\jquery.uploadifive.js" />
+    <Content Include="Scripts\jquery.uploadifive.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -1313,6 +1316,7 @@
     <Content Include="Scripts\Project\OnlineChat.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Content\Uploadifive\uploadifive.css" />
     <Content Include="Scripts\_references.js" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
