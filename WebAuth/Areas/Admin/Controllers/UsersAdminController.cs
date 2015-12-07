@@ -349,19 +349,6 @@ namespace WebAuth.Areas.Admin.Controllers
                 user.HeaderPhoto = "/Uploads/" + filename;
             }
 
-            //if (Request.Files.Count > 0)
-            //{
-            //    var file = Request.Files[0];
-
-            //    if (file != null && file.ContentLength > 0)
-            //    {
-            //        var fileName = Path.GetFileName(file.FileName);
-            //        var path = Path.Combine(Server.MapPath("~/Images/"), fileName);
-            //        file.SaveAs(path);
-            //        user.HeaderPhoto = path;
-            //    }
-            //}
-
             if (this.ModelState.IsValid)
             {
                 // Update the user details
@@ -403,6 +390,11 @@ namespace WebAuth.Areas.Admin.Controllers
             return this.View();
         }
 
+        /// <summary>
+        /// Uploads the specified filedata.
+        /// </summary>
+        /// <param name="Filedata">The filedata.</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Upload(HttpPostedFileBase Filedata)
         {

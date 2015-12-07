@@ -9,10 +9,20 @@ using System.Web.Mvc;
 
 namespace WebAuth.Controllers
 {
+    /// <summary>
+    /// HomeController
+    /// </summary>
     public partial class HomeController : BaseController
     {
-        private ILogger log = new Logger("HomeController");
+        /// <summary>
+        /// The log
+        /// </summary>
+        private static readonly ILogger log = new Logger("HomeController");
 
+        /// <summary>
+        /// Indexes this instance.
+        /// </summary>
+        /// <returns></returns>
         public virtual ActionResult Index()
         {
             log.DebugFormat("Index {0}", DateTime.Now);

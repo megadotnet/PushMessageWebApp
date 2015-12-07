@@ -9,8 +9,14 @@ using System.Web.Routing;
 
 namespace Message.WebAPI
 {
+    /// <summary>
+    /// WebApiApplication
+    /// </summary>
     public class WebApiApplication : System.Web.HttpApplication
     {
+        /// <summary>
+        /// Application_s the start.
+        /// </summary>
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
