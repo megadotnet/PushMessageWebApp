@@ -40,12 +40,13 @@
                 <div class="controls">
                     <img src="@Model.HeaderPhoto" alt="img" />
                 </div>
+                <div class="form-actions no-color">
+                    <div id="queue"></div>
+                    <input id="file_upload" name="file_upload" type="file" multiple="true">
+                    <input type="button" value="上传头像" class="btn" id="btnUpload" />
+                </div>
             </div>
-            <div id="queue"></div>
-            <input id="file_upload" name="file_upload" type="file" multiple="true">
-            <div class="form-actions no-color">
-                <input type="button" value="上传头像" class="btn" id="btnUpload"/>
-            </div>
+           
 
         </form>
         <h4>Modify Role for User</h4>
@@ -74,6 +75,7 @@
         
         uploader.uploadifive({
             'auto': false,
+            'buttonText':'选择文件',
             'formData': {
                 'userId': $('#Id').val(),
                 'token': 'S343AS'
