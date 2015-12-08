@@ -322,7 +322,7 @@ namespace WebAuth.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         [Description("User Edit Action")]
         public virtual async Task<ActionResult> Edit(ApplicationUser formuser,
-            string RoleId, HttpPostedFileBase file)
+            string RoleId)
         {
             if (formuser == null)
             {
@@ -334,20 +334,6 @@ namespace WebAuth.Areas.Admin.Controllers
             user.UserName = formuser.UserName;
             user.ChineseName = formuser.ChineseName;
             user.Email = formuser.Email;
-
-            if (file != null)
-            {
-                string folderpath = "~/Uploads";
-                string dirpath = Server.MapPath(folderpath);
-                if(!Directory.Exists(dirpath))
-                {
-                    Directory.CreateDirectory(dirpath);
-                }
-                string filename = Path.GetFileName(file.FileName);
-                string path = Path.Combine(dirpath, filename);
-                file.SaveAs(path);
-                user.HeaderPhoto = "/Uploads/" + filename;
-            }
 
             if (this.ModelState.IsValid)
             {
@@ -396,8 +382,15 @@ namespace WebAuth.Areas.Admin.Controllers
         /// <param name="Filedata">The filedata.</param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult Upload(HttpPostedFileBase Filedata)
+        public virtual async Task<ActionResult> Upload(string userId, HttpPostedFileBase Filedata)
         {
+            if (string.IsNullOrEmpty(userId))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            ApplicationUser user = await this.UserManager.FindByIdAsync(userId);
+
             if (Filedata == null ||
      string.IsNullOrEmpty(Filedata.FileName) ||
      Filedata.ContentLength == 0)
@@ -413,6 +406,10 @@ namespace WebAuth.Areas.Admin.Controllers
             string path = this.Server.MapPath(virtualPath);
 
             Filedata.SaveAs(path);
+            user.HeaderPhoto = virtualPath.Remove(0,1);
+            // Update the user details
+            await this.UserManager.UpdateAsync(user);
+
             return this.Json("OK");
         }
 

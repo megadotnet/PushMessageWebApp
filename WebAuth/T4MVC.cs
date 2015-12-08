@@ -124,6 +124,8 @@ namespace Links
         public static readonly string jquery_jcryption_3_1_0_mod_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.jcryption.3.1.0.mod.min.js") ? Url("jquery.jcryption.3.1.0.mod.min.js") : Url("jquery.jcryption.3.1.0.mod.js");
         public static readonly string jquery_signalR_2_2_0_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.signalR-2.2.0.min.js") ? Url("jquery.signalR-2.2.0.min.js") : Url("jquery.signalR-2.2.0.js");
         public static readonly string jquery_signalR_2_2_0_min_js = Url("jquery.signalR-2.2.0.min.js");
+        public static readonly string jquery_uploadifive_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.uploadifive.min.js") ? Url("jquery.uploadifive.min.js") : Url("jquery.uploadifive.js");
+        public static readonly string jquery_uploadifive_min_js = Url("jquery.uploadifive.min.js");
         public static readonly string jquery_validate_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate-vsdoc.min.js") ? Url("jquery.validate-vsdoc.min.js") : Url("jquery.validate-vsdoc.js");
         public static readonly string jquery_validate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.min.js") ? Url("jquery.validate.min.js") : Url("jquery.validate.js");
         public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
@@ -163,6 +165,14 @@ namespace Links
         public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
         public static readonly string ChatStyle_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ChatStyle.min.css") ? Url("ChatStyle.min.css") : Url("ChatStyle.css");
              
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Images {
+            private const string URLPATH = "~/Content/Images";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string SampleAvatar_gif = Url("SampleAvatar.gif");
+        }
+    
         public static readonly string pnotify_core_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pnotify.core.min.css") ? Url("pnotify.core.min.css") : Url("pnotify.core.css");
              
         public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
@@ -241,6 +251,16 @@ namespace Links
         
         }
     
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Uploadifive {
+            private const string URLPATH = "~/Content/Uploadifive";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string uploadifive_cancel_png = Url("uploadifive-cancel.png");
+            public static readonly string uploadifive_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uploadifive.min.css") ? Url("uploadifive.min.css") : Url("uploadifive.css");
+                 
+        }
+    
     }
 
     
@@ -273,6 +293,8 @@ namespace Links
                 public const string jquery_jcryption_3_1_0_mod_js = "~/Scripts/jquery.jcryption.3.1.0.mod.js"; 
                 public const string jquery_signalR_2_2_0_js = "~/Scripts/jquery.signalR-2.2.0.js"; 
                 public const string jquery_signalR_2_2_0_min_js = "~/Scripts/jquery.signalR-2.2.0.min.js"; 
+                public const string jquery_uploadifive_js = "~/Scripts/jquery.uploadifive.js"; 
+                public const string jquery_uploadifive_min_js = "~/Scripts/jquery.uploadifive.min.js"; 
                 public const string jquery_validate_js = "~/Scripts/jquery.validate.js"; 
                 public const string jquery_validate_min_js = "~/Scripts/jquery.validate.min.js"; 
                 public const string jquery_validate_unobtrusive_js = "~/Scripts/jquery.validate.unobtrusive.js"; 
@@ -286,6 +308,12 @@ namespace Links
         }
         public static partial class Content 
         {
+            public static partial class Images 
+            {
+                public static class Assets
+                {
+                }
+            }
             public static partial class themes 
             {
                 public static partial class @base 
@@ -322,6 +350,13 @@ namespace Links
                 }
                 public static class Assets
                 {
+                }
+            }
+            public static partial class Uploadifive 
+            {
+                public static class Assets
+                {
+                    public const string uploadifive_css = "~/Content/Uploadifive/uploadifive.css";
                 }
             }
             public static class Assets

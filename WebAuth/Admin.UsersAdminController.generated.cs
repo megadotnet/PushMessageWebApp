@@ -84,6 +84,13 @@ namespace WebAuth.Areas.Admin.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Upload()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Upload);
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public UsersAdminController Actions { get { return MVC.Admin.UsersAdmin; } }
@@ -105,6 +112,7 @@ namespace WebAuth.Areas.Admin.Controllers
             public readonly string DeleteConfirmed = "Delete";
             public readonly string Details = "Details";
             public readonly string Edit = "Edit";
+            public readonly string Upload = "Upload";
             public readonly string Index = "Index";
         }
 
@@ -116,6 +124,7 @@ namespace WebAuth.Areas.Admin.Controllers
             public const string DeleteConfirmed = "Delete";
             public const string Details = "Details";
             public const string Edit = "Edit";
+            public const string Upload = "Upload";
             public const string Index = "Index";
         }
 
@@ -162,7 +171,15 @@ namespace WebAuth.Areas.Admin.Controllers
             public readonly string id = "id";
             public readonly string formuser = "formuser";
             public readonly string RoleId = "RoleId";
-            public readonly string file = "file";
+        }
+        static readonly ActionParamsClass_Upload s_params_Upload = new ActionParamsClass_Upload();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Upload UploadParams { get { return s_params_Upload; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Upload
+        {
+            public readonly string userId = "userId";
+            public readonly string Filedata = "Filedata";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -266,16 +283,28 @@ namespace WebAuth.Areas.Admin.Controllers
         }
 
         [NonAction]
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, WebAuth.Models.ApplicationUser formuser, string RoleId, System.Web.HttpPostedFileBase file);
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, WebAuth.Models.ApplicationUser formuser, string RoleId);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Edit(WebAuth.Models.ApplicationUser formuser, string RoleId, System.Web.HttpPostedFileBase file)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Edit(WebAuth.Models.ApplicationUser formuser, string RoleId)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "formuser", formuser);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "RoleId", RoleId);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "file", file);
-            EditOverride(callInfo, formuser, RoleId, file);
+            EditOverride(callInfo, formuser, RoleId);
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
+        }
+
+        [NonAction]
+        partial void UploadOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string userId, System.Web.HttpPostedFileBase Filedata);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Upload(string userId, System.Web.HttpPostedFileBase Filedata)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Upload);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "Filedata", Filedata);
+            UploadOverride(callInfo, userId, Filedata);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 

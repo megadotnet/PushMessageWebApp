@@ -34,29 +34,30 @@
                 @Html.TextBoxFor(m => m.Email)
             </div>
         </div>
-        <div class="control-group">
-            @Html.LabelFor(m => m.HeaderPhoto, new { @class = "control-label" })
-            <div class="controls">
-                <img src="@Model.HeaderPhoto" alt="img" />
-                <input type="file" name="file" />
+        <form id="formupload">
+            <div class="control-group">
+                @Html.LabelFor(m => m.HeaderPhoto, new { @class = "control-label" })
+                <div class="controls">
+                    <img src="@Model.HeaderPhoto" alt="img" />
+                </div>
             </div>
-        </div>
-       
+            <div id="queue"></div>
+            <input id="file_upload" name="file_upload" type="file" multiple="true">
+            <div class="form-actions no-color">
+                <input type="button" value="上传头像" class="btn" id="btnUpload"/>
+            </div>
 
+        </form>
         <h4>Modify Role for User</h4>
-        <hr />
         @Html.DropDownList("RoleId", "No Roles")
+        <hr />
         <div class="form-actions no-color">
             <input type="submit" value="Edit" class="btn" />
         </div>
     </fieldset>
 }
 <hr />
-<form id="formupload">
-    <div id="queue"></div>
-    <input id="file_upload" name="file_upload" type="file" multiple="true">
-    <a style="position: relative; top: 8px;" href="javascript:$('#file_upload').uploadifive('upload')">Upload Files</a>
-</form>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
@@ -64,10 +65,17 @@
 <script type="text/javascript">
     $(function () {
 
-        $('#file_upload').uploadifive({
+        var uploader = $('#file_upload');
+
+        $('#btnUpload').click(function () {
+            uploader.uploadifive('upload');
+            window.location.reload();
+        });
+        
+        uploader.uploadifive({
             'auto': false,
             'formData': {
-                'timestamp': '1113SDFDF',
+                'userId': $('#Id').val(),
                 'token': 'S343AS'
             },
             'queueID': 'queue',
