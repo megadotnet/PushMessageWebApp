@@ -5,6 +5,9 @@ using Microsoft.Owin.Security;
 
 namespace WebAuth.Models
 {
+    /// <summary>
+    /// IndexViewModel
+    /// </summary>
     public class IndexViewModel
     {
         public bool HasPassword { get; set; }
@@ -14,6 +17,9 @@ namespace WebAuth.Models
         public bool BrowserRemembered { get; set; }
     }
 
+    /// <summary>
+    /// ManageLoginsViewModel
+    /// </summary>
     public class ManageLoginsViewModel
     {
         public IList<UserLoginInfo> CurrentLogins { get; set; }
