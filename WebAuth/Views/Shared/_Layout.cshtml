@@ -23,10 +23,11 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", HomeController.ActionNameConstants.Index, HomeController.NameConst)</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("AdminHome", "Index", "AdminHome", new { area = "Admin" }, null)</li>
-                    <li>@Html.ActionLink("Chat", "Index", "Chat", new { area = "Chat" }, null)</li>
+                    <li>@Html.ActionLink("About", HomeController.ActionNameConstants.About, HomeController.NameConst)</li>
+                    <li>@Html.ActionLink("Contact", HomeController.ActionNameConstants.Contact, HomeController.NameConst)</li>
+                    <li>@Html.ActionLink("AdminHome", WebAuth.Areas.Admin.Controllers.AdminHomeController.ActionNameConstants.Index
+                    , WebAuth.Areas.Admin.Controllers.AdminHomeController.NameConst, new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Chat", WebAuth.Areas.Chat.Controllers.ChatController.ActionNameConstants.Index, WebAuth.Areas.Chat.Controllers.ChatController.NameConst, new { area = "Chat" }, null)</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
