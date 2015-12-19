@@ -12,6 +12,10 @@ namespace Message.WebAPI
     /// </summary>
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApplicationUserManager"/> class.
+        /// </summary>
+        /// <param name="store">The store.</param>
         public ApplicationUserManager(IUserStore<ApplicationUser> store)
             : base(store)
         {
