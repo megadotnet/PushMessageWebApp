@@ -15,6 +15,12 @@ namespace Message.WebAPI
 {
     public partial class Startup
     {
+        /// <summary>
+        /// Gets the o authentication options.
+        /// </summary>
+        /// <value>
+        /// The o authentication options.
+        /// </value>
         public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
 
         public static string PublicClientId { get; private set; }
