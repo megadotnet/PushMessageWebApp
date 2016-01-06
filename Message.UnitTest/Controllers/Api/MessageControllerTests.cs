@@ -7,6 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using Moq;
+using Message.WebAPI.Services.IRepository;
+using BusniessEntities.Models;
+using System.Web.Http;
+using System.Web.Http.Results;
 
 namespace Message.WebAPI.Controllers.Api.Tests
 {
@@ -15,6 +20,28 @@ namespace Message.WebAPI.Controllers.Api.Tests
     /// </summary>
     public class MessageControllerTests
     {
+        /// <summary>
+        /// Sends the message test.
+        /// </summary>
+        /// <see cref="http://www.asp.net/web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api"/>
+        [Fact()]
+        public void  SendMessageTest()
+        {
+            // Arrange
+            var mockRepository = new Mock<IMessageRepository>();
+            mockRepository.Setup(x => x.SendMessage(It.IsAny<PushMsg>()))
+                .Returns(true);
+
+            var controller = new MessageController(mockRepository.Object);
+
+            // Act
+            IHttpActionResult actionResult = controller.SendMessage(new PushMsg() { });
+            var contentResult = actionResult as OkResult;
+
+            // Assert
+            Assert.NotNull(contentResult);
+        }
+
         /// <summary>
         /// Sends the message with authorization token test.
         /// </summary>
