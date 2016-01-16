@@ -43,6 +43,10 @@ namespace WebAuth.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Contacts this instance.
+        /// </summary>
+        /// <returns></returns>
         public virtual ActionResult Contact()
         {
             ViewBag.Message = "Contact us";
