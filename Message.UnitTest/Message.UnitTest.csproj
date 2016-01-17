@@ -157,6 +157,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Message.ServerHub\Message.ServerHub.csproj">
+      <Project>{b99fdc3d-3d7c-4dd9-8a49-6f75ad382c7e}</Project>
+      <Name>Message.ServerHub</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Message.WebAPI\Message.WebAPI.csproj">
       <Project>{6bcb1442-bfa6-4f6c-8b77-3e252c5eade3}</Project>
       <Name>Message.WebAPI</Name>
