@@ -10,8 +10,15 @@ using System.Threading.Tasks;
 
 namespace Message.ServerHostApp
 {
+    /// <summary>
+    /// Program
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// Mains the specified arguments.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
         static void Main(string[] args)
         {
             // This will *ONLY* bind to localhost, if you want to bind to all addresses
@@ -27,6 +34,9 @@ namespace Message.ServerHostApp
         }
       
     }
+    /// <summary>
+    /// Startup
+    /// </summary>
     class Startup
     {
         public void Configuration(IAppBuilder app)
@@ -35,6 +45,9 @@ namespace Message.ServerHostApp
             app.MapSignalR();
         }
     }
+    /// <summary>
+    /// MyHub
+    /// </summary>
     public class MyHub : Hub
     {
         public void Send(string name, string message)
