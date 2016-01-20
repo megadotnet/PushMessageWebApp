@@ -1,5 +1,6 @@
 ﻿$(function () {
-
+    jQuery.support.cors = true;
+    //$.connection.hub.url = "http://localhost:8080/signalr";
     // Declare a proxy to reference the hub.
     var chatHub = $.connection.chatHub;
     registerClientMethods(chatHub);

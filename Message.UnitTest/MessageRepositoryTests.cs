@@ -16,7 +16,7 @@ namespace Message.UnitTest
     public class MessageRepositoryTests
     {
         /// <summary>
-        /// Shoulds the send message.
+        /// Shoulds the send message.推送消息到WebAuth的项目前端页面feed
         /// </summary>
         [Fact]
         public void ShouldSendMessage()

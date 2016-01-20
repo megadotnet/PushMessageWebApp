@@ -1,8 +1,11 @@
 function Feed() {
     var chat = undefined;
-
+    jQuery.support.cors = true;
     var init = function () {
     
+        //Set the hubs URL for the connection
+        //$.connection.hub.url = "http://localhost:8080/signalr";
+
         // Reference the auto-generated proxy for the hub.
         chat = $.connection.feedHub;
         // Create a function that the hub can call back to display messages.

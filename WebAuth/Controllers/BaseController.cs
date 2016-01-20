@@ -11,6 +11,7 @@ using WebAuth.Models;
 using WebAuth.Areas.Admin.Controllers;
 using WebAuth.Helper;
 using System.Threading;
+using WebAuth.App_Start;
 
 namespace WebAuth.Controllers
 {
@@ -18,6 +19,7 @@ namespace WebAuth.Controllers
     /// <summary>
     /// BaseController
     /// </summary>
+    [AllowCrossSiteJson]
     public abstract partial class BaseController : Controller
     {
         /// <summary>
