@@ -28,6 +28,13 @@
     <Content Include="ComponmentGraph.dgml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="MessageSend.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="MessageSend.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>MessageSend.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\Package10_2046.uml">
       <SubType>Content</SubType>
     </Content>

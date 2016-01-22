@@ -30,7 +30,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Reso
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject", "ModelingProject\ModelingProject.modelproj", "{3FD71A40-A04D-4B20-9534-10D7086E5B1A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{A5303C79-6100-44DF-B217-75B3DD866B60}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SelftHost.Server", "SelftHost.Server", "{A5303C79-6100-44DF-B217-75B3DD866B60}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Message.ServerHostApp", "Message.ServerHostApp\Message.ServerHostApp.csproj", "{4A90D520-FE18-4F75-8487-AB7441C21875}"
 EndProject
