@@ -17,8 +17,14 @@ namespace Message.WebAPI.Controllers
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
+        /// <summary>
+        /// The _repo
+        /// </summary>
         private AuthRepository _repo = null;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountController"/> class.
+        /// </summary>
         public AccountController()
         {
             _repo = new AuthRepository();
@@ -63,6 +69,10 @@ namespace Message.WebAPI.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
+        /// </summary>
+        /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -73,6 +83,11 @@ namespace Message.WebAPI.Controllers
             base.Dispose(disposing);
         }
 
+        /// <summary>
+        /// Gets the error result.
+        /// </summary>
+        /// <param name="result">The result.</param>
+        /// <returns></returns>
         private IHttpActionResult GetErrorResult(IdentityResult result)
         {
             if (result == null)
