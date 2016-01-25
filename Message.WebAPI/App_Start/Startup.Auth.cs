@@ -13,6 +13,9 @@ using Message.WebAPI.Models;
 
 namespace Message.WebAPI
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class Startup
     {
         /// <summary>
@@ -23,6 +26,12 @@ namespace Message.WebAPI
         /// </value>
         public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
 
+        /// <summary>
+        /// Gets the public client identifier.
+        /// </summary>
+        /// <value>
+        /// The public client identifier.
+        /// </value>
         public static string PublicClientId { get; private set; }
 
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864

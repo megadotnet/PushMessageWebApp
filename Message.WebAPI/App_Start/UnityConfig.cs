@@ -6,8 +6,14 @@ using Unity.WebApi;
 
 namespace Message.WebAPI
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class UnityConfig
     {
+        /// <summary>
+        /// Registers the components.
+        /// </summary>
         public static void RegisterComponents()
         {
 			var container = new UnityContainer();
