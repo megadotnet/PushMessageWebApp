@@ -12,16 +12,73 @@ namespace Message.WebAPI.Models
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// T_BD_PushMessage
+    /// </summary>
     public partial class T_BD_PushMessage
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
         public int Id { get; set; }
+        /// <summary>
+        /// Gets or sets the content of the MSG.
+        /// </summary>
+        /// <value>
+        /// The content of the MSG.
+        /// </value>
         public string MsgContent { get; set; }
+        /// <summary>
+        /// Gets or sets the MSG title.
+        /// </summary>
+        /// <value>
+        /// The MSG title.
+        /// </value>
         public string MsgTitle { get; set; }
+        /// <summary>
+        /// Gets or sets the type of the MSG.
+        /// </summary>
+        /// <value>
+        /// The type of the MSG.
+        /// </value>
         public int MsgType { get; set; }
+        /// <summary>
+        /// Gets or sets the type of the MSG send.
+        /// </summary>
+        /// <value>
+        /// The type of the MSG send.
+        /// </value>
         public string MsgSendType { get; set; }
+        /// <summary>
+        /// Gets or sets the remark.
+        /// </summary>
+        /// <value>
+        /// The remark.
+        /// </value>
         public string Remark { get; set; }
+        /// <summary>
+        /// Gets or sets the expiration time.
+        /// </summary>
+        /// <value>
+        /// The expiration time.
+        /// </value>
         public Nullable<System.DateTime> ExpirationTime { get; set; }
+        /// <summary>
+        /// Gets or sets the userid.
+        /// </summary>
+        /// <value>
+        /// The userid.
+        /// </value>
         public Nullable<int> Userid { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is read.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is read; otherwise, <c>false</c>.
+        /// </value>
         public bool IsRead { get; set; }
 
     }
