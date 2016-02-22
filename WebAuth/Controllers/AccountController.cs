@@ -23,12 +23,24 @@ namespace WebAuth.Controllers
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountController"/> class.
+        /// </summary>
+        /// <param name="userManager">
+        /// The user manager.
+        /// </param>
+        /// <param name="signInManager">
+        /// The sign in manager.
+        /// </param>
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;
             SignInManager = signInManager;
         }
 
+        /// <summary>
+        /// Gets the sign in manager.
+        /// </summary>
         public ApplicationSignInManager SignInManager
         {
             get
