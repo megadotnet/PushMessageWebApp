@@ -4,6 +4,9 @@ using WebAuth.Models;
 
 namespace WebAuth
 {
+    /// <summary>
+    /// AutoMapperProfile
+    /// </summary>
     [Description("AutoMapper配置")]
     public class AutoMapperProfile : AutoMapper.Profile
     {
@@ -29,6 +32,9 @@ namespace WebAuth
         }
     }
 
+    /// <summary>
+    /// AutoMapperConfig
+    /// </summary>
     [Description("AutoMapper匹配")]
     public class AutoMapperConfig
     {

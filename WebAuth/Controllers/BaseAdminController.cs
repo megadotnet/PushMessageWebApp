@@ -76,6 +76,9 @@ namespace WebAuth.Controllers
             }
         }
 
+        /// <summary>
+        /// The database
+        /// </summary>
         private ApplicationDbContext db;
         /// <summary>
         /// Gets the _DB.
