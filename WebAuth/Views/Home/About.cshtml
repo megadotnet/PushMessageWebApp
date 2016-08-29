@@ -5,3 +5,21 @@
 <h3>@Html.Encode(ViewBag.Message)</h3>
 
 <p>Use this area to provide additional information.</p>
+@section scripts {
+<script>
+
+    var htmlobj=$.ajax({url:"/Home/TokenHeaderValue",async:false});
+
+    $.ajax("/Home/Values", {
+        type: "post",
+        contentType: "application/json",
+        data: "{ currentdata:'test' }", // JSON data goes here
+        dataType: "json",
+        headers: {
+            'RequestVerificationToken': htmlobj.responseText
+        }
+    });
+</script>
+}
+
+

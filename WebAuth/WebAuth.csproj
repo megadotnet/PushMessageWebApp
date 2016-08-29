@@ -293,6 +293,7 @@
     </Compile>
     <Compile Include="App_Start\AllowCrossSiteJsonAttribute.cs" />
     <Compile Include="App_Start\AutoMapperConfig.cs" />
+    <Compile Include="App_Start\MyValidateAntiForgeryToken.cs" />
     <Compile Include="App_Start\HtmlExtensions.cs" />
     <Compile Include="App_Start\MQHubsConfig.cs" />
     <Compile Include="App_Start\RemoveServerResponseHeader.cs" />

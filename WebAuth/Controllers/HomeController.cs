@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
+using WebAuth.App_Start;
 
 namespace WebAuth.Controllers
 {
@@ -41,6 +43,25 @@ namespace WebAuth.Controllers
             ViewBag.Message = "alert('Message Center');";
            
             return View();
+        }
+
+        /// <summary>
+        /// Abouts  
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [MyValidateAntiForgeryToken]
+        public virtual ActionResult Values(string currentdata)
+        {
+            return Json(currentdata);
+        }
+
+        [HttpGet]
+        public string TokenHeaderValue()
+        {
+            string cookieToken, formToken;
+            AntiForgery.GetTokens(null, out cookieToken, out formToken);
+            return cookieToken + ":" + formToken;
         }
 
         /// <summary>
