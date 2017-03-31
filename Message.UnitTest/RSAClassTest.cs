@@ -12,6 +12,9 @@ namespace Message.UnitTest
 {
     public class RSAClassTest
     {
+        /// <summary>
+        /// RSAParameters
+        /// </summary>
         [Fact]
         public void RSAParameters()
         {
@@ -25,14 +28,19 @@ namespace Message.UnitTest
             Debug.WriteLine("private key:");
             string privatekey = rsa.ToXmlString(true);
             Debug.WriteLine(privatekey);
+            Assert.NotNull(privatekey);
 
             //Export private parameter XML representation of publicParameters
             //object created above
             Debug.WriteLine("public key:");
             string publickey = rsa.ToXmlString(false);
             Debug.WriteLine(publickey);
+            Assert.NotNull(publickey);
         }
 
+        /// <summary>
+        /// VerifyToken
+        /// </summary>
         [Fact]
         public void VerifyToken()
         {
