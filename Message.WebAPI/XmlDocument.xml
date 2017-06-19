@@ -1,0 +1,1188 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Message.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:Message.WebAPI.App_Start.AjaxOnlyAttribute">
+            <summary>
+            AjaxOnlyAttribute
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.App_Start.AjaxOnlyAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Occurs before the action method is invoked.
+            </summary>
+            <param name="actionContext">The action context.</param>
+        </member>
+        <member name="T:Message.WebAPI.FilterConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.FilterConfig.RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection)">
+            <summary>
+            Registers the global filters.
+            </summary>
+            <param name="filters">The filters.</param>
+        </member>
+        <member name="T:Message.WebAPI.ApplicationUserManager">
+            <summary>
+            Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.ApplicationUserManager.#ctor(Microsoft.AspNet.Identity.IUserStore{Message.WebAPI.Models.ApplicationUser})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Message.WebAPI.ApplicationUserManager"/> class.
+            </summary>
+            <param name="store">The store.</param>
+        </member>
+        <member name="M:Message.WebAPI.ApplicationUserManager.Create(Microsoft.AspNet.Identity.Owin.IdentityFactoryOptions{Message.WebAPI.ApplicationUserManager},Microsoft.Owin.IOwinContext)">
+            <summary>
+            Creates the specified options.
+            </summary>
+            <param name="options">The options.</param>
+            <param name="context">The context.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Message.WebAPI.RouteConfig">
+            <summary>
+            RouteConfig
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            Registers the routes.
+            </summary>
+            <param name="routes">The routes.</param>
+        </member>
+        <member name="T:Message.WebAPI.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Startup.OAuthOptions">
+            <summary>
+            Gets the o authentication options.
+            </summary>
+            <value>
+            The o authentication options.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Startup.PublicClientId">
+            <summary>
+            Gets the public client identifier.
+            </summary>
+            <value>
+            The public client identifier.
+            </value>
+        </member>
+        <member name="T:Message.WebAPI.SwaggerConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.SwaggerConfig.Register">
+            <summary>
+            Registers this instance.
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.SwaggerConfig.GetXmlCommentsPath">
+            <summary>
+            Gets the XML comments path.
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="T:Message.WebAPI.UnityConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.UnityConfig.RegisterComponents">
+            <summary>
+            Registers the components.
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Registers the specified configuration.
+            </summary>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:Message.WebAPI.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:Message.WebAPI.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:Message.WebAPI.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:Message.WebAPI.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:Message.WebAPI.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:Message.WebAPI.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:Message.WebAPI.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:Message.WebAPI.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:Message.WebAPI.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:Message.WebAPI.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:Message.WebAPI.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,Message.WebAPI.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,Message.WebAPI.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:Message.WebAPI.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},Message.WebAPI.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey.#ctor(Message.WebAPI.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,Message.WebAPI.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:Message.WebAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:Message.WebAPI.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Message.WebAPI.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:Message.WebAPI.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:Message.WebAPI.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:Message.WebAPI.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:Message.WebAPI.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:Message.WebAPI.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Message.WebAPI.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="T:Message.WebAPI.Controllers.AccountController">
+            <summary>
+            AccountController
+            </summary>
+            <see cref="!:http://bitoftech.net/2014/06/01/token-based-authentication-asp-net-web-api-2-owin-asp-net-identity/"/>
+        </member>
+        <member name="F:Message.WebAPI.Controllers.AccountController._repo">
+            <summary>
+            The _repo
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Controllers.AccountController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Message.WebAPI.Controllers.AccountController"/> class.
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Controllers.AccountController.Register(Message.WebAPI.UserModel)">
+             <summary>
+             Registers the specified user model.
+             </summary>
+             <param name="userModel">The user model.</param>
+             <returns></returns>
+             <example><code>
+             <![CDATA[
+             POST http://localhost:2493/api/account/register HTTP/1.1
+            
+            Content-Type: application/json; charset=utf-8
+            {
+              "userName": "peter",
+              "password": "SuperPass",
+              "confirmPassword": "SuperPass"
+            }
+             ]]>
+             </code></example>
+        </member>
+        <member name="M:Message.WebAPI.Controllers.AccountController.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources that are used by the object and, optionally, releases the managed resources.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Message.WebAPI.Controllers.AccountController.GetErrorResult(Microsoft.AspNet.Identity.IdentityResult)">
+            <summary>
+            Gets the error result.
+            </summary>
+            <param name="result">The result.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Message.WebAPI.Controllers.HomeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Controllers.HomeController.Index">
+            <summary>
+            Indexes this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Message.WebAPI.Controllers.Api.MessageController">
+            <summary>
+            MessageController
+            </summary>
+        </member>
+        <member name="F:Message.WebAPI.Controllers.Api.MessageController.log">
+            <summary>
+            The log
+            </summary>
+        </member>
+        <member name="F:Message.WebAPI.Controllers.Api.MessageController.address">
+            <summary>
+            The address.
+            </summary>
+        </member>
+        <member name="F:Message.WebAPI.Controllers.Api.MessageController.QUEUE_DESTINATION">
+            <summary>
+            The queu e_ destination.
+            </summary>
+        </member>
+        <member name="F:Message.WebAPI.Controllers.Api.MessageController.messageRepository">
+            <summary>
+            The message repository
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Controllers.Api.MessageController.#ctor(Message.WebAPI.Services.IRepository.IMessageRepository)">
+            <summary>
+            MessageController
+            </summary>
+            <param name="_messageRepository"></param>
+        </member>
+        <member name="M:Message.WebAPI.Controllers.Api.MessageController.Get">
+            <summary>
+            Get string 
+            </summary>
+            <returns>IHttpActionResult</returns>
+        </member>
+        <member name="M:Message.WebAPI.Controllers.Api.MessageController.SendMessage(BusniessEntities.Models.PushMsg)">
+            <summary>
+            Send message to client
+            </summary>
+            <param name="messagemodel">The messagemodel.</param>
+            <returns>IHttpActionResult</returns>
+        </member>
+        <member name="M:Message.WebAPI.Controllers.Api.MessageController.SendToServer(BusniessEntities.Models.PushMsg)">
+            <summary>
+            Sends to server.
+            </summary>
+            <param name="messagemodel">The messagemodel.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Message.WebAPI.Controllers.OrdersController">
+            <summary>
+            OrdersController
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Controllers.OrdersController.Get">
+             <summary>
+             Gets this instance.
+             </summary>
+             <returns></returns>
+             <example>
+             <![CDATA[
+             POST http://localhost:2493/token HTTP/1.1
+            Content-Type: x-www-form-urlencoded
+            grant_type=password&username=peter&password=SuperPass
+             
+             
+             GET http://localhost:2493/api/Orders HTTP/1.1
+            Content-Type: application/json; charset=utf-8
+            Authorization: Bearer 0E-S7DWjVH6yWlkgO0ErvCfvXlhZhb9edDYpiBENXBbCkI097JP8_O22EQEco6G8HOHHzGhLggI6zQMLq470kXvLNQpq5yn4yfjYF-5DvA2wKF1h_yekX5eEgFcwpLfoYwOiVocuFJHxkdp0BvSvtJut8skaQ7SnIXgUljx_QVUgTlFXuR20L6CxGcWO7wo2g9M1e55MIGUJOBuPI-eREtkFna8YQgE5J840ROwzenM
+             
+             
+             ]]>
+             </example>
+        </member>
+        <member name="T:Message.WebAPI.WebApiApplication">
+            <summary>
+            WebApiApplication
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.WebApiApplication.Application_Start">
+            <summary>
+            Application_s the start.
+            </summary>
+        </member>
+        <member name="T:Message.WebAPI.Models.AuthRepository">
+            <summary>
+            AuthRepository
+            </summary>
+        </member>
+        <member name="F:Message.WebAPI.Models.AuthRepository._ctx">
+            <summary>
+            The _CTX
+            </summary>
+        </member>
+        <member name="F:Message.WebAPI.Models.AuthRepository._userManager">
+            <summary>
+            The _user manager
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Models.AuthRepository.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Message.WebAPI.Models.AuthRepository"/> class.
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Models.AuthRepository.RegisterUser(Message.WebAPI.UserModel)">
+            <summary>
+            Registers the user.
+            </summary>
+            <param name="userModel">The user model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Message.WebAPI.Models.AuthRepository.FindUser(System.String,System.String)">
+            <summary>
+            Finds the user.
+            </summary>
+            <param name="userName">Name of the user.</param>
+            <param name="password">The password.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Message.WebAPI.Models.AuthRepository.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Message.WebAPI.Models.AuthContext">
+            <summary>
+            AuthContext
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Models.AuthContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Message.WebAPI.Models.AuthContext"/> class.
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Models.ApplicationUser.GenerateUserIdentityAsync(Microsoft.AspNet.Identity.UserManager{Message.WebAPI.Models.ApplicationUser},System.String)">
+            <summary>
+            Generates the user identity asynchronous.
+            </summary>
+            <param name="manager">The manager.</param>
+            <param name="authenticationType">Type of the authentication.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Message.WebAPI.Models.ApplicationDbContext">
+            <summary>
+            ApplicationDbContext
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Models.ApplicationDbContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Message.WebAPI.Models.ApplicationDbContext"/> class.
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Models.ApplicationDbContext.Create">
+            <summary>
+            Creates this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Message.WebAPI.Models.T_BD_PushMessage">
+            <summary>
+            T_BD_PushMessage
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.MsgContent">
+            <summary>
+            Gets or sets the content of the MSG.
+            </summary>
+            <value>
+            The content of the MSG.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.MsgTitle">
+            <summary>
+            Gets or sets the MSG title.
+            </summary>
+            <value>
+            The MSG title.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.MsgType">
+            <summary>
+            Gets or sets the type of the MSG.
+            </summary>
+            <value>
+            The type of the MSG.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.MsgSendType">
+            <summary>
+            Gets or sets the type of the MSG send.
+            </summary>
+            <value>
+            The type of the MSG send.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.Remark">
+            <summary>
+            Gets or sets the remark.
+            </summary>
+            <value>
+            The remark.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.ExpirationTime">
+            <summary>
+            Gets or sets the expiration time.
+            </summary>
+            <value>
+            The expiration time.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.Userid">
+            <summary>
+            Gets or sets the userid.
+            </summary>
+            <value>
+            The userid.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.IsRead">
+            <summary>
+            Gets or sets a value indicating whether this instance is read.
+            </summary>
+            <value>
+              <c>true</c> if this instance is read; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Message.WebAPI.Models.T_BD_PushMessageConfig">
+            <summary>
+            T_BD_PushMessageConfig
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Models.T_BD_PushMessageConfig.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Models.T_BD_PushMessageConfig.Userid">
+            <summary>
+            Gets or sets the userid.
+            </summary>
+            <value>
+            The userid.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Models.T_BD_PushMessageConfig.MsgType">
+            <summary>
+            Gets or sets the type of the MSG.
+            </summary>
+            <value>
+            The type of the MSG.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Models.T_BD_PushMessageConfig.UpdateTime">
+            <summary>
+            Gets or sets the update time.
+            </summary>
+            <value>
+            The update time.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Models.T_BD_PushMessageConfig.Updator">
+            <summary>
+            Updator
+            </summary>
+        </member>
+        <member name="T:Message.WebAPI.Results.ChallengeResult">
+            <summary>
+            ChallengeResult
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Results.ChallengeResult.LoginProvider">
+            <summary>
+            Gets or sets the login provider.
+            </summary>
+            <value>
+            The login provider.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Results.ChallengeResult.Request">
+            <summary>
+            Gets or sets the request.
+            </summary>
+            <value>
+            The request.
+            </value>
+        </member>
+        <member name="M:Message.WebAPI.Results.ChallengeResult.#ctor(System.String,System.Web.Http.ApiController)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Message.WebAPI.Results.ChallengeResult"/> class.
+            </summary>
+            <param name="loginProvider">The login provider.</param>
+            <param name="controller">The controller.</param>
+        </member>
+        <member name="M:Message.WebAPI.Results.ChallengeResult.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>
+            Creates an <see cref="T:System.Net.Http.HttpResponseMessage" /> asynchronously.
+            </summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>
+            A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage" />.
+            </returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Message.WebAPI.Services.CacheManager" -->
+        <member name="F:Message.WebAPI.Services.CacheManager._redisClient">
+            <summary>
+            The _redis client
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Services.CacheManager.#ctor(ServiceStack.Redis.IRedisClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Message.WebAPI.Services.CacheManager"/> class.
+            </summary>
+            <param name="redisClient">The redis client.</param>
+        </member>
+        <member name="M:Message.WebAPI.Services.CacheManager.Get``1(System.String)">
+            <summary>
+            Gets the specified identifier.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Message.WebAPI.Services.IPHostValidationAttribute">
+            <summary>
+            IPHostValidationAttribute
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Services.IPHostValidationAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Occurs before the action method is invoked.
+            </summary>
+            <param name="actionContext">The action context.</param>
+        </member>
+        <member name="T:Message.WebAPI.Services.IRepository.IMessageRepository">
+            <summary>
+            IMessageRepository
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Services.IRepository.IMessageRepository.SendMessage(BusniessEntities.Models.PushMsg)">
+            <summary>
+            Sends the message.
+            </summary>
+            <param name="messagemodel">The messagemodel.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Message.WebAPI.Services.MessageCenterEntities">
+            <summary>
+            MessageCenterEntities
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Services.MessageCenterEntities.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Message.WebAPI.Services.MessageCenterEntities"/> class.
+            </summary>
+        </member>
+        <member name="P:Message.WebAPI.Services.MessageCenterEntities.T_BD_PushMessage">
+            <summary>
+            Gets or sets the t_ b d_ push message.
+            </summary>
+            <value>
+            The t_ b d_ push message.
+            </value>
+        </member>
+        <member name="P:Message.WebAPI.Services.MessageCenterEntities.T_BD_PushMessageConfig">
+            <summary>
+            Gets or sets the t_ b d_ push message configuration.
+            </summary>
+            <value>
+            The t_ b d_ push message configuration.
+            </value>
+        </member>
+        <member name="M:Message.WebAPI.Services.MessageCenterEntities.OnModelCreating(System.Data.Entity.DbModelBuilder)">
+            <summary>
+            This method is called when the model for a derived context has been initialized, but
+            before the model has been locked down and used to initialize the context.  The default
+            implementation of this method does nothing, but it can be overridden in a derived class
+            such that the model can be further configured before it is locked down.
+            </summary>
+            <param name="modelBuilder">The builder that defines the model for the context being created.</param>
+            <remarks>
+            Typically, this method is called only once when the first instance of a derived context
+            is created.  The model for that context is then cached and is for all further instances of
+            the context in the app domain.  This caching can be disabled by setting the ModelCaching
+            property on the given ModelBuidler, but note that this can seriously degrade performance.
+            More control over caching is provided through use of the DbModelBuilder and DbContextFactory
+            classes directly.
+            </remarks>
+        </member>
+        <member name="T:Message.WebAPI.Services.Repository.MessageRepository">
+            <summary>
+            MessageRepository
+            </summary>
+        </member>
+        <member name="F:Message.WebAPI.Services.Repository.MessageRepository.log">
+            <summary>
+            The log
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.Services.Repository.MessageRepository.SendMessage(BusniessEntities.Models.PushMsg)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="messagemodel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Message.WebAPI.Services.Repository.MessageRepository.PushMessages(BusniessEntities.Models.PushMsg[])">
+            <summary>
+            Pushes the messages.
+            </summary>
+            <param name="pushMsgs">The push MSGS.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">Push Message model should not be null</exception>
+            <exception cref="T:System.ArgumentException">Insert PushMessage Model to Db Fail</exception>
+        </member>
+        <member name="M:Message.WebAPI.Services.Repository.MessageRepository.InsertPushMessage(BusniessEntities.Models.PushMsg)">
+            <summary>
+            Inserts the push message.
+            </summary>
+            <param name="pushmsg">The pushmsg.</param>
+            <returns>成功插入PushMessage的PK的列表</returns>
+        </member>
+        <member name="M:Message.WebAPI.Services.Repository.MessageRepository.PushMessageToMQ(BusniessEntities.Models.PushMsg)">
+            <summary>
+            Pushes the message to mq.
+            </summary>
+            <param name="pushmsg">The pushmsg.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">
+            PushMsg object should not be null
+            or
+            User list should not be null
+            </exception>
+        </member>
+        <member name="M:Message.WebAPI.Services.Repository.MessageRepository.GetUserIdListByUserAccount(System.String)">
+            <summary>
+            Gets the user identifier list by user account.
+            </summary>
+            <param name="userAccount">The user account.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Message.WebAPI.Services.Repository.MessageRepository.SendPushMessageToMQ(BusniessEntities.Models.PushMsg)">
+            <summary>
+            Sends the push message.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Message.WebAPI.Services.Repository.MessageRepository.CreateActiveMQInstance">
+            <summary>
+            Creates the active mq instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Message.WebAPI.Services.RSAClass">
+             <summary>
+            RSAClass
+             </summary>
+             <see cref="!:http://codebetter.com/johnvpetersen/2012/04/02/making-your-asp-net-web-apis-secure/"/>
+        </member>
+        <member name="M:Message.WebAPI.Services.RSAClass.Decrypt(System.String)">
+            <summary>
+            Decrypts the specified data.
+            </summary>
+            <param name="data">The data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Message.WebAPI.Services.RSAClass.Encrypt(System.String)">
+            <summary>
+            Encrypts the specified data.
+            </summary>
+            <param name="data">The data.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Message.WebAPI.Services.TokenValidationAttribute">
+             <summary>
+             TokenValidationAttribute
+             </summary>
+             <example><code>
+             <![CDATA[
+             GET http://localhost:2493/api/message HTTP/1.1
+            Authorization-Token:22,96,55,0,23,188,37,68,229,169,68,36,95,170,97,165,133,57,25,229,92,132,245,72,100,110,90,244,126,82,142,181,232,86,121,64,43,250,57,165,79,133,231,34,208,65,132,99,82,152,73,195,0,0,230,134,76,232,72,157,38,155,174,216,98,222,127,195,182,184,199,165,73,204,105,17,206,43,109,231,73,105,21,74,99,249,211,164,130,177,127,222,159,65,28,62,40,176,198,179,247,71,21,223,185,17,231,171,167,199,35,90,81,148,205,31,250,229,215,241,214,136,84,173,127,35,48,53
+             ]]>
+             </code></example>
+        </member>
+        <member name="M:Message.WebAPI.Services.TokenValidationAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Occurs before the action method is invoked.
+            </summary>
+            <param name="actionContext">The action context.</param>
+        </member>
+        <member name="T:Message.WebAPI.SimpleAuthorizationServerProvider">
+            <summary>
+            SimpleAuthorizationServerProvider
+            </summary>
+        </member>
+        <member name="M:Message.WebAPI.SimpleAuthorizationServerProvider.ValidateClientAuthentication(Microsoft.Owin.Security.OAuth.OAuthValidateClientAuthenticationContext)">
+            <summary>
+            Called to validate that the origin of the request is a registered "client_id", and that the correct credentials for that client are
+            present on the request. If the web application accepts Basic authentication credentials,
+            context.TryGetBasicCredentials(out clientId, out clientSecret) may be called to acquire those values if present in the request header. If the web
+            application accepts "client_id" and "client_secret" as form encoded POST parameters,
+            context.TryGetFormCredentials(out clientId, out clientSecret) may be called to acquire those values if present in the request body.
+            If context.Validated is not called the request will not proceed further.
+            </summary>
+            <param name="context">The context of the event carries information in and results out.</param>
+            <returns>
+            Task to enable asynchronous execution
+            </returns>
+        </member>
+        <member name="M:Message.WebAPI.SimpleAuthorizationServerProvider.GrantResourceOwnerCredentials(Microsoft.Owin.Security.OAuth.OAuthGrantResourceOwnerCredentialsContext)">
+            <summary>
+            Called when a request to the Token endpoint arrives with a "grant_type" of "password". This occurs when the user has provided name and password
+            credentials directly into the client application's user interface, and the client application is using those to acquire an "access_token" and
+            optional "refresh_token". If the web application supports the
+            resource owner credentials grant type it must validate the context.Username and context.Password as appropriate. To issue an
+            access token the context.Validated must be called with a new ticket containing the claims about the resource owner which should be associated
+            with the access token. The application should take appropriate measures to ensure that the endpoint isn’t abused by malicious callers.
+            The default behavior is to reject this grant type.
+            See also http://tools.ietf.org/html/rfc6749#section-4.3.2
+            </summary>
+            <param name="context">The context of the event carries information in and results out.</param>
+            <returns>
+            Task to enable asynchronous execution
+            </returns>
+        </member>
+    </members>
+</doc>
