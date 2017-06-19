@@ -961,7 +961,7 @@
             A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage" />.
             </returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:Message.WebAPI.Services.CacheManager" -->
+        <!-- 对于成员“T:Message.WebAPI.Services.CacheManager”忽略有格式错误的 XML 注释 -->
         <member name="F:Message.WebAPI.Services.CacheManager._redisClient">
             <summary>
             The _redis client
