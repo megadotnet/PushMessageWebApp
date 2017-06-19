@@ -29,7 +29,7 @@ namespace Message.ServerHostApp
             using (WebApp.Start(url))
             {
                 Console.WriteLine("Server running on {0}", url);
-                //MQHubsConfig.RegisterMQListenAndHubs();
+                MQHubsConfig.RegisterMQListenAndHubs();
                 Console.ReadLine();
             }
         }
