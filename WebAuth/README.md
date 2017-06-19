@@ -1,6 +1,10 @@
-Push Message Web Application
+Base Role-based access control Asp.net Web App
 =================
-Push Message Web Application Demo 
+## Features
+  - T4MVC
+  - Elmah
+  - Common.Logging
+  - AntiXSS
 
 ## Dependency
   - ActiveMQ 5.91 or later
