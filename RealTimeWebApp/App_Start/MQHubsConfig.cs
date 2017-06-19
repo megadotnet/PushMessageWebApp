@@ -33,8 +33,11 @@ namespace RealTimeApp
             {
                 log.InfoFormat("从MQ收到消息{0}", m.MSGCONTENT);
 
-                //GlobalHost.ConnectionManager.GetHubContext<FeedHub>().Clients.All.receive(m)
-                GlobalHost.ConnectionManager.GetHubContext<FeedHub>().Clients.Users(m.Users).receive(m);
+                //Tips:RealTimeApp Will receive message By Using Clients All
+                GlobalHost.ConnectionManager.GetHubContext<FeedHub>().Clients.All.receive(m);
+
+                //Tips:WebAuth will receive message By specifc user account while login system
+                //GlobalHost.ConnectionManager.GetHubContext<FeedHub>().Clients.Users(m.Users).receive(m);
             };
 
             activemq.ReceviceListener<PushMsg>();

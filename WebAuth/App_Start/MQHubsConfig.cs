@@ -63,7 +63,8 @@ namespace WebAuth
 
             log.InfoFormat("从MQ收到消息{0}", m.MSGCONTENT);
             //GlobalHost.ConnectionManager.GetHubContext<FeedHub>().Clients.All.receive(m);
-            //push via 
+
+            //Tips:WebAuth will receive message By specifc user account while login system
             GlobalHost.ConnectionManager.GetHubContext<FeedHub>().Clients.Users(userAccounts).receive(m);
 
         }
