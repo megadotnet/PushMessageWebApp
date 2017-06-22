@@ -805,125 +805,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Message.WebAPI.Models.T_BD_PushMessage">
-            <summary>
-            T_BD_PushMessage
-            </summary>
-        </member>
-        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.Id">
-            <summary>
-            Gets or sets the identifier.
-            </summary>
-            <value>
-            The identifier.
-            </value>
-        </member>
-        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.MsgContent">
-            <summary>
-            Gets or sets the content of the MSG.
-            </summary>
-            <value>
-            The content of the MSG.
-            </value>
-        </member>
-        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.MsgTitle">
-            <summary>
-            Gets or sets the MSG title.
-            </summary>
-            <value>
-            The MSG title.
-            </value>
-        </member>
-        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.MsgType">
-            <summary>
-            Gets or sets the type of the MSG.
-            </summary>
-            <value>
-            The type of the MSG.
-            </value>
-        </member>
-        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.MsgSendType">
-            <summary>
-            Gets or sets the type of the MSG send.
-            </summary>
-            <value>
-            The type of the MSG send.
-            </value>
-        </member>
-        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.Remark">
-            <summary>
-            Gets or sets the remark.
-            </summary>
-            <value>
-            The remark.
-            </value>
-        </member>
-        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.ExpirationTime">
-            <summary>
-            Gets or sets the expiration time.
-            </summary>
-            <value>
-            The expiration time.
-            </value>
-        </member>
-        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.Userid">
-            <summary>
-            Gets or sets the userid.
-            </summary>
-            <value>
-            The userid.
-            </value>
-        </member>
-        <member name="P:Message.WebAPI.Models.T_BD_PushMessage.IsRead">
-            <summary>
-            Gets or sets a value indicating whether this instance is read.
-            </summary>
-            <value>
-              <c>true</c> if this instance is read; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="T:Message.WebAPI.Models.T_BD_PushMessageConfig">
-            <summary>
-            T_BD_PushMessageConfig
-            </summary>
-        </member>
-        <member name="P:Message.WebAPI.Models.T_BD_PushMessageConfig.Id">
-            <summary>
-            Gets or sets the identifier.
-            </summary>
-            <value>
-            The identifier.
-            </value>
-        </member>
-        <member name="P:Message.WebAPI.Models.T_BD_PushMessageConfig.Userid">
-            <summary>
-            Gets or sets the userid.
-            </summary>
-            <value>
-            The userid.
-            </value>
-        </member>
-        <member name="P:Message.WebAPI.Models.T_BD_PushMessageConfig.MsgType">
-            <summary>
-            Gets or sets the type of the MSG.
-            </summary>
-            <value>
-            The type of the MSG.
-            </value>
-        </member>
-        <member name="P:Message.WebAPI.Models.T_BD_PushMessageConfig.UpdateTime">
-            <summary>
-            Gets or sets the update time.
-            </summary>
-            <value>
-            The update time.
-            </value>
-        </member>
-        <member name="P:Message.WebAPI.Models.T_BD_PushMessageConfig.Updator">
-            <summary>
-            Updator
-            </summary>
-        </member>
         <member name="T:Message.WebAPI.Results.ChallengeResult">
             <summary>
             ChallengeResult
@@ -961,7 +842,7 @@
             A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage" />.
             </returns>
         </member>
-        <!-- 对于成员“T:Message.WebAPI.Services.CacheManager”忽略有格式错误的 XML 注释 -->
+        <!-- Badly formed XML comment ignored for member "T:Message.WebAPI.Services.CacheManager" -->
         <member name="F:Message.WebAPI.Services.CacheManager._redisClient">
             <summary>
             The _redis client
@@ -1029,6 +910,11 @@
             <value>
             The t_ b d_ push message configuration.
             </value>
+        </member>
+        <member name="P:Message.WebAPI.Services.MessageCenterEntities.T_BD_PushMessageToUsers">
+            <summary>
+            推送消息表Users
+            </summary>
         </member>
         <member name="M:Message.WebAPI.Services.MessageCenterEntities.OnModelCreating(System.Data.Entity.DbModelBuilder)">
             <summary>

@@ -1,4 +1,5 @@
-﻿using Message.WebAPI.Models;
+﻿using BusinessEntities;
+using Message.WebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -38,6 +39,11 @@ namespace Message.WebAPI.Services
         public DbSet<T_BD_PushMessageConfig> T_BD_PushMessageConfig { get; set; }
 
         /// <summary>
+        /// 推送消息表Users
+        /// </summary>
+        public virtual DbSet<T_BD_PushMessageToUsers> T_BD_PushMessageToUsers { get; set; }
+
+        /// <summary>
         /// This method is called when the model for a derived context has been initialized, but
         /// before the model has been locked down and used to initialize the context.  The default
         /// implementation of this method does nothing, but it can be overridden in a derived class
@@ -55,6 +61,13 @@ namespace Message.WebAPI.Services
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            if (modelBuilder == null)
+            {
+                throw new ArgumentNullException("modelBuilder");
+            }
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

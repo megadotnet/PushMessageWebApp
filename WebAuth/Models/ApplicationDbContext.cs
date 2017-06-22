@@ -112,5 +112,10 @@ namespace WebAuth.Models
         /// The t_ b d_ push message configuration.
         /// </value>
         public virtual DbSet<T_BD_PushMessageConfig> T_BD_PushMessageConfig { get; set; }
+
+        /// <summary>
+        /// 推送消息表Users
+        /// </summary>
+        public virtual DbSet<T_BD_PushMessageToUsers> T_BD_PushMessageToUsers { get; set; }
     }
 }

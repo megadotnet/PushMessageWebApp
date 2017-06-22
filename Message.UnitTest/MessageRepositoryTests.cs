@@ -15,6 +15,8 @@ namespace Message.UnitTest
     /// </summary>
     public class MessageRepositoryTests
     {
+     
+
         /// <summary>
         /// Shoulds the send message.推送消息到WebAuth的项目前端页面feed
         /// </summary>
@@ -36,6 +38,28 @@ namespace Message.UnitTest
 
             Assert.True(isSuccess);
 
+        }
+
+        /// <summary>
+        /// TestInsertToDb
+        /// </summary>
+        [Fact]
+        public void TestInsertToDb()
+        {
+            MessageRepository messageRepository = new MessageRepository();
+            var pkArrays=messageRepository.InsertPushMessage(new PushMsg()
+            {
+                Id = 1,
+                MSGTITLE = "Test title" + DateTime.Now,
+                MSGCONTENT = "test content" + DateTime.Now,
+                MSGTYPE = "1",
+                MsgSendType = "1",
+                ExpirationTime = DateTime.MaxValue,
+                IsRead = false,
+                Users = new string[] { "peter@163.com", "john@gmail.com" }
+            });
+
+            Assert.NotEmpty(pkArrays);
         }
 
 

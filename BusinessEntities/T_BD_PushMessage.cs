@@ -53,10 +53,18 @@ namespace BusinessEntities
         /// The remark.
         /// </value>
         public string Remark { get; set; }
+        /// <summary>
+        /// ExpirationTime
+        /// </summary>
+        
         public Nullable<System.DateTime> ExpirationTime { get; set; }
-        public Nullable<int> Userid { get; set; }
+        /// <summary>
+        /// IsTop
+        /// </summary>
+        public bool IsTop { get; set; }
         public bool IsRead { get; set; }
 
+        public virtual ICollection<T_BD_PushMessageToUsers> T_BD_PushMessageToUsers { get; set; }
     }
 
 

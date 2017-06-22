@@ -13,6 +13,7 @@ using Message.WebAPI.Controllers.Api;
 using BusniessEntities.Models;
 using Megadotnet.MessageMQ.Adapter;
 using Message.WebAPI.Models;
+using BusinessEntities;
 
 namespace Message.WebAPI.Services.Repository
 {
@@ -78,7 +79,7 @@ namespace Message.WebAPI.Services.Repository
         /// <param name="pushmsg">The pushmsg.</param>
         /// <returns>成功插入PushMessage的PK的列表</returns>
         //[TransactionScopeCallHandler]
-        protected int[] InsertPushMessage(PushMsg pushmsg)
+        public int[] InsertPushMessage(PushMsg pushmsg)
         {
             var dbcontext = new MessageCenterEntities();
 
@@ -94,7 +95,9 @@ namespace Message.WebAPI.Services.Repository
                         MsgType = Convert.ToInt32(pushmsg.MSGTYPE),
                         MsgSendType = pushmsg.MsgSendType,
                         ExpirationTime = pushmsg.ExpirationTime,
-                        Userid = GetUserIdListByUserAccount(u)
+                         T_BD_PushMessageToUsers=new List<T_BD_PushMessageToUsers> {
+                             new T_BD_PushMessageToUsers() { Userid = GetUserIdListByUserAccount(u), SendingTime=DateTime.Now }}
+                       // Userid = GetUserIdListByUserAccount(u)
                     }
                     );
             });
@@ -113,9 +116,6 @@ namespace Message.WebAPI.Services.Repository
                 {
                     log.Error(ex);
                 }
-
-                //entiesrepository.Add(u);
-                //entiesrepository.Save();
 
                 pushMessageEntiyIdList.Add(u.Id);
             });

@@ -1,6 +1,4 @@
-﻿
-
-using Microsoft.AspNet.SignalR;
+﻿using Microsoft.AspNet.SignalR;
 
 using System;
 using System.Collections.Generic;
@@ -61,10 +59,10 @@ namespace WebAuth
 
             var userAccounts = m.Users.ToArray();
 
-            log.InfoFormat("从MQ收到消息{0}", m.MSGCONTENT);
+            log.InfoFormat("Get Message from MQ 从MQ收到消息{0}, Users: {1}", m.MSGCONTENT, String.Join(",",m.Users));
             //GlobalHost.ConnectionManager.GetHubContext<FeedHub>().Clients.All.receive(m);
 
-            //Tips:WebAuth will receive message By specifc user account while login system
+            //Tips:WebAuth will receive message By specifc user account while login system, ex:peter@163.com, account need to login
             GlobalHost.ConnectionManager.GetHubContext<FeedHub>().Clients.Users(userAccounts).receive(m);
 
         }
