@@ -150,7 +150,7 @@
     <Compile Include="Areas\Admin\Controllers\DepartmentControllerTests.cs" />
     <Compile Include="ChatHubTests.cs" />
     <Compile Include="Controllers\Api\MessageControllerTests.cs" />
-    <Compile Include="MessageRepositoryTests.cs" />
+    <Compile Include="DAL\MessageRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RSAClassTest.cs" />
   </ItemGroup>
@@ -175,9 +175,7 @@
       <Name>WebAuth</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

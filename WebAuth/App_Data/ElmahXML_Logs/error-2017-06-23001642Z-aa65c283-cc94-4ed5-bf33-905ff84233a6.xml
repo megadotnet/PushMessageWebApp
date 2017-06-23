@@ -1,0 +1,168 @@
+﻿<error errorId="aa65c283-cc94-4ed5-bf33-905ff84233a6" application="/LM/W3SVC/4/ROOT" host="DESKTOP-NT0TRR6" type="MySql.Data.MySqlClient.MySqlException" message="Access denied for user 'root'@'localhost' (using password: YES)" source="MySql.Data" detail="System.Data.Entity.Core.ProviderIncompatibleException: An error occurred accessing the database. This usually means that the connection to the database failed. Check that the connection string is correct and that the appropriate DbContext constructor is being used to specify it or find it in the application's config file. See http://go.microsoft.com/fwlink/?LinkId=386386 for information on DbContext and connections. See the inner exception for details of the failure. ---&gt; System.Data.Entity.Core.ProviderIncompatibleException: The provider did not return a ProviderManifestToken string. ---&gt; MySql.Data.MySqlClient.MySqlException: Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Access denied for user 'root'@'localhost' (using password: YES) ---&gt; MySql.Data.MySqlClient.MySqlException: Access denied for user 'root'@'localhost' (using password: YES)&#xD;&#xA;   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()&#xD;&#xA;   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)&#xD;&#xA;   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()&#xD;&#xA;   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(Boolean reset)&#xD;&#xA;   at MySql.Data.MySqlClient.NativeDriver.Authenticate(String authMethod, Boolean reset)&#xD;&#xA;   at MySql.Data.MySqlClient.NativeDriver.Open()&#xD;&#xA;   at MySql.Data.MySqlClient.Driver.Open()&#xD;&#xA;   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)&#xD;&#xA;   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()&#xD;&#xA;   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()&#xD;&#xA;   at MySql.Data.MySqlClient.MySqlPool.GetConnection()&#xD;&#xA;   at MySql.Data.MySqlClient.MySqlConnection.Open()&#xD;&#xA;   at MySql.Data.MySqlClient.MySqlProviderServices.GetDbProviderManifestToken(DbConnection connection)&#xD;&#xA;   at System.Data.Entity.Core.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;   at System.Data.Entity.Core.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)&#xD;&#xA;   at System.Data.Entity.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;   at System.Data.Entity.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)&#xD;&#xA;   at System.Data.Entity.Infrastructure.DefaultManifestTokenResolver.&lt;&gt;c__DisplayClass1.&lt;ResolveManifestToken&gt;b__0(Tuple`3 k)&#xD;&#xA;   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)&#xD;&#xA;   at System.Data.Entity.Infrastructure.DefaultManifestTokenResolver.ResolveManifestToken(DbConnection connection)&#xD;&#xA;   at System.Data.Entity.Utilities.DbConnectionExtensions.GetProviderInfo(DbConnection connection, DbProviderManifest&amp; providerManifest)&#xD;&#xA;   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)&#xD;&#xA;   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)&#xD;&#xA;   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)&#xD;&#xA;   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()&#xD;&#xA;   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)&#xD;&#xA;   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()&#xD;&#xA;   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()&#xD;&#xA;   at System.Data.Entity.Internal.Linq.InternalSet`1.FindAsync(CancellationToken cancellationToken, Object[] keyValues)&#xD;&#xA;   at System.Data.Entity.DbSet`1.FindAsync(CancellationToken cancellationToken, Object[] keyValues)&#xD;&#xA;   at System.Data.Entity.DbSet`1.FindAsync(Object[] keyValues)&#xD;&#xA;   at Microsoft.AspNet.Identity.EntityFramework.EntityStore`1.GetByIdAsync(Object id)&#xD;&#xA;   at Microsoft.AspNet.Identity.EntityFramework.UserStore`6.&lt;GetUserAggregateAsync&gt;d__6c.MoveNext()&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at Microsoft.AspNet.Identity.TaskExtensions.CultureAwaiter`1.GetResult()&#xD;&#xA;   at Microsoft.AspNet.Identity.Owin.SecurityStampValidator.&lt;&gt;c__DisplayClass2`3.&lt;&lt;OnValidateIdentity&gt;b__1&gt;d__4.MoveNext()&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)&#xD;&#xA;   at Microsoft.Owin.Security.Cookies.CookieAuthenticationHandler.&lt;AuthenticateCoreAsync&gt;d__2.MoveNext()&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.&lt;BaseInitializeAsync&gt;d__0.MoveNext()&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at Microsoft.Owin.Security.Infrastructure.AuthenticationMiddleware`1.&lt;Invoke&gt;d__0.MoveNext()&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at Microsoft.AspNet.Identity.Owin.IdentityFactoryMiddleware`2.&lt;Invoke&gt;d__0.MoveNext()&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at Microsoft.AspNet.Identity.Owin.IdentityFactoryMiddleware`2.&lt;Invoke&gt;d__0.MoveNext()&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at Microsoft.AspNet.Identity.Owin.IdentityFactoryMiddleware`2.&lt;Invoke&gt;d__0.MoveNext()&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at Microsoft.AspNet.Identity.Owin.IdentityFactoryMiddleware`2.&lt;Invoke&gt;d__0.MoveNext()&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContextStage.&lt;RunApp&gt;d__5.MoveNext()&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.&lt;DoFinalWork&gt;d__2.MoveNext()&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.StageAsyncResult.End(IAsyncResult ar)&#xD;&#xA;   at Microsoft.Owin.Host.SystemWeb.IntegratedPipeline.IntegratedPipelineContext.EndFinalWork(IAsyncResult ar)&#xD;&#xA;   at System.Web.HttpApplication.AsyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2017-06-23T00:16:42.5184644Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8&#xD;&#xA;HTTP_COOKIE:AspxAutoDetectCookieSupport=1; ASP.NET_SessionId=hnusj520zcfa1pxx0qpzhgzl; .AspNet.ApplicationCookie=8WbI481FdKN6hTEGnO0KNus2-OaFO2MnzXxjDUxWBaAuT9iOATxas4r8y7X6FREwKbM86YeWuQab0SpmZAN1-c6ToO1tLBihaD6-2z3J54-NkoAit8tvb60QpkZlv76hUahHgyHBqRspYdEA2MIA7EM8IPjUakKibFpwjW4f41a9uFSOtDdTjCqjBtehkZyetumG1BD_dWmPTrwEYiNr-UPuov3-FXKzhy1Lbgldbod-hscLlT3WS7C7SaJwv-oHtmyprbG5cPI4_fEpVSXSNk_1CTSUc0tiU7vNat_jw2v_FR5kdUUfdIYFTa-co2oi8ZSqVW8vHiUk0Uw1lBm3FVMtzL8DLaeC1hbfS8hrKCLaS4x_uOlg8HAp_XjCkhYH4waxqg7TsYk2GCzQPoBpB8H7atXEsxUMY4eM_9nH4QxzYxwD0A881OxBg3KJ99yMR2rArP-6Px3PeOEMyBQXgAQBFsZF70YpeBbbgcZ0SumYWe56rLyDNz0KfpeTXZBTfQs1KTSIxqmuMPMHuJwsug&#xD;&#xA;HTTP_HOST:localhost:4143&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36&#xD;&#xA;HTTP_UPGRADE_INSECURE_REQUESTS:1&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip, deflate, br&#xD;&#xA;Accept-Language: en-US,en;q=0.8&#xD;&#xA;Cookie: AspxAutoDetectCookieSupport=1; ASP.NET_SessionId=hnusj520zcfa1pxx0qpzhgzl; .AspNet.ApplicationCookie=8WbI481FdKN6hTEGnO0KNus2-OaFO2MnzXxjDUxWBaAuT9iOATxas4r8y7X6FREwKbM86YeWuQab0SpmZAN1-c6ToO1tLBihaD6-2z3J54-NkoAit8tvb60QpkZlv76hUahHgyHBqRspYdEA2MIA7EM8IPjUakKibFpwjW4f41a9uFSOtDdTjCqjBtehkZyetumG1BD_dWmPTrwEYiNr-UPuov3-FXKzhy1Lbgldbod-hscLlT3WS7C7SaJwv-oHtmyprbG5cPI4_fEpVSXSNk_1CTSUc0tiU7vNat_jw2v_FR5kdUUfdIYFTa-co2oi8ZSqVW8vHiUk0Uw1lBm3FVMtzL8DLaeC1hbfS8hrKCLaS4x_uOlg8HAp_XjCkhYH4waxqg7TsYk2GCzQPoBpB8H7atXEsxUMY4eM_9nH4QxzYxwD0A881OxBg3KJ99yMR2rArP-6Px3PeOEMyBQXgAQBFsZF70YpeBbbgcZ0SumYWe56rLyDNz0KfpeTXZBTfQs1KTSIxqmuMPMHuJwsug&#xD;&#xA;Host: localhost:4143&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36&#xD;&#xA;Upgrade-Insecure-Requests: 1&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/4/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="k:\MyProject\GitHub\PushMessageWebApp\WebAuth\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="4" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/4" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="k:\MyProject\GitHub\PushMessageWebApp\WebAuth" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="20862" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="4143" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="AspxAutoDetectCookieSupport=1; ASP.NET_SessionId=hnusj520zcfa1pxx0qpzhgzl; .AspNet.ApplicationCookie=8WbI481FdKN6hTEGnO0KNus2-OaFO2MnzXxjDUxWBaAuT9iOATxas4r8y7X6FREwKbM86YeWuQab0SpmZAN1-c6ToO1tLBihaD6-2z3J54-NkoAit8tvb60QpkZlv76hUahHgyHBqRspYdEA2MIA7EM8IPjUakKibFpwjW4f41a9uFSOtDdTjCqjBtehkZyetumG1BD_dWmPTrwEYiNr-UPuov3-FXKzhy1Lbgldbod-hscLlT3WS7C7SaJwv-oHtmyprbG5cPI4_fEpVSXSNk_1CTSUc0tiU7vNat_jw2v_FR5kdUUfdIYFTa-co2oi8ZSqVW8vHiUk0Uw1lBm3FVMtzL8DLaeC1hbfS8hrKCLaS4x_uOlg8HAp_XjCkhYH4waxqg7TsYk2GCzQPoBpB8H7atXEsxUMY4eM_9nH4QxzYxwD0A881OxBg3KJ99yMR2rArP-6Px3PeOEMyBQXgAQBFsZF70YpeBbbgcZ0SumYWe56rLyDNz0KfpeTXZBTfQs1KTSIxqmuMPMHuJwsug" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:4143" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36" />
+    </item>
+    <item name="HTTP_UPGRADE_INSECURE_REQUESTS">
+      <value string="1" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="AspxAutoDetectCookieSupport">
+      <value string="1" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="hnusj520zcfa1pxx0qpzhgzl" />
+    </item>
+    <item name=".AspNet.ApplicationCookie">
+      <value string="8WbI481FdKN6hTEGnO0KNus2-OaFO2MnzXxjDUxWBaAuT9iOATxas4r8y7X6FREwKbM86YeWuQab0SpmZAN1-c6ToO1tLBihaD6-2z3J54-NkoAit8tvb60QpkZlv76hUahHgyHBqRspYdEA2MIA7EM8IPjUakKibFpwjW4f41a9uFSOtDdTjCqjBtehkZyetumG1BD_dWmPTrwEYiNr-UPuov3-FXKzhy1Lbgldbod-hscLlT3WS7C7SaJwv-oHtmyprbG5cPI4_fEpVSXSNk_1CTSUc0tiU7vNat_jw2v_FR5kdUUfdIYFTa-co2oi8ZSqVW8vHiUk0Uw1lBm3FVMtzL8DLaeC1hbfS8hrKCLaS4x_uOlg8HAp_XjCkhYH4waxqg7TsYk2GCzQPoBpB8H7atXEsxUMY4eM_9nH4QxzYxwD0A881OxBg3KJ99yMR2rArP-6Px3PeOEMyBQXgAQBFsZF70YpeBbbgcZ0SumYWe56rLyDNz0KfpeTXZBTfQs1KTSIxqmuMPMHuJwsug" />
+    </item>
+  </cookies>
+</error>

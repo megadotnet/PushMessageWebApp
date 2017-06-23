@@ -297,9 +297,7 @@
     <Compile Include="App_Start\HtmlExtensions.cs" />
     <Compile Include="App_Start\MQHubsConfig.cs" />
     <Compile Include="App_Start\RemoveServerResponseHeader.cs" />
-    <Compile Include="App_Start\jCryption.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    <Compile Include="App_Start\jCryption.cs" />
     <Compile Include="App_Start\jCryption.Mvc.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
@@ -1290,6 +1288,7 @@
     <Content Include="Areas\Chat\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Chat\Views\_ViewStart.cshtml" />
     <Content Include="EncryptConnectingstr.bat" />
+    <Content Include="README.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

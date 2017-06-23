@@ -24,7 +24,7 @@ namespace BusinessEntities
         /// <value>
         /// The userid.
         /// </value>
-        public Nullable<int> Userid { get; set; }
+        public string Userid { get; set; }
         /// <summary>
         /// Gets or sets the type of the MSG.
         /// </summary>

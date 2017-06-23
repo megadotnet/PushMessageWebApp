@@ -163,9 +163,14 @@ namespace Message.WebAPI.Services.Repository
         /// </summary>
         /// <param name="userAccount">The user account.</param>
         /// <returns></returns>
-        private int GetUserIdListByUserAccount(string userAccount)
+        //private int GetUserIdListByUserAccount(string userAccount)
+        //{
+        //    return 0;
+        //}
+
+        private string GetUserIdListByUserAccount(string userAccount)
         {
-            return 0;
+            return userAccount;
         }
 
         /// <summary>

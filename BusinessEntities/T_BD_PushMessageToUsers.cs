@@ -7,7 +7,7 @@ namespace BusinessEntities
     {
         public int Id { get; set; }
         public int MessageId { get; set; }
-        public Nullable<int> Userid { get; set; }
+        public string Userid { get; set; }
         public bool IsRead { get; set; }
         public System.DateTime SendingTime { get; set; }
 
