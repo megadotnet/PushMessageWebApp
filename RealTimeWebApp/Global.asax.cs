@@ -1,5 +1,4 @@
 ﻿
-using Messag.Utility.Config;
 using Microsoft.AspNet.SignalR;
 using System;
 using System.Collections.Generic;

@@ -1,19 +1,17 @@
-﻿
-using Messag.Utility.Config;
-
-using Message.WebAPI.Services.IRepository;
+﻿using Message.WebAPI.Services.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
-using Messag.Logger;
 
 using Message.WebAPI.Controllers.Api;
 using BusniessEntities.Models;
 using Megadotnet.MessageMQ.Adapter;
 using Message.WebAPI.Models;
 using BusinessEntities;
+using IronFramework.Common.Logging.Logger;
+using Megadotnet.MessageMQ.Adapter.Config;
 
 namespace Message.WebAPI.Services.Repository
 {
@@ -193,7 +191,7 @@ namespace Message.WebAPI.Services.Repository
         /// <returns></returns>
         private static ActiveMQAdapter<PushMsg> CreateActiveMQInstance()
         {
-            var activemq = new ActiveMQAdapter<PushMsg>(MQConfig.MQIpAddress, MQConfig.QueueDestination);
+            var activemq = new ActiveMQAdapter<PushMsg>(MyMQConfig.MQIpAddress, MyMQConfig.QueueDestination);
             return activemq;
         }
     }

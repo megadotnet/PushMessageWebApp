@@ -7,11 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Threading.Tasks;
-using Messag.Logger;
-using Messag.Utility.Config;
-using Megadotnet.MessageMQ.Adapter;
 using BusniessEntities.Models;
 using WebAuth;
+using IronFramework.Common.Logging.Logger;
+using Megadotnet.MessageMQ.Adapter.Config;
+using Megadotnet.MessageMQ.Adapter;
 
 namespace Message.ServerHostApp
 {
@@ -30,14 +30,14 @@ namespace Message.ServerHostApp
         /// </summary>
         public static void RegisterMQListenAndHubs()
         {
-            string queueDestname = MQConfig.QueueDestination;
+            string queueDestname = MyMQConfig.QueueDestination;
             Task.Factory.StartNew(() =>
             {
 
 #if DEBUG
-                queueDestname = MQConfig.QueueDestination;
+                queueDestname = MyMQConfig.QueueDestination;
 #endif
-                var activemq = ActiveMQListenAdapter<PushMsg>.Instance(MQConfig.MQIpAddress, queueDestname);
+                var activemq = ActiveMQListenAdapter<PushMsg>.Instance(MyMQConfig.MQIpAddress, queueDestname);
 
                 activemq.MQListener += m =>
                 {

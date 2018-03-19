@@ -9,10 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Message.ServerHostApp</RootNamespace>
     <AssemblyName>Message.ServerHostApp</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,30 +39,30 @@
       <HintPath>..\packages\Apache.NMS.1.7.1\lib\net40\Apache.NMS.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Apache.NMS.ActiveMQ, Version=1.7.1.3924, Culture=neutral, PublicKeyToken=82756feee3957618, processorArchitecture=MSIL">
-      <HintPath>..\packages\Apache.NMS.ActiveMQ.1.7.1\lib\net40\Apache.NMS.ActiveMQ.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Apache.NMS.ActiveMQ, Version=1.7.2.4108, Culture=neutral, PublicKeyToken=82756feee3957618, processorArchitecture=MSIL">
+      <HintPath>..\packages\Apache.NMS.ActiveMQ.1.7.2\lib\net40\Apache.NMS.ActiveMQ.dll</HintPath>
     </Reference>
-    <Reference Include="Common.Logging, Version=3.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Common.Logging.3.2.0\lib\net40\Common.Logging.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Common.Logging.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Common.Logging.Core.3.2.0\lib\net40\Common.Logging.Core.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
     </Reference>
     <Reference Include="Common.Logging.NLog40, Version=3.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <HintPath>..\packages\Common.Logging.NLog40.3.2.0\lib\net40\Common.Logging.NLog40.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Megadotnet.Message.Utility">
-      <HintPath>..\ReferenceDll\Megadotnet.Message.Utility.dll</HintPath>
+    <Reference Include="IronFramework.Common.Config, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronFramework.Common.Config.1.0.0\lib\net45\IronFramework.Common.Config.dll</HintPath>
     </Reference>
-    <Reference Include="Megadotnet.MessageMQ.Adapter">
-      <HintPath>..\ReferenceDll\Megadotnet.MessageMQ.Adapter.dll</HintPath>
+    <Reference Include="IronFramework.Common.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronFramework.Common.Logging.1.0.0\lib\net45\IronFramework.Common.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Megadotnet.MessageMQ.IAdapter">
-      <HintPath>..\ReferenceDll\Megadotnet.MessageMQ.IAdapter.dll</HintPath>
+    <Reference Include="Megadotnet.MessageMQ.Adapter, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Megadotnet.MessageMQ.Adapter.1.0.0.4\lib\net45\Megadotnet.MessageMQ.Adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="Megadotnet.MessageMQ.IAdapter, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Megadotnet.MessageMQ.IAdapter.1.0.0.3\lib\netstandard2.0\Megadotnet.MessageMQ.IAdapter.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>

@@ -8,7 +8,6 @@ using Newtonsoft.Json.Serialization;
 using Microsoft.Practices.Unity;
 using Message.WebAPI.Services.IRepository;
 using Message.WebAPI.Services.Repository;
-using Messag.Utility.EntLib.IoC;
 using System.Net.Http.Headers;
 using System.Web.Http.ExceptionHandling;
 using Elmah.Contrib.WebApi;

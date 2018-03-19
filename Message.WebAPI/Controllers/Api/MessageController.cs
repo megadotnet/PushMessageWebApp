@@ -1,6 +1,6 @@
 ﻿using BusniessEntities.Models;
-using Messag.Logger;
-using Messag.Utility.Config;
+using IronFramework.Common.Logging.Logger;
+using Megadotnet.MessageMQ.Adapter.Config;
 using Message.WebAPI.Services;
 using Message.WebAPI.Services.IRepository;
 using System;
@@ -25,11 +25,11 @@ namespace Message.WebAPI.Controllers.Api
         /// <summary>
         /// The address.
         /// </summary>
-        private static string address = MQConfig.MQIpAddress;
+        private static string address = MyMQConfig.MQIpAddress;
         /// <summary>
         /// The queu e_ destination.
         /// </summary>
-        private static string QUEUE_DESTINATION = MQConfig.QueueDestination;
+        private static string QUEUE_DESTINATION = MyMQConfig.QueueDestination;
 
         /// <summary>
         /// The message repository

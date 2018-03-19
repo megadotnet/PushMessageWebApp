@@ -1,13 +1,14 @@
 ﻿
-using Messag.Utility.Config;
+using BusniessEntities.Models;
+using IronFramework.Common.Logging.Logger;
+using Megadotnet.MessageMQ.Adapter.Config;
 using Microsoft.AspNet.SignalR;
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Messag.Logger;
-using BusniessEntities.Models;
+
 
 
 
@@ -28,7 +29,8 @@ namespace RealTimeApp
         /// </summary>
         public static void RegisterMQListenAndHubs()
         {
-            var activemq = Megadotnet.MessageMQ.Adapter.ActiveMQListenAdapter<PushMsg>.Instance(MQConfig.MQIpAddress, MQConfig.QueueDestination);
+            var activemq = Megadotnet.MessageMQ.Adapter.ActiveMQListenAdapter<PushMsg>
+                .Instance(MyMQConfig.MQIpAddress, MyMQConfig.QueueDestination);
             activemq.MQListener += m =>
             {
                 log.InfoFormat("从MQ收到消息{0}", m.MSGCONTENT);

@@ -1,6 +1,6 @@
 ﻿using BotDetect.Web.UI.Mvc;
 using Elmah;
-using Messag.Logger;
+using IronFramework.Common.Logging.Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;

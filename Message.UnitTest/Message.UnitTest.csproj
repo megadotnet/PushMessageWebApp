@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Message.UnitTest</RootNamespace>
     <AssemblyName>Message.UnitTest</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -21,6 +21,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <NuGetPackageImportStamp>fc8ad78d</NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,17 +68,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Megadotnet.Message.Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ReferenceDll\Megadotnet.Message.Utility.dll</HintPath>
+    <Reference Include="IronFramework.Common.Config, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronFramework.Common.Config.1.0.0\lib\net45\IronFramework.Common.Config.dll</HintPath>
     </Reference>
-    <Reference Include="Megadotnet.MessageMQ.Adapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ReferenceDll\Megadotnet.MessageMQ.Adapter.dll</HintPath>
+    <Reference Include="IronFramework.Common.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronFramework.Common.Logging.1.0.0\lib\net45\IronFramework.Common.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Megadotnet.MessageMQ.IAdapter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ReferenceDll\Megadotnet.MessageMQ.IAdapter.dll</HintPath>
+    <Reference Include="Megadotnet.MessageMQ.Adapter, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Megadotnet.MessageMQ.Adapter.1.0.0.4\lib\net45\Megadotnet.MessageMQ.Adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="Megadotnet.MessageMQ.IAdapter, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Megadotnet.MessageMQ.IAdapter.1.0.0.3\lib\netstandard2.0\Megadotnet.MessageMQ.IAdapter.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
