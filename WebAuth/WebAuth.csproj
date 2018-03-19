@@ -1307,7 +1307,13 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\JsonResource.js" >
+	 <DependentUpon>JsonResource.tt</DependentUpon>
+	</Content>
     <Content Include="Scripts\jsrender.js" />
+    <Content Include="Scripts\JsRes.js" >
+      <DependentUpon>JsRes.tt</DependentUpon>
+	</Content>
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\pnotify.core.js" />
     <Content Include="Scripts\Project\App.js" />
