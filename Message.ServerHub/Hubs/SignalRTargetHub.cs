@@ -1,11 +1,19 @@
-﻿using Microsoft.AspNet.SignalR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="SignalRTargetHub.cs" company="Megadotnet">
+//   SignalRTargetHub
+// </copyright>
+// <summary>
+//   SignalRTargetHub
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 namespace WebAuth.Hubs
 {
+    using Microsoft.AspNet.SignalR;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+
     /// <summary>
     /// SignalRTargetHub
     /// </summary>
